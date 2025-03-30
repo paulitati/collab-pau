@@ -21,6 +21,7 @@ body {
 
 .footer {
     height: 60px;
+    /*background-color: #f5f5f5; color anterior*/
     background-color: #dfe4e5;
     border-top: 1px solid #ddd;
     padding-top: 20px;
@@ -189,6 +190,7 @@ a.desc:after {
   background-position-y: center;
 }
 
+/*Hice cambios*/
 .contenedorGrupos{
     border:#002432 dotted 2px;
     color: #002432;
@@ -200,6 +202,7 @@ a.desc:after {
     float:left;
 }
 
+/*Hice cambios*/
 .divAlumno{
     /*Se cambio width del .divAlumno*/
     width: 170px;
@@ -212,27 +215,31 @@ a.desc:after {
     display: inline-block;
 }
 
-
 /*NAV BAR*/
 .navbar-nav li{
     font-size: 12px;
 }
+
 .navbar-inverse{
-    background-color: #2a2a2a !important;
+    background-color: #002432 !important;
     border-color: #fff;
     height: 100px;
     display: flex;
     align-items: center;
 }
+
 .navbar-brand{
     font-size: 30px;
 }
 
+
 .tipocuenta{
+    /*color: #8672FF !important; color de tipo de cuenta anterior*/
     color: #FF7124 !important;
     text-decoration: none;
     pointer-events: none;
 }
+
 .navbar-inverse .navbar-nav > .active > a{
     color: #fff;
     background-color: #080808;
@@ -244,6 +251,7 @@ a.desc:after {
     padding:0px;
 }
 
+/*Agregue esto para cambiar y acomodar el container dentro del footer*/
 .footer > .container{
     width: inherit;
     margin:0px;
@@ -257,7 +265,8 @@ a.desc:after {
     padding: 20px 15px;
     margin-bottom: 20px;
     list-style: none;
-    background-color: #262626;
+    /*background-color: #262626; color anterior*/
+    background-color: #002432;
     border-radius: 10px;
 }
 
