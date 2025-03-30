@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\AsignaturasDocentes;
 use app\models\AsignaturasDocentesSearch;
+use app\models\Asignaturas;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -23,12 +24,17 @@ class AsignaturasDocentesController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index', 'view', 'update', 'delete', 'create'],
+                'only' => ['index', 'view', 'update', 'delete', 'create', 'create-profesor-aux'],
                 'rules' => [
                     [
                         'actions' => ['index', 'view', 'update', 'delete', 'create'],
                         'allow' => true,
                         'roles' => ['administrador'],
+                    ],
+                    [
+                        'actions' => ['create-profesor-aux', 'view'],
+                        'allow' => true,
+                        'roles' => ['profesor'],
                     ],
                 ],
             ],
@@ -86,6 +92,38 @@ class AsignaturasDocentesController extends Controller
             'model' => $model,
         ]);
     }
+
+    //Este metodo lo que hace es permitir que un profesor pueda asociar a una de sus asignaturas a otro profesor creando un registro de AsignaturasDocentes
+    public function actionCreateProfesorAux($id) 
+    {
+    // Buscar la asignatura existente
+    $asignatura = Asignaturas::findOne($id);
+
+    if (!$asignatura) {
+        // Si no se encuentra la asignatura, mostrar un error o redirigir
+        Yii::$app->session->setFlash('error', 'La asignatura no existe.');
+        return $this->redirect(['index']);
+    }
+
+    $model = new AsignaturasDocentes();
+
+    // Establecer el valor predeterminado para el campo 'tipo'
+    $model->tipo = 1;  // Esto hace que el valor de tipo sea 1 por defecto
+
+    // Si el formulario fue enviado y los datos son válidos
+    if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        // Redirigir al usuario a la vista de la asignatura
+        return $this->redirect(['view', 'id' => $model->id]);
+    }
+
+    // Pasar el modelo de AsignaturasDocentes y la asignatura existente al formulario
+    return $this->render('create_aux', [
+        'model' => $model,
+        'asignatura' => $asignatura, // Asignar la asignatura a la vista
+    ]);
+}
+
+
 
     /**
      * Updates an existing AsignaturasDocentes model.

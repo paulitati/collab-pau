@@ -23,7 +23,7 @@ class UsuariosController extends Controller {
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['index', 'view', 'update', 'delete', 'create', 'test-felder-silverman'],
-                'rules' => [
+                'rules' => [ 
                     [
                         'actions' => ['index', 'view', 'actualizar-perfil', 'test-felder-silverman'],
                         'allow' => true,
@@ -32,7 +32,7 @@ class UsuariosController extends Controller {
                     [
                         'actions' => ['delete'],
                         'allow' => true,
-                        'roles' => ['administrador'],
+                        'roles' => ['administrador', 'profesor'],
                     ],
                     [
                         'actions' => ['create', 'update'],
@@ -95,6 +95,7 @@ class UsuariosController extends Controller {
                     'model' => $this->findModel($id),
         ]);
     }
+
 
     public function actionFicha($id) {
         $usuario = Yii::$app->user->identity->id;
@@ -174,6 +175,9 @@ class UsuariosController extends Controller {
         return $this->render('promover-docente');
     }
 
+
+
+
     public function actionAltaExitosa() {
         return $this->render('alta-exitosa');
     }
@@ -207,6 +211,8 @@ class UsuariosController extends Controller {
             'model' => $model,
         ]);
     }
+
+
     public function actionActualizarPerfil($id) {
         // Obtener el usuario actual logueado
         $usuario = Yii::$app->user->identity->id;
@@ -277,11 +283,12 @@ class UsuariosController extends Controller {
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id) {
+    public function actionDelete($id, $t) {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['index', 't'=>$t]);
     }
+
 
     public function actionTestFelderSilverman() {
 
@@ -431,6 +438,7 @@ class UsuariosController extends Controller {
             ]);
         }
     }
+
 
     public function actionTestBigFive() {
 

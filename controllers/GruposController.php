@@ -63,6 +63,7 @@ class GruposController extends Controller {
         ]);
     }
 
+
     /**
      * Displays a single Grupos model.
      * @param integer $id
@@ -75,6 +76,7 @@ class GruposController extends Controller {
         ]);
     }
 
+    //Convierte un estilo de aprendizaje abreviado a un nombre de clase CSS para aplicar estilos visuales.
     function getEstilo($estilo) {
         $nestilo = '';
         switch (substr(trim($estilo), 0, 3)) {
@@ -127,14 +129,27 @@ class GruposController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+    
     public function actionCreate($asigid) {
         $usuario = Yii::$app->user->identity->id;
         $oUser = \app\models\Usuarios::findOne(['id' => $usuario]);
         $asigid = Yii::$app->security->decryptByPassword($asigid, $oUser->password);
+
+    // Consulta a la tabla Asignaturas para obtener el nombre y año
+    $asignatura = \app\models\Asignaturas::findOne(['id' => $asigid]);
+    if ($asignatura) {
+        $asignaturaNombre = $asignatura->nombre;
+        $asignaturaYear = $asignatura->year;
+    } else {
+        Yii::$app->session->setFlash('error', 'La asignatura no existe.');
+        return $this->redirect(['index']); // Redirigir a index en caso de error
+    }
+    // Consulta a la tabla Grupos para obtener la cantidad de grupos para esta asignatura
+    $cantidadGrupos = \app\models\Grupos::find()->where(['asignaturas_id' => $asigid])->count();
     
         $model = new Grupos();
         $model->asignaturas_id = $asigid;
-    
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             if ($model->metodos_formacion_id == 1) {
                 // Lógica para formar grupos manualmente
@@ -197,6 +212,9 @@ class GruposController extends Controller {
         return $this->render('create', [
             'model' => $model,
             'asigid' => $asigid,
+            'asignaturaNombre'=>$asignaturaNombre,
+            'asignaturaYear'=>$asignaturaYear,
+            'cantidadGrupos'=>$cantidadGrupos,
         ]);
     }
     
@@ -228,14 +246,18 @@ class GruposController extends Controller {
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id) {
+    public function actionDelete($id)
+    {
         $usuario = Yii::$app->user->identity->id;
         $oUser = \app\models\Usuarios::findOne(['id' => $usuario]);
         $id = Yii::$app->security->decryptByPassword($id, $oUser->password);
 
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id); // Obtener el modelo ANTES de eliminarlo
+        $asignaturas_id = $model->asignaturas_id; // Obtener el asignaturas_id
 
-        return $this->redirect(['index']);
+        $model->delete(); // Eliminar el modelo DESPUÉS de obtener el asignaturas_id
+
+        return $this->redirect(['index', 'asigid' => Yii::$app->security->encryptByPassword($asignaturas_id, $oUser->password)]);
     }
 
     /**
@@ -252,14 +274,33 @@ class GruposController extends Controller {
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+
+    
     public function actionCambiarAlumno($alumno_id, $grupo_id, $view)
     {
         $alumno = Usuarios::findOne($alumno_id);
         $grupoActual = GruposFormados::findOne($grupo_id); // Encuentra el modelo del grupo actual
     
         if ($alumno && $grupoActual) {
-            // Encuentra todos los grupos formados disponibles con el mismo grupos_id
-            $gruposDisponibles = GruposFormados::find()->where(['grupos_id' => $grupoActual->grupos_id])->all();
+
+        //Se obtiene la cantidad máxima de integrantes del grupo principal. Como todos tienen la misma cantidad maxima de integrantes se puede usar de base.
+        $cantidadMaximaIntegrantes = Grupos::findOne($grupoActual->grupos_id)->cantidadintegrantes;
+        //Se construye la consulta
+        // Encuentra todos los grupos formados disponibles con espacio, excluyendo el grupo actual
+            $gruposDisponibles = GruposFormados::find()
+            //Selecciona todos los grupos formados con su cantidad de integrantes
+            ->select(['grupos_formados.*', 'COUNT(grupos_alumnos.usuarios_id) AS cantidad_alumnos'])
+            //Realizamos la union entre grupos alumnos y grupos formados  por el id
+            ->leftJoin('grupos_alumnos', 'grupos_formados.id = grupos_alumnos.grupos_formados_id')
+            ->where(['grupos_formados.grupos_id' => $grupoActual->grupos_id])
+            ->andWhere(['!=', 'grupos_formados.id', $grupo_id]) // Excluye el grupo actual
+            //agrupa los resultados por el valor de la columna id en grupos_formados
+            ->groupBy('grupos_formados.id')
+            //Esta condición incluye solo los grupos formados donde el número de alumnos (cantidad_alumnos) es menor que la cantidad máxima permitida ($cantidadMaximaIntegrantes).
+            ->having('cantidad_alumnos < :cantidad_maxima', [':cantidad_maxima' => $cantidadMaximaIntegrantes])
+            ->all();
+            
     
             $dynamicModel = new \yii\base\DynamicModel(['nuevo_grupo_formado_id']);
             $dynamicModel->addRule(['nuevo_grupo_formado_id'], 'required');

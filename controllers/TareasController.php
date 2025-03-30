@@ -6,6 +6,8 @@ use Yii;
 use app\models\Tareas;
 use app\models\Evento;
 use app\models\TareasSearch;
+use app\models\Preguntas;
+use app\models\MultipleChoice;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -76,6 +78,7 @@ class TareasController extends Controller {
         ]);
     }
     
+
     public function actionCreateEvento($asigid)
     {
         $modelEvento = new Evento();
@@ -101,9 +104,6 @@ class TareasController extends Controller {
     
     
     
- 
-    
-
     public function actionTareasAlumnos($asigid, $year) {      
         $userid = Yii::$app->user->identity->id;   
         $oUser = \app\models\Usuarios::findOne(['id' => $userid]);
@@ -145,6 +145,15 @@ class TareasController extends Controller {
      */
    public function actionCreate($asigid, $tipoactividad) {
     date_default_timezone_set('America/Argentina/Buenos_Aires');
+    // Consulta a la tabla Asignaturas para obtener el nombre y año
+    $asignatura = \app\models\Asignaturas::findOne(['id' => $asigid]);
+    if ($asignatura) {
+        $asignaturaYear = $asignatura->year;
+    } else {
+        Yii::$app->session->setFlash('error', 'La asignatura no existe.');
+        return $this->redirect(['index']); // Redirigir a index en caso de error
+    }
+
     
     if ($tipoactividad == 'grupal') {
         $model = new Tareas();
@@ -173,6 +182,8 @@ class TareasController extends Controller {
         return $this->render('create', [
             'model' => $model,
             'tipoactividad' => $tipoactividad,
+            'asigid'=>$asigid,
+            'asignaturaYear'=>$asignaturaYear,
         ]);
 
     } elseif ($tipoactividad == 'individual') {
@@ -202,6 +213,7 @@ class TareasController extends Controller {
         return $this->render('create', [
             'model' => $model,
             'tipoactividad' => $tipoactividad,
+            'asignaturaYear'=>$asignaturaYear,
         ]);
 
     } elseif ($tipoactividad == 'cuestionarioevaluativo') {
@@ -245,6 +257,7 @@ class TareasController extends Controller {
             'modelTarea' => $modelTarea,
             'preguntas' => $preguntas,
             'multipleChoice' => $multipleChoice,
+            'asignaturaYear'=>$asignaturaYear,
         ]);
     }
 }
@@ -290,6 +303,9 @@ class TareasController extends Controller {
      * @return Tareas the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
+
+
+
     protected function findModel($id) {
         if (($model = Tareas::findOne($id)) !== null) {
             return $model;
@@ -299,12 +315,17 @@ class TareasController extends Controller {
     }
 
     /* Entorno gamificado*/
+    //Permite elegir el tipo de actividad a crear.
+    //Renderiza la vista elegir-actividad.
     public function actionElegirActividad($asigid) {
         return $this->render('elegir-actividad', [
             'asigid' => $asigid,
         ]);
     }
 
+    //Crea un cuestionario individual.
+    //Maneja la creación de preguntas y opciones de multiple choice.
+    //Renderiza la vista crear-cuestionario
     public function actionCrearCuestionarioIndividual()
     {
         // Crear modelos de la tarea y las preguntas
