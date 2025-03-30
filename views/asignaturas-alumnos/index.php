@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="asignaturas-alumnos-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Asociar Alumno', ['create', 'asigid' => Yii::$app->security->encryptByPassword($asigid, $oUser->password)], ['class' => 'btn btn-success']) ?>
@@ -38,5 +38,23 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+        //Para agregar un logo de busqueda a la fila a la primera celda de la fila de busqueda por filtros
+        'filterRowOptions' => [
+            'id' => 'w0-filters', // Esto es por si quieres apuntar específicamente a esta fila
+            'class' => 'custom-filter-row', // Agregar una clase para personalización
+            ],
     ]); ?>
 </div>
+
+<?php
+//Javascript para agregar el logo de busqueda
+$this->registerJs("
+$(document).ready(function() {
+    // Generar la URL correcta para la imagen
+    var imageUrl = '" . Yii::$app->urlManager->baseUrl . "/images/logo_busqueda.png';
+    
+    // Insertar una imagen en la primera celda de la fila de filtros
+    $('#w0-filters td:first-child').html('<img src=\"' + imageUrl + '\" alt=\"Imagen de Filtro\" style=\"width: 30px; height: 30px;\">');
+});
+");
+?>

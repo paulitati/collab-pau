@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'codigo',
+            'cantidadintegrantes',
             'year',            
             [
                 'attribute' => 'metodos_formacion_id',

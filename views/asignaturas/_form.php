@@ -11,8 +11,10 @@ use yii\widgets\ActiveForm;
 <div class="asignaturas-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
+    <p><span style="font-weight:600; color:#38928D;;">Nota:</span> Colocar siempre las iniciales de la <span style="font-weight:600; color:#FD8916;">Asignatura</span> en <span style="font-weight:600; color:#FD8916;">Mayusculas</span>.</p>
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'year')->textInput() ?>
+    
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>

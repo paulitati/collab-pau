@@ -21,6 +21,8 @@ AppAsset::register($this);
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
+    <!--Agregue favicon-->
+        <link rel="icon" href="<?= Yii::$app->request->baseUrl ?>/images/favicon.png" type="image/png">
     </head>
     <body>
         <?php $this->beginBody() ?>
@@ -54,6 +56,10 @@ AppAsset::register($this);
                     ['label' => 'Sentencias de Apertura', 'url' => ['/sentencias-apertura/index']]];
             } elseif (array_key_exists('profesor', $rolesUsuario)) {
                 $opciones = [
+                    //Agrego el label para la identificacion de Cuenta Profesor
+                    ['label'=> 'Cuenta Profesor',
+                    'url'=> '#',
+                    'linkOptions' => ['class' => 'tipocuenta']],
                     ['label' => 'Asignaturas', 'url' => ['/asignaturas/index']],
                     ['label' => 'Alumnos', 'url' => ['/usuarios/index', 't' => 'a']],
                     [
@@ -114,7 +120,8 @@ AppAsset::register($this);
 
         <footer class="footer">
             <div class="container">
-                <p class="pull-left">&copy; Universidad Nacional de Santiago del Estero<br/> Facultad de Ciencias Exactas y Tecnolog&iacute;as<br/>Instituto de Investigaci&oacute;n en Inform&aacue;tica y Sistemas de Informaci&oacute;n<br/> <?= date('Y') ?></p>
+                <!--Corregido para que se escriba bien Informática-->
+                <p class="pull-left">&copy; Universidad Nacional de Santiago del Estero<br/> Facultad de Ciencias Exactas y Tecnolog&iacute;as<br/>Instituto de Investigaci&oacute;n en Inform&aacute;tica y Sistemas de Informaci&oacute;n<br/> <?= date('Y') ?></p>
 
                 <p class="pull-right"><?= Yii::powered() ?></p>
             </div>

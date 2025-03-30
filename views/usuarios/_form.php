@@ -15,6 +15,25 @@ use yii\widgets\ActiveForm;
 
 <?= $form->field($model, 'apellido')->textInput(['maxlength' => true]) ?>
 
+<?= $form->field($model, 'dni')->textInput(['maxlength' => true]) ?>
+
+<?= $form->field($model, 'institucion')->textInput(['list' => 'instituciones', 'placeholder' => 'Ingrese su institución']) ?>
+
+<datalist id="instituciones">
+    <option value="UNSE">
+    <option value="UCSE">
+    <option value="UNICAUCA">
+    <option value="UMNG">
+    <option value="UAZ">
+    <option value="UdL">
+    <option value="TEC">
+    <option value="UGR">
+</datalist>
+
+<div id="institucion-otra-container" style="display: none; margin-bottom: 15px;">
+    <input type="text" id="institucion-otra-input" class="form-control" placeholder="Ingresa el nombre de la institución">
+</div>
+
 <?= $form->field($model, 'fechanacimiento')->widget(\yii\jui\DatePicker::class, [
     'language' => 'es',
     'dateFormat' => 'dd/MM/yyyy',
@@ -31,6 +50,14 @@ use yii\widgets\ActiveForm;
 <?= ($operacion == 'alta') ? $form->field($model, 'username')->textInput(['maxlength' => true]) : '' ?>
 
 <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+
+<?= $form->field($model, 'pregunta')->dropDownList([
+        'mascota' => '¿Cuál es el nombre de tu mascota?',
+        'pelicula' => '¿Cuál es tu película favorita?',
+        'comida' => '¿Cuál es tu comida favorita?',
+    ], ['prompt' => 'Seleccione una pregunta de seguridad']) ?>
+
+<?= $form->field($model, 'respuesta')->textInput(['maxlength' => true]) ?>
 
 <!-- Campo para subir la foto de perfil -->
 <?= $form->field($model, 'foto_perfil')->fileInput(['id' => 'uploadFotoPerfil']) ?>
@@ -60,4 +87,3 @@ document.getElementById('uploadFotoPerfil').onchange = function (evt) {
     }
 };
 </script>
-

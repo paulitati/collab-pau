@@ -19,12 +19,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     
-    <div style="margin:20px 0; padding: 30px; text-align: justify; background-color: #F0DFD5">
+    <div style="margin:20px 0; padding: 30px; text-align: justify; background-color: #dfe4e5">
         
         <h3>Aviso de Privacidad</h3>
-        <p>Integrantes del proyecto de investigación 23/C138 “Mejorando escenarios de aprendizaje colaborativo soportado por computadora” perteneciente al Instituto de Investigación en Informática y Sistemas de Información (IIISI) de la Universidad Nacional de Santiago del Estero (Argentina) son los responsables del tratamiento de los datos personales que nos proporcione.</p>
-        <p>Los datos personales que recabamos de usted, los utilizaremos exclusivamente con fines académicos y de investigación. Nuestra finalidad es generar el conocimiento necesario para generar artículos científicos en colaboración con la Universidad Autónoma de Zacatecas (México), la Universidad Militar Nueva Granada (Colombia) y la Universidad del Cauca (Colombia). En caso de que no desee que sus datos personales sean tratados para finalidad expuesta, usted puede manifestarlo al correo electrónico <a href="mailto://infoiiiisi@unse.edu.ar">infoiiiisi@unse.edu.ar</a> (casilla de correo del IIIISI). Si usted no manifiesta su negativa, se entenderá que ha otorgado su consentimiento.</p>
-        <p>Se informa que no se realizarán transferencias a terceras partes de los datos recabados, y que en nuestros artículos siempre se conservarán en secreto datos sensibles como el nombre y el  apellido de nuestras fuentes.</p>
+        <p>Los datos personales que proporcionen tanto docentes como estudiantes sólo serán usados con 
+            fines académicos y de investigación, particularmente, para la generación de artículos científicos.</p>
+        <p>Estos datos quedarán bajo la responsabilidad de los docentes integrantes del Proyecto de investigación 
+            23/C176-A-2022 “DESARROLLO DE APLICACIONES PARA COLABORACIÓN EN E-LEARNING” perteneciente al 
+            Instituto de Investigación en Informática y Sistemas de Información (IIISI) de
+            la Universidad Nacional de Santiago del Estero (Argentina).</p>
+        <p>Si usted no desea que sus datos sean utilizados con los fines expuestos, por favor, envíe un correo electrónico a: 
+            rosanna@unse.edu.ar (email perteneciente a la Directora del Proyecto mencionado). En caso contrario, se entenderá que otorga su consentimiento.</p>
+        <p>Asimismo, se informa que no se realizarán transferencias a terceros de los datos recabados 
+            y que nunca se expondrán nombres y apellidos de docentes y/o de estudiantes en las 
+            publicaciones que se realicen a partir de los datos recabados.</p>
         
     </div>
     

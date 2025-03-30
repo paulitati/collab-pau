@@ -24,6 +24,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'username',
             'nombre',
             'apellido',
+            //Agregado para mostrar el dni
+            'dni',
+            'institucion',
             [
                 'attribute' => 'fechanacimiento',
                 'label' => 'Fecha de Nacimiento',

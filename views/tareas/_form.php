@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'descripcion')->textarea() ?>
 
-    <?= $form->field($model, 'year')->textInput() ?>
+    <?= $form->field($model, 'year')->textInput(['value' => $asignaturaYear, 'readonly' => true]) ?>
     
     <?= $form->field($model, 'usar_sentencias_apertura')->radioList(['1' => 'Sí', '0' => 'No']) ?>
     
@@ -34,8 +34,7 @@ use yii\widgets\ActiveForm;
         <span style="font-weight:600; color:#FD8916;">un valor entre 100 y 1000.</span></p>
     </div>
 
-    <?= $form->field($model, 'grupos_id')->dropDownList(app\models\Grupos::getListaGrupos()) ?>
-    <p>Nota: Recuerda el código de grupo que creaste en la <span style="font-weight:600; color:#FD8916;">sección "grupos".</span> Tiene que coincidir con el año.</p>
+    <?= $form->field($model, 'grupos_id')->dropDownList(app\models\Grupos::getListaGrupos($asigid)) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'button-g2']) ?>

@@ -5,6 +5,7 @@ use yii\helpers\Html;
 
 $this->title = 'COLLAB';
 $completarEstiloAprendizaje = false;
+$completarTestPersonalidad = false;
 
 if (isset(Yii::$app->user->identity->id)) {
     $rolesUsuario = Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity->id);
@@ -18,18 +19,44 @@ if (array_key_exists('estudiante', $rolesUsuario)) {
     if (empty($objEstudiante->estiloaprendizaje)) {
         $completarEstiloAprendizaje = true;
     }
+    if (empty($objEstudiante->personalidad)) {
+        $completarTestPersonalidad = true;
+    }
+    
 }
-?>
+?> 
+<!--Bloque cambiado-->
+<div class="row">
+            <div class="col-lg-12">
+                <?php if ($completarEstiloAprendizaje || $completarTestPersonalidad){ 
+                    if($completarEstiloAprendizaje==true && $completarTestPersonalidad==true){?>
+                    <div style='margin: 0px auto 20px auto; width: 35%; text-align: center;padding: 10px; border:#FDD900 1px solid; background-color: #FF7124'>
+                        <p style='color: #002432'>Recuerda completar los test de estilos de aprendizaje y personalidad para tener un perfil completo en el sistema.</p>
+                        <?= Html::a('Completar ahora...', ['usuarios/test-felder-silverman'], ['class' => 'btn btn-primary', 'style' =>'background-color: #38928D']) ?>
+                    </div> <?php }?>
+                    <?php if($completarEstiloAprendizaje==true && $completarTestPersonalidad==false){?>
+                        <div style='margin: 0px auto 20px auto; width: 35%; text-align: center;padding: 10px; border:#FDD900 1px solid; background-color: #FF7124'>
+                        <p style='color: #002432'>Recuerda completar el test de estilos de aprendizaje para tener un perfil completo en el sistema.</p>
+                        <?= Html::a('Completar ahora...', ['usuarios/test-felder-silverman'], ['class' => 'btn btn-primary', 'style' =>'background-color: #38928D']) ?>
+                    </div> <?php }?>
+                    <?php if($completarEstiloAprendizaje==false && $completarTestPersonalidad==true){?>
+                        <div style='margin: 0px auto 20px auto; width: 35%; text-align: center;padding: 10px; border:#FDD900 1px solid; background-color: #FF7124'>
+                        <p style='color: #002432'>Recuerda completar el test de personalidad para tener un perfil completo en el sistema.</p>
+                        <?= Html::a('Completar ahora...', ['usuarios/test-big-five'], ['class' => 'btn btn-primary', 'style' =>'background-color: #38928D']) ?>
+                    </div> <?php }?>
 
+                <?php }?>
+         </div>
+  </div>
+  <!--Fin de bloque cambiado-->
 <div class="site-index">
     <div class="site-hero">
         <div class="hero-text">
             <h1>COLLAB</h1>
-            <h2>Una herramienta para soportar la comunicación en entornos de Aprendizaje Colaborativo Soportado por
-                Computadora (ACSC).</h2>
-            <p>¡Bienvenido a un entorno colaborativo y gamificado! 🚀🏆 Gana puntos, supera desafíos, escala hasta la cima del
-                leaderboard, alcanza nuevos rangos y colabora con tu equipo para triunfar. ¡La aventura comienza ahora!
-            </p>
+            <h2>¡Bienvenidos a COLLAB!</h2>
+            <h2>Esta es una herramienta que permite la comunicación y el trabajo en equipo para dar soporte al 
+            Aprendizaje Colaborativo Soportado por Computadora(ACSC).</h2>
+            <br>
             
             <?php if (array_key_exists('estudiante', $rolesUsuario) || array_key_exists('profesor', $rolesUsuario) ): ?>
             <div class="hero-buttons">
@@ -51,33 +78,20 @@ if (array_key_exists('estudiante', $rolesUsuario)) {
 
 
     </div>
-    <div class="row">
-            <div class="col-lg-12">
-                <?php if ($completarEstiloAprendizaje): ?>
-                    <div style='margin: 0px auto 20px auto; width: 35%; text-align: center;padding: 10px; border:#FDD900 1px solid; background-color: #FEFEB4'>
-                        <p>Recuerda completar el test de estilos de aprendizaje para tener un perfil completo en el sistema.</p>
-                        <?= Html::a('Completar ahora...', ['usuarios/test-felder-silverman'], ['class' => 'btn btn-success']) ?>
-                    </div>
 
-                <?php endif?>
-         </div>
-  </div>
     <div class="site-aviso">
         <h3>Aviso de Privacidad</h3>
-        <p>Integrantes del proyecto de investigación 23/C176-A-2022 “DESARROLLO DE APLICACIONES PARA COLABORACIÓN EN
-            E-LEARNING” perteneciente al Instituto de Investigación en Informática y Sistemas de Información (IIISI) de
-            la Universidad Nacional de Santiago del Estero (Argentina) son los responsables del tratamiento de los datos
-            personales que nos proporcione.</p>
-        <p>Los datos personales que recabamos de usted, los utilizaremos exclusivamente con fines académicos y de
-            investigación. Nuestra finalidad es generar el conocimiento necesario para generar artículos científicos. En
-            caso de que no desee que sus datos personales sean tratados para finalidad expuesta, usted puede
-            manifestarlo al correo electrónico rosanna@unse.edu.ar (casilla de correo de la directora del proyecto de
-            investigación IIISI antes mencionado). Si usted no manifiesta su negativa, se entenderá que ha otorgado su
-            consentimiento.</p>
-        <p>Se informa que no se realizarán transferencias a terceras partes de los datos recabados, y que en nuestros
-            artículos siempre se conservarán en secreto datos sensibles como el nombre y el apellido de nuestras
-            fuentes.</p>
-
+        <p>Los datos personales que proporcionen tanto docentes como estudiantes sólo serán usados con 
+            fines académicos y de investigación, particularmente, para la generación de artículos científicos.</p>
+        <p>Estos datos quedarán bajo la responsabilidad de los docentes integrantes del Proyecto de investigación 
+            23/C176-A-2022 “DESARROLLO DE APLICACIONES PARA COLABORACIÓN EN E-LEARNING” perteneciente al 
+            Instituto de Investigación en Informática y Sistemas de Información (IIISI) de
+            la Universidad Nacional de Santiago del Estero (Argentina).</p>
+        <p>Si usted no desea que sus datos sean utilizados con los fines expuestos, por favor, envíe un correo electrónico a: 
+            rosanna@unse.edu.ar (email perteneciente a la Directora del Proyecto mencionado). En caso contrario, se entenderá que otorga su consentimiento.</p>
+        <p>Asimismo, se informa que no se realizarán transferencias a terceros de los datos recabados 
+            y que nunca se expondrán nombres y apellidos de docentes y/o de estudiantes en las 
+            publicaciones que se realicen a partir de los datos recabados.</p>
     </div>
 
 

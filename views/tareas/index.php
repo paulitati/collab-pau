@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="tareas-index">
 
     <h2 class="perfil-title"><?= Html::encode($this->title) ?><span>.</span></h2>
-    <p>En esta sección, podrás crear y gestionar actividades y eventos para tus asignaturas. Cada actividad puede ser utilizada para promover la participación en clase, fomentar la colaboración en equipo y reforzar los conceptos clave de la materia. </p>
+    <p>En esta sección, podrás crear y gestionar actividades y eventos para tus asignaturas. Cada actividad puede ser utilizada para promover la participación en clase, fomentar la colaboración en grupo y reforzar los conceptos clave de la materia. </p>
     <p><strong>Actividad:</strong> Las actividades son tareas o trabajos asignados a los estudiantes con el fin de reforzar el aprendizaje y evaluar su comprensión. Estas pueden incluir trabajos prácticos, ejercicios de investigación o discusiones en clase.</p>
 
 
