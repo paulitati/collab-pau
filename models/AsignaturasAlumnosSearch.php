@@ -38,32 +38,59 @@ class AsignaturasAlumnosSearch extends AsignaturasAlumnos
      *
      * @return ActiveDataProvider
      */
+    
+
+  
     public function search($params)
     {
-        $query = AsignaturasAlumnos::find();
+    $query = AsignaturasAlumnos::find();
 
-        // add conditions that should always apply here
+    // Relacionar con la tabla asignaturas(asignaturas para ordenar asignaturas en vista estudiantes) y usuarios(usuarios para ordenar estudiantes en asignaturasalumnos en profesores)
+    $query->joinWith(['asignaturas', 'usuarios']);//El asignaturas entre parentesis el es nombre del metodo que se uso para definir la relacion con la tabla Asignaturas en la clase AsignaturasAlumnos
+    //En este caso era: getAsignaturas().
 
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
+    $dataProvider = new ActiveDataProvider([
+        'query' => $query,
+        'sort' => [
+            //Definimos las opciones de ordenamiento
+            'attributes' => [
+                //Por el año de asignaturas_alumnos
+                'year',
+                //Por el nombre de asignaturas
+                'asignaturas.nombre' => [
+                    'asc' => ['asignaturas.nombre' => SORT_ASC],
+                    'desc' => ['asignaturas.nombre' => SORT_DESC],
+                ],
+                //Por el apellido de usuarios
+                'usuarios.apellido' => [
+                    'asc' => ['usuarios.apellido' => SORT_ASC],
+                    'desc' => ['usuarios.apellido' => SORT_DESC],
+                ],
+            ],
+            //Define la configuracion de ordenamiento, Primero por año descendente y luego por nombre de asignatura ascendente(En el caso de usar la relacion: asignaturasalumnos-asignaturas)
+            //Define la configuracion de ordenamiento, Primero por año descendente y luego por apellido de usuario ascendente(En el caso de usar la relacion: asignaturasalumnos-usuarios)
+            'defaultOrder' => [
+                'year' => SORT_DESC,
+                'asignaturas.nombre' => SORT_ASC,
+                'usuarios.apellido'=> SORT_ASC,
+            ],
+        ],
+    ]);
 
-        $this->load($params);
+    $this->load($params);
 
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
-            return $dataProvider;
-        }
-
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'year' => $this->year,
-            'asignaturas_id' => $this->asignaturas_id,
-            'usuarios_id' => $this->usuarios_id,
-        ]);
-
+    if (!$this->validate()) {
         return $dataProvider;
     }
+
+    $query->andFilterWhere([
+        'id' => $this->id,
+        'year' => $this->year,
+        'asignaturas_id' => $this->asignaturas_id,
+        'usuarios_id' => $this->usuarios_id,
+    ]);
+
+    return $dataProvider;
+}
+
 }

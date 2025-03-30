@@ -45,9 +45,18 @@ class TareasSearch extends Tareas
 
         // add conditions that should always apply here
 
+        
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            //Definimos las opciones de ordenamiento
+            //Define la configuracion de ordenamiento, Por id descendente 
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC,
+                ],
+            ],
         ]);
+        
 
         $this->load($params);
 

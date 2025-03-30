@@ -6,7 +6,6 @@ use Yii;
 
 /**
  * This is the model class for table "usuarios".
- *
  * @property int $id
  * @property int $pais_idpais
  * @property string $username
@@ -20,6 +19,10 @@ use Yii;
  * @property string $fechanacimiento
  * @property string $email
  * @property string $foto_perfil
+ * @property string $dni
+ * @property string $pregunta
+ * @property string $respuesta
+ * @property string $institucion
  * @property AsignaturasDocentes[] $asignaturasDocentes
  * @property GruposAlumnos[] $gruposAlumnos
  * @property Sentencias[] $sentencias
@@ -133,22 +136,30 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
      */
     public function rules() {
         return [
-            [['username', 'password','pais_idpais','fechanacimiento', 'email', 'nombre', 'apellido'], 'required'],
+            [['username', 'password','pais_idpais','fechanacimiento', 'email', 'nombre', 'apellido', 'dni', 'pregunta', 'respuesta', 'institucion'], 'required'],
             [['tipo'], 'integer'],
-            [['username'], 'string', 'max' => 45],
+            [['username'], 'string', 'max' => 45], 
             ['username', 'unique', 'targetClass' => '\app\models\Usuarios', 'message' => 'Este nombre de usuario, ya existe.'],
-            [['password'], 'string', 'max' => 255],
-            [['nombre', 'apellido'], 'string', 'max' => 150],
+            [['password'], 'string', 'max' => 255], 
+            [['nombre', 'apellido'], 'string', 'max' => 150], 
             [['estiloaprendizaje'], 'string', 'max' => 30],
-            [['personalidad'], 'string', 'max' => 100],
-            [['fechanacimiento'], 'string', 'max' => 30],
+            [['personalidad'], 'string', 'max' => 100], 
+            [['fechanacimiento'], 'string', 'max' => 30], 
             [['fechanacimiento'], 'default', 'value' => null],
             [['email'], 'string', 'max' => 100],
-            [['pais_idpais'], 'integer'],
+            [['pais_idpais'], 'integer'], 
             [['foto_perfil'], 'file', 'extensions' => 'png, jpg, jpeg', 'maxSize' => 1024 * 1024 * 2],
             [['cont_actividades_individuales'], 'integer'],
             [['cont_actividades_grupales'], 'integer'],
+            [['dni'], 'string', 'max' => 15], //Dni debe ser un string de maximo 15 caracteres
+            [['dni'], 'unique', 'targetClass' => '\app\models\Usuarios', 'message' => 'DNI/CI ya registrado.'], //Dni debe ser unico
+            [['email'], 'email'], //email debe ser de tipo email
+            [['pregunta'], 'string', 'max' => 100],
+            [['respuesta'], 'string', 'max' => 100],
+            [['institucion'], 'string', 'max' => 255],//Institucion debe ser un string de maximo 255 caracteres,
+
             
+
             //[['aceptaterminos'], 'compare', 'compareValue' => 1, 'message' => 'Tienes que leer y aceptar nuestra política de datos'],            
             [['preg1', 'preg2', 'preg3', 'preg4', 'preg5', 'preg6', 'preg7', 'preg8', 'preg9', 'preg10',
             'preg11', 'preg12', 'preg13', 'preg14', 'preg15', 'preg16', 'preg17', 'preg18', 'preg19', 'preg20',
@@ -178,10 +189,15 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
             'personalidad' => 'Personalidad',
             'fechanacimiento' => 'Fecha de Nacimiento',
             'email' => 'E-mail',
-            'pais_idpais' => 'País'
+            'pais_idpais' => 'País',
+            'dni' => 'DNI/CI',
+            'pregunta' =>'Pregunta de seguridad',
+            'respuesta' =>'Respuesta a pregunta de seguridad',
+            'institucion' => 'Institución Educativa',
             //'aceptaterminos' => 'Acepto que mis datos sean utilizados con fines académicos y de investigación. Se resalta que estos datos personales no serán divulgados.'
         ];
     }
+
 
     /**
      * @return \yii\db\ActiveQuery
@@ -209,7 +225,8 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     }
 
     public static function getListaDocentes() {
-        return yii\helpers\ArrayHelper::map(Usuarios::find()->where(['tipo' => 1])->all(), 'id', 'nombrecompleto');
+        //Se agrega el orderby a la consulta, para ordenar los docentes alfabeticamente ascendente por apellido
+        return yii\helpers\ArrayHelper::map(Usuarios::find()->where(['tipo' => 1])->orderBy(['apellido' => SORT_ASC])->all(),'id','nombrecompleto');
     }
     
     public static function getListaAlumnos() {
@@ -233,15 +250,18 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
         return $this->getAuthKey() === $authKey;
     }
 
+
     public static function findIdentity($id) {
         $objUsuario = new Usuarios();
         return $objUsuario->findOne($id);
     }
 
+    
     public static function findIdentityByAccessToken($token, $type = null): \yii\web\IdentityInterface {
         throw new \yii\base\NotSupportedException("Sólo se permite logueo por"
         . " nombre de usuario y contraseÃ±a");
     }
+
 
     public function beforeSave($insert) {
         $return = parent::beforeSave($insert);

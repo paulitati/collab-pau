@@ -8,14 +8,12 @@ use Yii;
 
 /**
  * This is the model class for table "grupos".
- *
  * @property int $id
  * @property string $codigo
  * @property int $year
  * @property int $cantidadintegrantes
  * @property int $asignaturas_id
  * @property int $metodos_formacion_id
- *
  * @property Chats[] $chats
  * @property Asignaturas $asignaturas
  * @property MetodosFormacion $metodosFormacion
@@ -37,13 +35,15 @@ class Grupos extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['alumnosPorGrupo'], 'safe'],
-            [['asignaturas_id', 'metodos_formacion_id', 'codigo', 'cantidadintegrantes'], 'required'],
-            ['codigo', 'unique', 'targetClass' => '\app\models\Grupos', 'message' => 'Este codigo de grupo, ya existe.'],
+            [['alumnosPorGrupo'], 'safe'], 
+            [['asignaturas_id', 'metodos_formacion_id', 'codigo', 'cantidadintegrantes'], 'required'], 
+            ['codigo', 'unique', 'targetClass' => '\app\models\Grupos', 'message' => 'Este codigo de grupo, ya existe.'], 
             [['asignaturas_id', 'metodos_formacion_id', 'cantidadintegrantes'], 'integer'],
-            [['year'], 'string', 'max' => 4],
+            [['year'], 'string', 'max' => 4], 
+            [['cantidadintegrantes'], 'number', 'min' => 2, 'message' => 'La cantidad de integrantes no debe ser menor a 2'], //Agregado
             [['asignaturas_id'], 'exist', 'skipOnError' => true, 'targetClass' => Asignaturas::className(), 'targetAttribute' => ['asignaturas_id' => 'id']],
             [['metodos_formacion_id'], 'exist', 'skipOnError' => true, 'targetClass' => MetodosFormacion::className(), 'targetAttribute' => ['metodos_formacion_id' => 'id']],
+            
         ];
     }
 
@@ -61,9 +61,11 @@ class Grupos extends \yii\db\ActiveRecord {
         ];
     }
 
+
     /**
      * @return \yii\db\ActiveQuery
      */
+
     public function getChats() {
         return $this->hasMany(Chats::className(), ['grupos_id' => 'id']);
     }
@@ -71,6 +73,7 @@ class Grupos extends \yii\db\ActiveRecord {
     /**
      * @return \yii\db\ActiveQuery
      */
+
     public function getAsignaturas() {
         return $this->hasOne(Asignaturas::className(), ['id' => 'asignaturas_id']);
     }
@@ -89,12 +92,16 @@ class Grupos extends \yii\db\ActiveRecord {
         return $this->hasMany(GruposAlumnos::className(), ['grupos_id' => 'id']);
     }
 
+
+
+
     private static function cmp($a, $b) {
         if ($a["fitness"] == $b["fitness"]) {
             return 0;
         }
         return ($a["fitness"] < $b["fitness"]) ? 1 : -1;
     }
+
 
     function random() {
         return mt_rand() / mt_getrandmax();
@@ -586,9 +593,17 @@ class Grupos extends \yii\db\ActiveRecord {
         return $poblacion[$indiceMayor];
     }
     
-
-    public static function getListaGrupos() {
-        return yii\helpers\ArrayHelper::map(Grupos::find()->all(), 'id', 'codigo');
-    }
+   
+   public static function getListaGrupos($idAsignatura) {
+    return yii\helpers\ArrayHelper::map(
+        Grupos::find()
+            ->where(['asignaturas_id' => $idAsignatura]) // Agregamos la condición where para filtrar por idasignatura
+            ->orderBy(['codigo' => SORT_ASC])
+            ->all(),
+        'id',
+        'codigo'
+    );
+}
+    
 
 }
