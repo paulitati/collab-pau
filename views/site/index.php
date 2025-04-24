@@ -94,5 +94,4 @@ if (array_key_exists('estudiante', $rolesUsuario)) {
             publicaciones que se realicen a partir de los datos recabados.</p>
     </div>
 
-
 </div>

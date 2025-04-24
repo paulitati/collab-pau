@@ -6,9 +6,8 @@ return [
         'class' => 'yii\db\Connection',
         'dsn' => 'mysql:host=localhost;dbname=dbchat',
         'username' => 'root',
-        //Comento la contraseña para tener acceso de manera local a la BD, quitar antes de enviar.
         //'password' => 'Unse#2024',
-        'password'=>'',
+        'password'=>'chatfce@2018',
         'charset' => 'utf8',
 
     /*Añadir nuevamente en produccion

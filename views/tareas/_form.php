@@ -20,13 +20,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'year')->textInput(['value' => $asignaturaYear, 'readonly' => true]) ?>
     
-    <?= $form->field($model, 'usar_sentencias_apertura')->radioList(['1' => 'Sí', '0' => 'No']) ?>
+    <?= $form->field($model, 'usar_sentencias_apertura')->radioList(['1' => 'Sí', '0' => 'No'], ['value' => '0']) ?>
     
-    <?= $form->field($model, 'reportar_estado_animo')->radioList(['1' => 'Sí', '0' => 'No']) ?>
     
-    <?= $form->field($model, 'reportar_conflicto')->radioList(['1' => 'Sí', '0' => 'No']) ?>
+    <?= $form->field($model, 'reportar_estado_animo')->radioList(['1' => 'Sí', '0' => 'No'], ['value' => '0']) ?>
     
-    <?= $form->field($model, 'actividad_gamificada')->radioList(['1' => 'Sí', '0' => 'No']) ?>
+    <?= $form->field($model, 'reportar_conflicto')->radioList(['1' => 'Sí', '0' => 'No'], ['value' => '0']) ?>
+    
+    <?= $form->field($model, 'actividad_gamificada')->radioList(['1' => 'Sí', '0' => 'No'], ['value' => '0']) ?>
 
     <div id="puntaje-tarea-container" style="display: none;">
         <?= $form->field($model, 'puntaje_tarea')->textInput(['type' => 'number']) ?>

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2025 a las 22:43:52
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 7.4.33
+-- Servidor: localhost
+-- Tiempo de generación: 24-04-2025 a las 16:40:57
+-- Versión del servidor: 5.7.33-0ubuntu0.16.04.1
+-- Versión de PHP: 7.0.33-0ubuntu0.16.04.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -29,10 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `asignaturas` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
+  `nombre` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
-  `carreras_id` int(11) NOT NULL DEFAULT 1,
-  `estado` int(1) NOT NULL
+  `carreras_id` int(11) NOT NULL DEFAULT '1',
+  `estado` int(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -511,7 +510,7 @@ CREATE TABLE `asignaturas_docentes` (
   `id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL,
   `asignaturas_id` int(11) NOT NULL,
-  `tipo` int(1) NOT NULL
+  `tipo` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -560,8 +559,8 @@ INSERT INTO `asignaturas_docentes` (`id`, `usuarios_id`, `asignaturas_id`, `tipo
 --
 
 CREATE TABLE `auth_assignment` (
-  `item_name` varchar(64) NOT NULL,
-  `user_id` varchar(64) NOT NULL,
+  `item_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -603,6 +602,8 @@ INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
 ('estudiante', '1025', 1741608704),
 ('estudiante', '1026', 1741866789),
 ('estudiante', '1027', 1743363977),
+('estudiante', '1028', 1745488388),
+('estudiante', '1029', 1745493388),
 ('estudiante', '103', 1536641802),
 ('estudiante', '104', 1536723692),
 ('estudiante', '105', 1536768131),
@@ -1610,11 +1611,11 @@ INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
 --
 
 CREATE TABLE `auth_item` (
-  `name` varchar(64) NOT NULL,
+  `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `type` smallint(6) NOT NULL,
-  `description` text DEFAULT NULL,
-  `rule_name` varchar(64) DEFAULT NULL,
-  `data` blob DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `rule_name` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `data` blob,
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1636,8 +1637,8 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 --
 
 CREATE TABLE `auth_item_child` (
-  `parent` varchar(64) NOT NULL,
-  `child` varchar(64) NOT NULL
+  `parent` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `child` varchar(64) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -1645,9 +1646,9 @@ CREATE TABLE `auth_item_child` (
 --
 
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
-('administrador', 'profesor'),
+('profesor', 'estudiante'),
 ('estudiante', 'guest'),
-('profesor', 'estudiante');
+('administrador', 'profesor');
 
 -- --------------------------------------------------------
 
@@ -1656,8 +1657,8 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 --
 
 CREATE TABLE `auth_rule` (
-  `name` varchar(64) NOT NULL,
-  `data` blob DEFAULT NULL,
+  `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `data` blob,
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1670,8 +1671,8 @@ CREATE TABLE `auth_rule` (
 
 CREATE TABLE `carreras` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `universidad` varchar(255) NOT NULL
+  `nombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `universidad` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -1690,12 +1691,12 @@ INSERT INTO `carreras` (`id`, `nombre`, `universidad`) VALUES
 
 CREATE TABLE `chats` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(255) DEFAULT NULL,
+  `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   `tareas_id` int(11) NOT NULL,
   `grupos_formados_id` int(11) NOT NULL,
   `nota` int(11) DEFAULT NULL,
-  `descripcion_nota` varchar(455) DEFAULT NULL
+  `descripcion_nota` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -1870,7 +1871,23 @@ INSERT INTO `chats` (`id`, `descripcion`, `fecha`, `tareas_id`, `grupos_formados
 (240, 'Chat correspondiente a la tarea Actividad de investigación y diálogo que emplea la configuración de grupos UCSEPlanNuevo', '2024-09-27 06:10:06', 64, 238, NULL, NULL),
 (241, 'Chat correspondiente a la tarea Investigar temáticas y dialogar que emplea la configuración de grupos Nota periodistica sept2024', '2024-09-27 06:20:56', 65, 239, NULL, NULL),
 (242, 'Chat correspondiente a la tarea Investigar temáticas y dialogar que emplea la configuración de grupos Nota periodistica sept2024', '2024-09-27 06:20:56', 65, 240, NULL, NULL),
-(243, 'Chat correspondiente a la tarea Hacer la actividad  que emplea la configuración de grupos BD2-2021', '2024-11-25 02:59:06', 66, 154, NULL, NULL);
+(243, 'Chat correspondiente a la tarea Hacer la actividad  que emplea la configuración de grupos BD2-2021', '2024-11-25 02:59:06', 66, 154, NULL, NULL),
+(244, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 177, NULL, NULL),
+(245, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 186, NULL, NULL),
+(246, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 187, NULL, NULL),
+(247, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 188, NULL, NULL),
+(248, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 189, NULL, NULL),
+(249, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 178, NULL, NULL),
+(250, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 179, NULL, NULL),
+(251, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 180, NULL, NULL),
+(252, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 181, NULL, NULL),
+(253, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 182, NULL, NULL),
+(254, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 183, NULL, NULL),
+(255, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 184, NULL, NULL),
+(256, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 185, NULL, NULL),
+(257, 'Chat correspondiente a la tarea . que emplea la configuración de grupos G1 IA UCSE 2024', '2025-04-24 06:16:24', 68, 162, NULL, NULL),
+(258, 'Chat correspondiente a la tarea . que emplea la configuración de grupos UCSEPlanNuevo', '2025-04-24 06:19:00', 69, 237, NULL, NULL),
+(259, 'Chat correspondiente a la tarea . que emplea la configuración de grupos UCSEPlanNuevo', '2025-04-24 06:19:00', 69, 238, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1989,10 +2006,10 @@ CREATE TABLE `desafios` (
   `nombre` varchar(255) NOT NULL,
   `descripcion` text NOT NULL,
   `rangos_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `contador` int(11) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `contador` int(11) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `desafios`
@@ -2025,10 +2042,10 @@ CREATE TABLE `desafios_usuarios` (
   `id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL,
   `desafios_id` int(11) NOT NULL,
-  `contador_desafio_completado` int(11) DEFAULT 0,
+  `contador_desafio_completado` int(11) DEFAULT '0',
   `estado` enum('no completado','completado') DEFAULT 'no completado',
   `fecha_completado` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `desafios_usuarios`
@@ -2112,7 +2129,8 @@ INSERT INTO `desafios_usuarios` (`id`, `usuarios_id`, `desafios_id`, `contador_d
 (77, 912, 2, 2, 'completado', NULL),
 (78, 863, 2, 2, 'completado', NULL),
 (79, 581, 5, 1, 'completado', NULL),
-(80, 581, 1, 1, 'completado', NULL);
+(80, 581, 1, 1, 'completado', NULL),
+(86, 830, 2, 7, 'completado', NULL);
 
 -- --------------------------------------------------------
 
@@ -4331,14 +4349,14 @@ CREATE TABLE `eventos` (
   `id_tarea` int(11) NOT NULL,
   `tipo_evento` enum('pregunta','juego','actividad','debate') NOT NULL,
   `titulo` varchar(255) DEFAULT NULL,
-  `descripcion` text DEFAULT NULL,
+  `descripcion` text,
   `link` varchar(255) DEFAULT NULL,
   `pregunta` varchar(255) DEFAULT NULL,
-  `descripcion_pregunta` text DEFAULT NULL,
+  `descripcion_pregunta` text,
   `imagen` varchar(255) DEFAULT NULL,
-  `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp(),
+  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `estado` varchar(255) NOT NULL DEFAULT 'activado'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `eventos`
@@ -4362,7 +4380,7 @@ INSERT INTO `eventos` (`id`, `id_tarea`, `tipo_evento`, `titulo`, `descripcion`,
 CREATE TABLE `grupos` (
   `id` int(11) NOT NULL,
   `year` int(11) DEFAULT NULL,
-  `codigo` varchar(45) NOT NULL,
+  `codigo` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `cantidadintegrantes` tinyint(4) DEFAULT NULL,
   `asignaturas_id` int(11) NOT NULL,
   `metodos_formacion_id` int(11) NOT NULL
@@ -4953,9 +4971,9 @@ INSERT INTO `grupos_alumnos` (`id`, `usuarios_id`, `grupos_formados_id`) VALUES
 
 CREATE TABLE `grupos_formados` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
+  `nombre` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `grupos_id` int(11) NOT NULL,
-  `puntaje` int(11) DEFAULT 0
+  `puntaje` int(11) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -5153,9 +5171,9 @@ CREATE TABLE `logros` (
   `id` int(11) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `descripcion` text NOT NULL,
-  `contador` int(11) DEFAULT 0,
+  `contador` int(11) DEFAULT '0',
   `puntaje` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -5165,11 +5183,11 @@ CREATE TABLE `logros` (
 
 CREATE TABLE `logros_usuario` (
   `id` int(11) NOT NULL,
-  `contador_realizado` int(11) DEFAULT 0,
+  `contador_realizado` int(11) DEFAULT '0',
   `estado` enum('no completado','completado') DEFAULT 'no completado',
   `logros_id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -5179,7 +5197,7 @@ CREATE TABLE `logros_usuario` (
 
 CREATE TABLE `metodos_formacion` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(255) DEFAULT NULL
+  `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -5200,8 +5218,8 @@ CREATE TABLE `multiple_choice` (
   `id` int(11) NOT NULL,
   `preguntas_id` int(11) NOT NULL,
   `opcion` text NOT NULL,
-  `es_correcta` tinyint(1) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `es_correcta` tinyint(1) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -5211,7 +5229,7 @@ CREATE TABLE `multiple_choice` (
 
 CREATE TABLE `pais` (
   `idpais` int(11) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL
+  `nombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -5236,10 +5254,10 @@ CREATE TABLE `preguntas` (
   `id` int(11) NOT NULL,
   `tareas_id` int(11) NOT NULL,
   `pregunta` text NOT NULL,
-  `es_multiple_choice` tinyint(1) DEFAULT 0,
+  `es_multiple_choice` tinyint(1) DEFAULT '0',
   `archivo` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -5253,7 +5271,7 @@ CREATE TABLE `rangos` (
   `nivel` int(11) NOT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
   `imagen` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `rangos`
@@ -5276,7 +5294,7 @@ CREATE TABLE `rangos_usuarios` (
   `usuarios_id` int(11) NOT NULL,
   `rangos_id` int(11) NOT NULL,
   `fecha_asignacion` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `rangos_usuarios`
@@ -5296,7 +5314,7 @@ CREATE TABLE `respuesta_preguntas` (
   `evento_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `respuesta` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `respuesta_preguntas`
@@ -5315,7 +5333,7 @@ INSERT INTO `respuesta_preguntas` (`id`, `evento_id`, `usuario_id`, `respuesta`)
 
 CREATE TABLE `sentencias` (
   `id` int(11) NOT NULL,
-  `sentencia` blob DEFAULT NULL,
+  `sentencia` blob,
   `fecha_hora` datetime DEFAULT NULL,
   `usuarios_id` int(11) NOT NULL,
   `chats_id` int(11) NOT NULL
@@ -16364,7 +16382,7 @@ INSERT INTO `sentencias` (`id`, `sentencia`, `fecha_hora`, `usuarios_id`, `chats
 
 CREATE TABLE `sentencias_apertura` (
   `id` int(11) NOT NULL,
-  `sentencia` varchar(255) DEFAULT NULL,
+  `sentencia` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `atributo` tinyint(4) DEFAULT NULL,
   `habilidad` tinyint(4) DEFAULT NULL,
   `subhabilidad` tinyint(4) DEFAULT NULL
@@ -16409,18 +16427,18 @@ INSERT INTO `sentencias_apertura` (`id`, `sentencia`, `atributo`, `habilidad`, `
 
 CREATE TABLE `tareas` (
   `id` int(11) NOT NULL,
-  `nombre_t` varchar(255) NOT NULL,
-  `consigna` text NOT NULL,
-  `descripcion` text DEFAULT NULL,
+  `nombre_t` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `consigna` text COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` text COLLATE utf8_unicode_ci,
   `year` int(11) DEFAULT NULL,
   `usar_sentencias_apertura` bit(1) DEFAULT NULL,
   `reportar_estado_animo` bit(1) DEFAULT NULL,
   `reportar_conflicto` bit(1) DEFAULT NULL,
   `asignaturas_id` int(11) NOT NULL,
   `grupos_id` int(11) NOT NULL,
-  `puntaje_tarea` int(11) NOT NULL DEFAULT 0,
-  `tipo_tarea` enum('individual','grupal') DEFAULT NULL,
-  `actividad_gamificada` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Indica si la actividad está gamificada (0: No, 1: Sí)'
+  `puntaje_tarea` int(11) DEFAULT NULL,
+  `tipo_tarea` enum('individual','grupal') COLLATE utf8_unicode_ci DEFAULT NULL,
+  `actividad_gamificada` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Indica si la actividad está gamificada (0: No, 1: Sí)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -16460,7 +16478,7 @@ INSERT INTO `tareas` (`id`, `nombre_t`, `consigna`, `descripcion`, `year`, `usar
 (43, 'Sistemas multiagentes', 'Sistemas multiagentes', '', 2021, b'0', b'0', b'0', 20, 53, 0, NULL, 0),
 (44, 'Mineria Web', 'Minería Web', '', 2021, b'0', b'0', b'0', 21, 54, 0, NULL, 0),
 (45, 'Autenticación', 'Autenticación', '', 2021, b'0', b'0', b'0', 22, 55, 0, NULL, 0),
-(46, 'Práctico 2', '\"Analicen las posibilidades de inclusión de diferentes tecnologías de colaboración (frecuentemente denominadas “de la Web 2.0”) para el desarrollo de actividades colaborativas en la propuesta áulica elaborada en el Trabajo práctico anterior, a fin de reemplazar las actividades colaborativas presenciales allí propuestas. Consensúen la aplicación de al menos tres de ellas y discutan los cambios a introducir en el documento que generaron como resolución del Trabajo Práctico 1\". Toda duda deberá ser formulada formalmente al profesor utilizando el grupo de WhatsApp disponible para esta cursada.', 'Práctico 2', 2022, b'0', NULL, NULL, 24, 56, 0, NULL, 0),
+(46, 'Práctico 2', '"Analicen las posibilidades de inclusión de diferentes tecnologías de colaboración (frecuentemente denominadas “de la Web 2.0”) para el desarrollo de actividades colaborativas en la propuesta áulica elaborada en el Trabajo práctico anterior, a fin de reemplazar las actividades colaborativas presenciales allí propuestas. Consensúen la aplicación de al menos tres de ellas y discutan los cambios a introducir en el documento que generaron como resolución del Trabajo Práctico 1". Toda duda deberá ser formulada formalmente al profesor utilizando el grupo de WhatsApp disponible para esta cursada.', 'Práctico 2', 2022, b'0', NULL, NULL, 24, 56, 0, NULL, 0),
 (47, 'Trabajo Final', 'Trabajo Final', 'Trabajo Final', 2022, b'0', b'0', b'0', 24, 57, 0, NULL, 0),
 (48, 'Tarea de investigacion TP3', 'Tendrás que realizar una búsqueda en la web sobre un caso real de uso de los criptosistemas, luego reunirte con tus compañeros de grupo para socializar lo investigado, y finalmente de manera individual generar un documento (word o ppt) que resuma los aspectos más significativos de la tarea realizada que enviarás por aula virtual para evaluación.', '', 2024, b'0', NULL, NULL, 27, 60, 0, NULL, 0),
 (49, 'Redes Bayesianas (Tareas del OA)', 'Espacio de diálogo para realizar las tareas del OA.', 'Espacio de diálogo para realizar las tareas del OA.', 2024, b'0', NULL, NULL, 26, 63, 0, NULL, 0),
@@ -16476,7 +16494,10 @@ INSERT INTO `tareas` (`id`, `nombre_t`, `consigna`, `descripcion`, `year`, `usar
 (63, 'Representacion de conocimiento', 'Actividad de diálogo y resolución de ejercicios', 'Actividad de diálogo y resolución de ejercicios', 2024, b'0', b'0', b'0', 32, 72, 0, NULL, 0),
 (64, 'Noticias periodisticas sept2024', 'Averiguar sobre las temáticas vinculadas con las noticias actuales internacionales y comentarlas.', 'Actividad de investigación y diálogo', 2024, b'0', b'0', b'0', 26, 73, 0, NULL, 0),
 (65, 'Noticias periodisticas sept2024', 'Investigar temáticas y dialogar', 'Investigar temáticas y dialogar', 2024, b'0', b'0', b'0', 32, 76, 0, NULL, 0),
-(66, 'Actividad Gamificada', 'Este es un test de una actividad gamificada', 'Hacer la actividad ', 2021, b'0', b'0', b'0', 21, 54, 1000, 'grupal', 1);
+(66, 'Actividad Gamificada', 'Este es un test de una actividad gamificada', 'Hacer la actividad ', 2021, b'0', b'0', b'0', 21, 54, 1000, 'grupal', 1),
+(67, 'Prueba', '.', '.', 2024, b'0', b'0', b'0', 28, 67, NULL, 'grupal', 0),
+(68, 'Prueba', '.', '.', 2024, b'0', b'0', b'0', 26, 62, NULL, 'grupal', 0),
+(69, 'Prueba', '.', '.', 2024, b'0', b'0', b'0', 26, 73, NULL, 'grupal', 0);
 
 -- --------------------------------------------------------
 
@@ -16490,8 +16511,8 @@ CREATE TABLE `tareas_alumnos` (
   `usuarios_id` int(11) NOT NULL,
   `nota` decimal(5,2) DEFAULT NULL,
   `fecha_entrega` date DEFAULT NULL,
-  `comentarios` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `comentarios` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tareas_alumnos`
@@ -16511,7 +16532,7 @@ CREATE TABLE `tarea_usuario_puntaje` (
   `id_usuario` int(11) NOT NULL,
   `id_tarea` int(11) NOT NULL,
   `puntaje` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tarea_usuario_puntaje`
@@ -16531,26 +16552,26 @@ INSERT INTO `tarea_usuario_puntaje` (`id`, `id_usuario`, `id_tarea`, `puntaje`) 
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `username` varchar(45) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `nombre` varchar(150) DEFAULT NULL,
-  `apellido` varchar(150) DEFAULT NULL,
+  `username` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nombre` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `apellido` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dni` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `institucion` varchar(255) DEFAULT NULL,
+  `institucion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tipo` tinyint(4) DEFAULT NULL,
-  `estiloaprendizaje` varchar(30) DEFAULT NULL,
-  `auth_key` varchar(255) DEFAULT NULL,
-  `fechanacimiento` datetime NOT NULL DEFAULT current_timestamp(),
-  `email` varchar(100) NOT NULL,
-  `nacionalidad` varchar(255) DEFAULT NULL,
-  `pais_idpais` int(11) NOT NULL DEFAULT 1,
-  `personalidad` varchar(100) DEFAULT NULL,
-  `puntaje` int(11) DEFAULT 0,
-  `foto_perfil` varchar(255) DEFAULT NULL,
-  `cont_actividades_individuales` int(11) DEFAULT 0,
-  `cont_actividades_grupales` int(11) DEFAULT 0,
-  `pregunta` varchar(100) DEFAULT NULL,
-  `respuesta` varchar(100) DEFAULT NULL
+  `estiloaprendizaje` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `auth_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fechanacimiento` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `nacionalidad` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pais_idpais` int(11) NOT NULL DEFAULT '1',
+  `personalidad` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `puntaje` int(11) DEFAULT '0',
+  `foto_perfil` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cont_actividades_individuales` int(11) DEFAULT '0',
+  `cont_actividades_grupales` int(11) DEFAULT '0',
+  `pregunta` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `respuesta` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -16562,7 +16583,7 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (2, 'GastonAdamo', '$2y$13$qw8kssACQov.qO/8BYKKB.weVOqzGaxMJzaKfDvE58UZ1WuJNtKQa', 'Luciano ', 'Juarez', NULL, NULL, 0, 'ACT10 - SEN8 - VIS10 - SEC8', 'VlDYWOWvAivEdv9yNgRzVV3iMxD3Na8rTjRjXVgEl-neBN8bUSuvsnb-IfiFRyEeMo0mNZ8aRHTWnO-5O_s0Az7Xg5cq-BmVKBFfDbVBfu7Xpx_pw30R5WJYg3tpn5B7R8S_bysf3fFs6cb2xO0oNFtK3U2hEnBI6UN8gQWv5qST3OI8TVsXNnEGLb-Z6yCAXctYWW4ZTI8P5tSBd3481EDIAm8aUUp03pZTLau0WpTh6ujJw4RxTYDP83bng-q', '2018-06-25 00:00:00', '', '', 1, '', 0, NULL, 0, 0, NULL, NULL),
 (3, 'Javierjose1234', '$2y$13$vYpAtKooXbcFMMgNkvJmZekGhwNoSVGrV2I49rVnQmxU7BfbSMyuO', 'Javier José Armando', 'Bernasconi', NULL, NULL, 0, 'ACT7 - SEN7 - VIS8 - GLO6', 'fctJMrXwnoKV7BqwruNacL7gK8ZEvupjpzpbornCnNdKNzGPd_ENyco9Rs3fZ4qoyiwcSW_MiWshEeMljTdpfIVqYoP9gAMouBV2cld2sU_5XF3NWxXvLYC1U5C3EfZCQHjoxlhG5VCL3n2PedWX3QtSOG6vgW54Qi31X6qRQc5QVy1bNpuswNY8_oMc-ONf5s09M_FeY755KbclcltiOmmVQSwasc-TCUHNG_0Ebo4ZR4PpWMTaHyNFm3GGSr1', '2018-06-25 00:44:31', '', '', 1, '', 0, NULL, 0, 0, NULL, NULL),
 (4, 'OscarAndresArce', '$2y$13$WQ.1/A6iW2zwKxF0AysmHeWeEOLzluyKBlJJDHudbrhGdfjI910uy', 'Oscar Andres', 'Arce', NULL, NULL, 0, 'ACT8 - SEN8 - VIS6 - SEC8', 'gb57QFw3Fjg1RIYNYDJA8lSJXj-c_2hcDTGFBVLJXBThGlOSjAH1LHJAG2BcfGERGLPrFs-Tvht04TGahtHkQw-wBYQguf_GVVcAuCZ6WKzk-KiDUfOZXUotxJbF8nzBog1uBLH5spsRu1GvT33_y3zJOZp1hv0Ne7vDGI9O63WXQD6aFApJflRkQjnwXlFwwFKUoVT4_YgfPCwDLUnE6z1Xn8WKAHr-GoNwfsh8CVWB1B9TU0ItjeMw8veE_J0', '2018-06-25 00:44:31', '', '', 1, '', 0, NULL, 0, 0, NULL, NULL),
-(5, 'rosanna', '$2y$13$0DJ77erKohPUfTKLySQpHOx2dBdVlJ/N1siuTQ7JutHXr.WuCWjyi', 'Rosanna', 'Costaguta', NULL, NULL, 1, NULL, 'aSP84X2KncooeEH812IT5uGnV0X6qGwFnwGmzl6O4LZvk5A8T_R8r13lUtxp4eONiQAxJo8_80rD1T8PKhhF4oSyxuDRPeNYdtJqVX0HxD1OZ4tlIvJGKCwM3c01bZrwfNXKizml74xksOXnxL5R1pf2lxKYz25ofF-0d7wl0corqTwdXIV7o4nA8TkWWoSz4nyXLF079mEFCAEPdJaCQ-4x0NqxKwnZ_aGH4AB-l7m9y4WqOe5FieeYy_cIIgr', '2018-06-25 00:00:00', 'rcostaguta@hotmail.com', '', 1, 'extra:5.00,agrea:4.44,consc:5.00,neuro:1.63,openn:4.10', 5060, 'uploads/pngtree-student-profile-in-modern-flat-gradient-style-png-image_11953001.png', 0, 0, NULL, NULL),
+(5, 'rosanna', '$2y$13$0DJ77erKohPUfTKLySQpHOx2dBdVlJ/N1siuTQ7JutHXr.WuCWjyi', 'Rosanna', 'Costaguta', NULL, NULL, 1, NULL, 'aSP84X2KncooeEH812IT5uGnV0X6qGwFnwGmzl6O4LZvk5A8T_R8r13lUtxp4eONiQAxJo8_80rD1T8PKhhF4oSyxuDRPeNYdtJqVX0HxD1OZ4tlIvJGKCwM3c01bZrwfNXKizml74xksOXnxL5R1pf2lxKYz25ofF-0d7wl0corqTwdXIV7o4nA8TkWWoSz4nyXLF079mEFCAEPdJaCQ-4x0NqxKwnZ_aGH4AB-l7m9y4WqOe5FieeYy_cIIgr', '2018-06-25 00:00:00', 'rcostaguta@hotmail.com', '', 1, 'extra:5.00,agrea:4.44,consc:5.00,neuro:1.63,openn:4.10', 5210, 'uploads/pngtree-student-profile-in-modern-flat-gradient-style-png-image_11953001.png', 0, 0, NULL, NULL),
 (6, 'nassifguada', '$2y$13$8WUo7W0a3OPGjHsh9FDsOeKkFHyQi34EGSAgLOdR7Y4g2Xf1G8Z.C', 'Guadalupe', 'Nassif', NULL, NULL, 0, 'ACT8 - SEN8 - VIS9 - SEC7', 'xp1OF-c-k3uULVV1rvND3mZFE9n3-iREMubndw5nYUpLsOLmM53olnG9LpEUNrWZCPfkLxYI1L9-RUujpWmiuVwOJ9_bJIFrvxjynkPdPUehClHt_qcllQCPIlBjnXqNjT6ivaCw14Pe0pFoU-pWpLI1DsLyy0Gbk327bGLfeQzeyya6tXR5SdZjs9sY2iL2yxGHPg5O9CytHxnWqJMnRvKBJVBWWUSGkhbKPjtt3NwQwzaLeLSlaFf1SIRU1YH', '1993-05-23 00:00:00', 'nassifguada', '', 1, '', 0, NULL, 0, 0, NULL, NULL),
 (7, 'leorieta', '$2y$13$7Ymg2/qkdsGhIGmJFt.7iuwLBn624.KS05umx/Zb8Qhb8G14aKpn6', 'Leandro ', 'Orieta', NULL, NULL, 0, 'REF9 - SEN9 - VIS9 - SEC6', 'XGUyPfs2uwpb7C4QOthp53rAOTmpiphub5vl3OAuGvV5ndI3AT0icVvw1XCzx7hOHfzyL0B0StxAFvkehi4iTyPPpOefR6rSCRlxaBuswrNUqGlG-dtsrnQJKDsAL-rem1-8SS88yvNMV-TZ_1usatpXwfS870hFQWH2OJmElSip7hUe_BJtqJVxFuem5p9vh43FJHQoZz82kgkMkZuYEfoOPg_tWKV6e5o4fXPSSVuJTaSNhUvKbeX2bcJY-s7', '2018-06-25 00:00:00', 'leorieta96@gmail.com', '', 1, 'extra:2.38,agrea:4.00,consc:3.89,neuro:2.88,openn:3.00', 2000, NULL, 0, 0, NULL, NULL),
 (8, 'Maurosezella', '$2y$13$0FtKPw2wBEpiclOcmGGI7uG9g.uNfS0VmtjFCvczoXomg6Xq/5kHe', 'Mauro', 'Sezella', NULL, NULL, 0, 'ACT7 - SEN8 - VIS11 - GLO6', 'jPQDYD1HiB5KsYe8yZwbxFb9b44ZlFYtj0Gn9R-ohcEuL8KvAGKUxbWd-sFzVX7oOaCn3DS36t4JEGj0qL_zXBtYzhfCLhj7LXKf04G5FK6Oqb_O-gD9rxwAwbtPHy_lhAnwGX2gY3sLR5X1NFq7HDUe8kRdJDcd_wLNcSoKPQAithHfibbl_T30K4ib-Q4m1i-uALLI55DLxcEueheW6aY8aUK4yAy7FtM-BKKeagj7E7LFx6lHt0KLc037N3Z', '1994-05-23 00:00:00', 'Maurosezella', '', 1, 'extra:4.38,agrea:4.56,consc:3.22,neuro:2.25,openn:3.90', 0, NULL, 0, 0, NULL, NULL),
@@ -17093,7 +17114,7 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (578, 'GabrielPetrelli93', '$2y$13$b4P6oBwj0Fz344i8w2mAy.d.t9.YvlC9382qvhGge68nIbxZKAgeq', 'Gabriel', 'Petrelli', NULL, NULL, 0, 'REF7 - INT6 - VER6 - SEC7', 'j5-F_3KkYPwmJRH79qYX6BKyIFrAiQBSX9Gl9UphCqbkg8pp_Ci3M1shsXyv5R65nUQtpq0UU90GQw0vizzlEfMdbduH8P1K5jppnm5_v21st3p76-36zwoCvsQJYwQmdVRzfc7dOwAACmT4bY_NfsufReh6Yq0Rnyr0GEmAFTvsJFQJZqbt86uO3VMAgnmjQ9ZcZgyjcEEQQkhKSj5iu192AACYq3BByAi93DKIT9kk9zvJyUwlzfLf_MsBXsm', '1993-04-24 00:00:00', 'elgabpetrello@gmail.com', NULL, 1, 'extra:3.75,agrea:4.00,consc:4.22,neuro:2.50,openn:3.80', 0, NULL, 0, 0, NULL, NULL),
 (579, 'guidosalvarez', '$2y$13$Mnd38vSCAhZkRNqkAOyx6e5J3ZOkDU3uZz6IiZlJqN5XLAcSmhxpO', 'Guido Sebastian', 'Alvarez', NULL, NULL, 0, 'REF6 - SEN7 - VER6 - SEC11', 'rld8c54vbWqwlNzd3RHbLNJ6dHc-bYHwVfWOpZSA8aXc0G3g4Z3D4J_GOpznW1lXX9sKnF8yQgBxWVuA4kmTwOvRxmaGPNMC_WbFsnMCUBNui5g1R4UUs1BgtdhDk1bfEcpBecda613k6UXhzlpUA-Bndg7I0zjiFdIpou1j5j0GItIl1-zvul1IqfwWjheDCnYaQto35gjWkKgywjerCc01Ju9ggOajSNvFhXEdlm-3hxvaN4LgO6fwmsfHevN', '1995-02-20 00:00:00', 'guidosebastianalvarez@gmail.com', NULL, 1, 'extra:3.38,agrea:3.78,consc:3.56,neuro:2.25,openn:2.40', 0, NULL, 0, 0, NULL, NULL),
 (580, 'GuilleCapde', '$2y$13$OZ8.3QMi9BbIjcQyd.uDW.wX78PEPMweuqF.EFFOAwvqT4ldIU5uC', 'Guillermo', 'Capdevila', NULL, NULL, 0, 'ACT9 - INT6 - VIS9 - GLO10', 'QlxQ7cfB6rpIZet_NggoOfUfBZtO1djXrtmETqblVfGlaiEVEOsC1k2u-VtR1OjZAWAN5voRU23EyjxPMmZrs9ZgFWu4_7aZRv2PEtvLVY-Z1Dmzql2CcS-8U9_uDGCRc9xBqPRGMQs97Oi78PjAn4z4wrFfKdvRnKUam9GEN2_Ts_u6nkxmBzSFziRtSvZoH8iCdozR-z6dU61dwrVlEQjxCY7lUxh9zlsvfaHlzYmGyvBP5YeiUFA4-jtsNGw', '1999-03-08 00:00:00', 'guille.capde.99@gmail.com', NULL, 1, 'extra:3.63,agrea:4.00,consc:3.00,neuro:2.75,openn:4.40', 0, NULL, 0, 0, NULL, NULL),
-(581, 'paulitati', '$2y$13$aUoxBOJA3EJha0n2OTp/fuTyLWyYK5xBjTBL0GyUCSCK5R43z5Kxa', 'Paulina', 'Gimenez Suarez', '41091815', 'UNSE', 0, 'REF6 - INT7 - VER7 - SEC7', 'h1GOaIdUJi-Nv9gxmV0-iIbrxvzu7egDA3xLXsGa8VE6R-l2d1wUzjUKiHNT-PsSTimpnOIku3SB8gXFbmo_y-XN0lK61drrntjBHCe-ucjc87Ua6z0i0QAs7McnsS4YFTEBV3CdxBQ4uPrYOF_3naOYwCZ-00nrxQSlzoscjRtFmaj1vBxMonaT9VhHqgDbzLKLBxJKFokj4MKB7s0VKnraOtsUdZ5c0FygQXGGwDLEzPdY8nmLINVZIMpijA5', '1998-04-17 00:00:00', 'paulitatipgs@gmail.com', NULL, 1, 'extra:1.88,agrea:3.33,consc:3.78,neuro:3.50,openn:3.00', 6000, NULL, 0, 0, 'mascota', 'osi'),
+(581, 'paulitati', '$2y$13$t0Ixdfrwq9hSgUMyEJTxju1iJrbHOTmweTl9Qt/o3Nl8TzJiiNKxq', 'Paulina', 'Gimenez Suarez', '41091815', 'UNSE', 0, 'REF6 - INT7 - VER7 - SEC7', 'h1GOaIdUJi-Nv9gxmV0-iIbrxvzu7egDA3xLXsGa8VE6R-l2d1wUzjUKiHNT-PsSTimpnOIku3SB8gXFbmo_y-XN0lK61drrntjBHCe-ucjc87Ua6z0i0QAs7McnsS4YFTEBV3CdxBQ4uPrYOF_3naOYwCZ-00nrxQSlzoscjRtFmaj1vBxMonaT9VhHqgDbzLKLBxJKFokj4MKB7s0VKnraOtsUdZ5c0FygQXGGwDLEzPdY8nmLINVZIMpijA5', '1998-04-17 00:00:00', 'paulitatipgs@gmail.com', NULL, 1, 'extra:1.88,agrea:3.33,consc:3.78,neuro:3.50,openn:3.00', 6000, NULL, 0, 0, 'mascota', 'osi'),
 (582, 'Nicolas', '$2y$13$ibfP7/4i9yC40yVCDK68.uc7zsLWGCPKY3Oy/8qevfwl02ikhIaia', 'German Nicolas', 'Romano', NULL, NULL, 0, NULL, 'dUjPtzfE3XCp-TW-BCAjodnAXtLv25MOhT8rDjzmdFcCOXBznbJoAXx3k0T9MADwpIlne6jJj9Whj8Ck0VjDRr0VCp971HAeRWFERq_SwNqw82UzpEh2fg0VPFp1l6nvRkt5xCYbjrZCzkx9bbhvSHiXlB-8SHwj5gjYOs9EZ1OA8YrMWaNPpJ87Cd5W8dCnD-ScHL8-Z-wiROIGCYnrQFmGdlBDbXWL43TDor9fWdj3lgJ3d6Iy5anHzIJwGgd', '2020-11-16 00:00:00', 'germanrom92@hotmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (583, 'Nicolas', '$2y$13$O9TWdGedU2VF3HnGqQh7RuaG5IIvpI.jxS8IW0SB6vd7n.um/DOd.', 'German Nicolas', 'Romano', NULL, NULL, 0, NULL, 'dMIjh3IN6H47Bqa188f6VVeTdSk8jhiggqqIggsIZnlrrr3hlQS7PqHdhTzp7x0WPtwVT2kx_FreuF_1ef90yjS1GkwGZX2aFsEfZ3NgLjbgZD97ZJW1n28pQIGy8eWjKT4odDTRJTdwMt9N2d_g-ImJ6prXOyZiTOXHjL4EFs99Kzh6UzehFv2LDV6sRTQIweljj90GFAWb662qcHbWe3NmV8jnQyzHexmW2h5_NUVHGpPx2SzOG3axJQrtzcI', '2020-11-16 00:00:00', 'germanrom92@hotmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (584, 'NicolasR', '$2y$13$MZ5.zNxs.LC5ChDgOt1ENuHNN/sxANoEYAOsPBCpC4Fm2/dBOo5Bq', 'German Nicolas', 'Romano', NULL, NULL, 0, 'REF6 - SEN8 - VIS9 - SEC6', 'XagGMlwpdGF9Y5NkjxMDk4jRBV3aXmiLR_yXj9NBN8QqPTRsCSbCpEODwQJ9scFWE8LINp1JxT3yBbr53iaJpiPWQYvNz8Dyr9xYon75kq_bRUyqsTmnGteKo6x_xo7845LddD_41Uqw5dHjeIBzZW8kIlyOEMWz9KoH-_9NSI_Bp2GY_KgEKxuaR-JSGnfVzS22AkG_hgOdFMj-U-ODjhN_JrV1H1RsIuvgBjOoWN1p9gQ8998HI4JZz3guQw8', '2020-11-16 00:00:00', 'germanrom92@hotmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
@@ -17781,176 +17802,147 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `asignaturas`
 --
 ALTER TABLE `asignaturas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT de la tabla `asignaturas_alumnos`
 --
 ALTER TABLE `asignaturas_alumnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=495;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=517;
 --
 -- AUTO_INCREMENT de la tabla `asignaturas_docentes`
 --
 ALTER TABLE `asignaturas_docentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT de la tabla `carreras`
 --
 ALTER TABLE `carreras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `chats`
 --
 ALTER TABLE `chats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=280;
 --
 -- AUTO_INCREMENT de la tabla `conflictos`
 --
 ALTER TABLE `conflictos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
-
 --
 -- AUTO_INCREMENT de la tabla `cuestionariosconflicto`
 --
 ALTER TABLE `cuestionariosconflicto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT de la tabla `desafios`
 --
 ALTER TABLE `desafios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
 --
 -- AUTO_INCREMENT de la tabla `desafios_usuarios`
 --
 ALTER TABLE `desafios_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 --
 -- AUTO_INCREMENT de la tabla `emociones`
 --
 ALTER TABLE `emociones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2650;
-
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
 --
 -- AUTO_INCREMENT de la tabla `grupos`
 --
 ALTER TABLE `grupos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 --
 -- AUTO_INCREMENT de la tabla `grupos_alumnos`
 --
 ALTER TABLE `grupos_alumnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=923;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=946;
 --
 -- AUTO_INCREMENT de la tabla `grupos_formados`
 --
 ALTER TABLE `grupos_formados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=315;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=326;
 --
 -- AUTO_INCREMENT de la tabla `logros`
 --
 ALTER TABLE `logros`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `logros_usuario`
 --
 ALTER TABLE `logros_usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `metodos_formacion`
 --
 ALTER TABLE `metodos_formacion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `multiple_choice`
 --
 ALTER TABLE `multiple_choice`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `pais`
 --
 ALTER TABLE `pais`
   MODIFY `idpais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `rangos`
 --
 ALTER TABLE `rangos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT de la tabla `rangos_usuarios`
 --
 ALTER TABLE `rangos_usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT de la tabla `respuesta_preguntas`
 --
 ALTER TABLE `respuesta_preguntas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT de la tabla `sentencias`
 --
 ALTER TABLE `sentencias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12055;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12072;
 --
 -- AUTO_INCREMENT de la tabla `sentencias_apertura`
 --
 ALTER TABLE `sentencias_apertura`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
 --
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT de la tabla `tareas_alumnos`
 --
 ALTER TABLE `tareas_alumnos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT de la tabla `tarea_usuario_puntaje`
 --
 ALTER TABLE `tarea_usuario_puntaje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1028;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1030;
 --
 -- Restricciones para tablas volcadas
 --
@@ -18106,7 +18098,6 @@ ALTER TABLE `tareas_alumnos`
 ALTER TABLE `tarea_usuario_puntaje`
   ADD CONSTRAINT `fk_tarea` FOREIGN KEY (`id_tarea`) REFERENCES `tareas` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
