@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-04-2025 a las 16:40:57
+-- Tiempo de generación: 28-04-2025 a las 10:20:01
 -- Versión del servidor: 5.7.33-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.33-0ubuntu0.16.04.16
 
@@ -68,7 +68,9 @@ INSERT INTO `asignaturas` (`id`, `nombre`, `year`, `carreras_id`, `estado`) VALU
 (29, 'Base de Datos I - 2024', 2024, 1, 0),
 (30, 'Introducción a los SI', 0, 1, 0),
 (31, 'IA UCSE plan 2008', 0, 1, 0),
-(32, 'IA UCSE plan 2008', 0, 1, 0);
+(32, 'IA UCSE plan 2008', 0, 1, 0),
+(59, 'Inteligencia Artificial UNSE 2025', 2025, 1, 0),
+(60, 'Inteligencia Artificial UCSE 2025', 2025, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -498,7 +500,8 @@ INSERT INTO `asignaturas_alumnos` (`id`, `year`, `asignaturas_id`, `usuarios_id`
 (487, 2024, 26, 993),
 (488, 2024, 26, 993),
 (489, 2024, 26, 993),
-(490, 2024, 26, 993);
+(490, 2024, 26, 993),
+(517, 2025, 59, 856);
 
 -- --------------------------------------------------------
 
@@ -550,7 +553,9 @@ INSERT INTO `asignaturas_docentes` (`id`, `usuarios_id`, `asignaturas_id`, `tipo
 (32, 5, 26, 0),
 (33, 932, 29, 0),
 (34, 932, 30, 0),
-(35, 5, 32, 0);
+(35, 5, 32, 0),
+(67, 5, 59, 0),
+(68, 5, 60, 0);
 
 -- --------------------------------------------------------
 
@@ -2130,7 +2135,8 @@ INSERT INTO `desafios_usuarios` (`id`, `usuarios_id`, `desafios_id`, `contador_d
 (78, 863, 2, 2, 'completado', NULL),
 (79, 581, 5, 1, 'completado', NULL),
 (80, 581, 1, 1, 'completado', NULL),
-(86, 830, 2, 7, 'completado', NULL);
+(86, 830, 2, 7, 'completado', NULL),
+(90, 856, 5, 1, 'completado', NULL);
 
 -- --------------------------------------------------------
 
@@ -17548,7 +17554,43 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (1015, 'Jbanegas111', '$2y$13$flhIApILhhky6r5LANwdRuVVHb2KOFqdBTVsbnQPtwSMM/pn5Cz6S', 'Javier', 'Banegas', NULL, NULL, 0, NULL, 'rWRDA5y6Y0Bc5kjm5y-2OP5OWs_ar2YY4KyKe_RuzmhHCHtiuh_hjSwLFRZ6DOmx8f-6abIoshYnFV1V4yYWktytlsDUwAVUcVcJ6hSvVLfipCtxq1LGRiRAYYNaxcBfQRavuHZRaAqtNP4nCtPUlm6tC5wkZIysnkCUw-yg6JhYaqVUK4e_i7G9e-rB_fxgzuTHwDdWwlaXzyWEogHaoVpjjwpt64vUG5TbBWIuxopJihiqH9e9tIdIK615UnY', '2000-08-29 00:00:00', 'a00827812@tec.mx', NULL, 3, NULL, 0, '', 0, 0, NULL, NULL),
 (1016, 'Mateo Llanos ', '$2y$13$Xrjmxm2PZhX5/FipxtLfGeQXsb7I0rnJYc9C1xXZmUyhvHTHo6Gry', 'Jesus Mateo Llanos', ' Llanos', NULL, NULL, 0, NULL, 'lPN982ehILdCmiof-rgL707oc59tP71ZFrUOeiyi3gutS_BAW9UotQFjRBYoMlI5sM8tq_oR7H79FcHZZ7ladspLs__syEFuTUtDmAD7qb33DuDOdV08X7fiDtXHGKmaq5iTbQYM7xlWV5S8wWlRsmCBvlf0mP9r0JG0QWmrB1Fa9EwGcRWSB-MRUsHVwWBEcjohcrQ5Ki7SNF7LpHD5H4UYGget9CZuk5CQWjhAHoQNTchBDZyTwfeeDZxoe5t', '2003-08-29 00:00:00', 'Mateollanso431@unimilitar.edu.co', NULL, 2, NULL, 0, 'uploads/achu}.png', 0, 0, NULL, NULL),
 (1017, 'AdrianPineda2121', '$2y$13$qCcgLaNX5UbS/LC53Q/JCOKeHJjDKV9aTFQAwaCqI.U6p9qVcTXD.', 'Adrian', 'Pineda', NULL, NULL, 0, 'ACT8 - SEN6 - VIS10 - GLO8', 'GzFggPAWTjAxwoSrWTsVS34FtyH9hOAgQy01oq4zHv7QRN2Z7FFDG2A7mojf-EaElCVI7pifUHvO4awKNUxKNnKF1vv6rFnQJv6x07wDQbGJwjjRKzg6lsoKVuPGPzSpNY4l5m73IeTy21gU6y3yPZQy3x_7bWZQ_Kexe3KK5Yws5qY5VO_z5RV6ZQZcKWtYgLJMumRuADuJ7CTajBVqZzSjrgi7OPIypWiP4vv9DK1PcUqfs_S84NRUET8r9KE', '2003-04-21 00:00:00', 'adripinedasanchez21@gmail.com', NULL, 3, 'extra:3.38,agrea:4.22,consc:3.56,neuro:2.75,openn:4.40', 1000, '', 0, 0, NULL, NULL),
-(1018, 'suylem', '$2y$13$iKVHfZzGrDNMWPMbNbS0yOoj5TaSKFOkkcwJKf1Xe7e1.rQAax4cK', 'Suyeon ', 'Cho', NULL, NULL, 0, NULL, 'IVgfD85FlNJogik1xQZ1zeonF_7NwePY9YzZcD1JVYzel8JzQwhhkRSRwmUhy-OhRDdc1dmBm5KL0fxvaGHSNHDgCOwmGXeGtiflV-OdnP1aHd4HOPGQ3hOREnVZL9U3wA9uR-EY4FYKItQBep7492U7_dEUpYiePrlxN_W7I008RD98-xL-Wry_SipTIgjCcgJ1hxyJ8EMKrI69KQFmHZKkHUfL-QnMDTaJMk0Jz06Oshp7dn-IoL24tml2MhA', '2001-01-05 00:00:00', 'csuyeon0105@gmail.com', NULL, 3, NULL, 0, '', 0, 0, NULL, NULL);
+(1018, 'suylem', '$2y$13$iKVHfZzGrDNMWPMbNbS0yOoj5TaSKFOkkcwJKf1Xe7e1.rQAax4cK', 'Suyeon ', 'Cho', NULL, NULL, 0, NULL, 'IVgfD85FlNJogik1xQZ1zeonF_7NwePY9YzZcD1JVYzel8JzQwhhkRSRwmUhy-OhRDdc1dmBm5KL0fxvaGHSNHDgCOwmGXeGtiflV-OdnP1aHd4HOPGQ3hOREnVZL9U3wA9uR-EY4FYKItQBep7492U7_dEUpYiePrlxN_W7I008RD98-xL-Wry_SipTIgjCcgJ1hxyJ8EMKrI69KQFmHZKkHUfL-QnMDTaJMk0Jz06Oshp7dn-IoL24tml2MhA', '2001-01-05 00:00:00', 'csuyeon0105@gmail.com', NULL, 3, NULL, 0, '', 0, 0, NULL, NULL),
+(1030, 'limapadre', '$2y$13$e0nAXonOmfhdh5h5/fLXEOcgRkDZjW81zF2gJ7KxOpl/cvIYYQpkG', 'Javier', 'Lima', NULL, NULL, 0, NULL, '06Ulp6x_3BUJPV_4919cMNJb7lvPoGAHdP7gR6WZY7_yNpDHX76qTwqs5VOoYMPXrFrUVB_LEGxLu2ZgWefJAt9Y0H8SLgrQ_3LrvTkVnpjAMS5gatq8sNJVU-TOORdjUoaHflOV0chvpcAdc2pLEZLP8QuXbPFs_U8y_9y69143Xwzg4ZhJ6W7D8gFV5tSRk12M4Din4cQNFMTx68rtPTo4p5ZtFDEsJE-4WE6QE7ShYCqpIfK0BcrmwSu06pG', '1968-08-28 00:00:00', 'rcostaguta@hotmail.com', NULL, 1, NULL, 1000, '', 0, 0, NULL, NULL),
+(1031, 'angelicayasmin13', '$2y$13$ckKxF1THa76NJydHIIHa5.SYZC5/97dggq2GAxuKXBicsmE8qVuS.', 'Angelica Yasmin', 'Meca Molina', NULL, NULL, 0, 'REF8 - SEN7 - VIS9 - SEC7', '3ACxIW8J3gYMUoynsuPX-wCSR6S-OjfZsSB-xwzkJ659Htbd88sv4-7I8366jSJ61TqDs-fvBuGT6XWy9_ndceS0mcxuKixkswPXdBFxFzeIwwFuqH37bRBMqaiQWnk98ZuwGtusD2DX0bnTYej70npnErKlg5A88PpG2R3CnMx4z4aeWWjCfeLmUv5hZ_eX-E5FFB6tMyNbvvTOFWAUYwBcLxbYVFaXAeKAQhvd8zSXiJyygppyRkrZN4MDARN', '2004-01-16 00:00:00', 'angieyas13@gmail.com', NULL, 1, 'extra:2.50,agrea:3.44,consc:4.89,neuro:2.13,openn:5.00', 1000, '', 0, 0, NULL, NULL),
+(1032, 'MatiasQuiroga_21', '$2y$13$bUDzn50bHjecxmetTVLjZuaWL//7k1YSh/CKfdvAJd.uLs3P627IS', 'Matias', 'Quiroga', NULL, NULL, 0, 'REF8 - SEN7 - VIS6 - SEC8', '2niHgBtQdyYe65Kdqa4QhJbTfwqqO72y1zMe-MsDkam0GkD1V3ddN0DMgpAzIM4pXW4YgWnxkGNjxwaS9rrXtl6suAqCkGgc3z3YtZcWhHXMfu60wHx3QVFACWwNJzE341XvNjY4YZEk_JeNBjTMztbrQVeRzovME9UDwjYC8oS_LGNtekxbiVbrVi3qLagjyQHQ-wmx9DA3VwIcwvMAkhaFxaYclpkkMPN4hRHKNAIa_pDJS2P_5f_xC79YE8W', '2003-08-21 00:00:00', 'matiasquiroga_01@hotmail.com', NULL, 1, 'extra:1.13,agrea:3.89,consc:5.00,neuro:1.38,openn:2.40', 1000, 'uploads/168311760_135449855249369_7834040216310256054_n.jpg', 0, 0, NULL, NULL),
+(1033, 'Chino185', '$2y$13$EDZVHDevJ87aSKw9S0qpDu7yfUuEGZBpJkT601zIGbXOYOlQrlFE6', 'Ignacio', 'Nader', NULL, NULL, 0, 'ACT8 - SEN8 - VIS10 - SEC6', 'GHmE_5JUXDi00BAQ05DvNy3baY4IzZZRRky8JxZRCgurznKwvIBBx_p1O_Mub6CjwFN5bZhxsddq4Tc98NcyCMJhnS7b3_mssp2fUS73agpy93Haxl4SeE2tPEwJC1uFFgT9bZRJZgg-kJOFGN4H7bCZJpioCe96FXpZKOv1mn6FyfJmIJ5uDdkZkX-lvNAOO8kOeVvOCayJZmD-eVqJaWDs002rQGbQ1A9zFUsWLbtBG9PMe4Rvjfvb7aH5GfZ', '2003-05-18 00:00:00', 'ignacionader18@gmail.com', NULL, 1, 'extra:4.00,agrea:4.33,consc:3.22,neuro:1.75,openn:3.10', 1000, '', 0, 0, NULL, NULL),
+(1034, 'Tincho', '$2y$13$U7SSh7DXiUv.ncIhWdAvxugPjVE5TO6VwuAb3sZfsnR7/k/RLTysa', 'Martin', 'Trejo', NULL, NULL, 0, 'ACT6 - INT6 - VIS10 - GLO6', 'N8tqab231rmZa2SEvN54TiniQjiP5eYb-wFHyk_98mvw9p2wwEDznJOkd7GT6-MYOTSQjDMyMAWlv8oChrg0GnXU5zauwnRjUeE69Ve2LEGGf4Yxd-1RxPfh5Ky0vEIg1NBnjQAkpKFAnBkYZ9xc5BV8bJg_1095PnmCLdr9BUeEcVIZaqg_8SLm25bzjFFRcVFyb3AMbBGk1qP2ysTL8FudagyUenCFvJdHSytYRyLvGeDt4ZNLbavSpgXz2II', '2004-02-20 00:00:00', 'tinchootrejo07@gmail.com', NULL, 1, 'extra:4.13,agrea:3.78,consc:4.11,neuro:3.13,openn:4.60', 1000, '', 0, 0, NULL, NULL),
+(1035, 'Exe', '$2y$13$zooSpMWWA7vZ6zHLY301ceKmpiSGlwz0Zd0wEb8/l5aUe4b3R8206', 'Sebastian Exequiel', 'Ruiz', NULL, NULL, 0, 'REF7 - SEN7 - VIS8 - SEC6', 'wDrnLo_GJEyWXA03X1zK7FpQ02vZQJvJaFyYo2wcX52tNe_0UK3utjB7uYC9k9y26a5oRMQe2Uzp2HgskDDYMIOdK141Nu_c4szWEQbGUUbt_-WsgCCQFtnAA-LAz8ttoQBS-9qk2BcPaiDY25iMPnXAIGSKipS94iR4VzvSfgu13iRZUyJEDFNLsqfDlvXfbkbn8MH0B5uxiOsHbbAQOU0ErtBiEmjxYqq4221Ie-fNDj04fQeMcG6K7EtB3P1', '2004-06-06 00:00:00', 'exequiel.ruiz159@gmail.com', NULL, 1, 'extra:2.25,agrea:3.33,consc:3.11,neuro:3.13,openn:3.50', 1000, '', 0, 0, NULL, NULL),
+(1036, 'Mateo_19', '$2y$13$FymEJiTIgMQQxT4K6/VqMuoS6LRrzkQUr9QjQGMi6IeyCoupFWsL.', 'Mateo', 'Chavez', NULL, NULL, 0, 'ACT8 - SEN6 - VIS10 - GLO7', 'lmSOtizOsBn9Tnv2dEpHEw0oo22bPjVPgThB9CSxH84_zaeE7cnALazv7eCDNXCYMEOsyHO47iWWIsPvIhU-1xmCyMxdmDHrb7f0M-vNUJW_TM5HsYtqCsFfI8HP_kGkZAqGuVZRFqhv3xj9NGodu2yYq-Qsd2zher2ldtce7YjnsRWGPKbolkKu9KkFBgLT_ddGzL9HcCaD83qVW0eV-OtPY0fbtTxY2fMTa-rfN1c_Rb2bTdStfUx2BFyCjYE', '2004-03-19 00:00:00', 'mateochavez1904@gmail.com', NULL, 1, 'extra:2.25,agrea:3.33,consc:3.00,neuro:2.00,openn:3.40', 1000, '', 0, 0, NULL, NULL),
+(1037, 'sfragola', '$2y$13$Q3TMW7w99ppiT78domY6de88PIVh2hJK7aN7hKL8JtAA5.n3P5WVK', 'Santiago', 'Fragola', NULL, NULL, 0, 'ACT7 - INT6 - VIS9 - GLO10', 'DHn8C6ZSq5p9mN3B2gqeKNvljrElYcUaj4b3QxnSvupQkoDDLDFwGVkzT61UkOSqnJX2lrF_ev56cRjCapBc7py_Ns5VTkjM01f0GgfEu-YWfdzLnGQgGJFf7N_C2DL4h0Ve6f8fWSAn5nshA4TebxkgaO1F_bHvIznw1PchFfUkMkqLchyaDKbkNG5EHPUXACR9sBinl8IRdfSK_Jqc5KM8kFOfEK-Xz2j7AWojR_sv7cPnf6509yzy5Hfk17q', '2004-02-03 00:00:00', 'cuchoinfinity@gmail.com', NULL, 1, 'extra:2.88,agrea:4.44,consc:2.78,neuro:2.25,openn:4.10', 1000, '', 0, 0, NULL, NULL),
+(1038, 'Delgado', '$2y$13$zh2AjpVzDUCBJPh4RHmflOwgVGdM.jfTaOKiU8PGYNHt0r5O1diOa', 'Juan Jeremías', 'Delgado', NULL, NULL, 0, 'ACT6 - SEN7 - VIS9 - GLO8', '5lei-sJAB8GPE5XjToR0S-C7MA8B8oCszR25LLDalELsFK954nB3AQuxrmEUHLDTGnuaulTE8Cw6kxobtojYszSSVKABmXKoLwkezL_Xu6UQHncG3GwaFVVK3DlynYuuCwIRtyTz5oNbjDOnmcXnVQY6C6KRgc007EfX76mqKqqnMCfkOGI51kgcVfJU41qlSChR0mZhEGFkp0-tOOlzFDQxZBmBrcdgeo57WmFXVzifO2uyj1ZvZ8yBaVWuhon', '2003-09-18 00:00:00', 'jeremiasjuanok@gmail.com', NULL, 1, 'extra:4.00,agrea:3.33,consc:3.44,neuro:3.00,openn:3.40', 1000, '', 0, 0, NULL, NULL),
+(1039, 'AlbarraRo', '$2y$13$jVcwY.sZa4tY3t24ltnxg.iuRz/NWzAk8iXaywNCRGUNZ1v9/UJpq', 'Rocio', 'Albarracin', NULL, NULL, 0, 'ACT7 - SEN8 - VIS6 - SEC9', 'HEe5GSwe2uVEGZXcKosPYtvEza7-36LS2YHdN4CRtp7y944fl1ZP2q6jWC3RCOMYZ74GFS_0NaZHT-rmvM5t2b8uk6bfcOCE_OppnHFf4ikA0egRr8iqjUEoHRWOv6NaXPWMZMT72cEgZJNLCfYH--j7ZwsjAeswClHn4hNzBMqgTJ5jBOa3M4NmDS_9pqEaFNcpiyhdKqFNad-IDe97LnxmduVesPFPEN1iVuXQFeZLRysfykOQYG0725_XkDS', '2004-01-14 00:00:00', 'rocioalbarracin31066@gmail.com', NULL, 1, 'extra:3.00,agrea:3.89,consc:4.22,neuro:3.38,openn:4.20', 1000, '', 0, 0, NULL, NULL),
+(1040, 'maledelmarmol', '$2y$13$nq0w/TK2Cw.3ddbBzTxdP.mZ0v2e/hUwLYGuFkkMMOZEWrCCxuacq', 'Malena', 'Del Marmol', NULL, NULL, 0, 'REF6 - SEN6 - VER8 - GLO7', 'e7fnFbMk0lyhv5FaO-3s8elOXJz8h8R3xO0VSbH9G7sCEmVQrFlviho5Pd6BgfDqIW4StiGZZ4kwWpDobmcQGTmJlRut29IyDC8fk3u0_KVPFVeAVy7B6ME3nXaUu29YNyF8JHPV5cvZ1QLtPKlgI1ghTxLNszKKPqT9e7iTb6vxwglzjAHjYCrG0Sy_aLSkz_ZyjUzM3vzk6ip2QBXkE0H298G4hQfQmFFDLE46DlSJUtFhmNuazNJKIZxP4-a', '2003-07-30 00:00:00', 'delmarmolmalena@gmail.com', NULL, 1, 'extra:2.00,agrea:2.33,consc:3.22,neuro:2.13,openn:2.90', 1000, '', 0, 0, NULL, NULL),
+(1041, 'autalan.ana', '$2y$13$zCnqTxxZOLBr1ESUMOEvK.nhN8IwQpvSxi4SaeWxWBoIxyrFFWS6u', 'Ana Carolina', 'Autalan', NULL, NULL, 0, 'REF8 - SEN8 - VER6 - GLO6', 'QRHeAI34rqU8vH03K88DT-qmpeCZpNDibNqofN7gx3SODbr9FyRbgttNT2VUpN08Jr-oylRbjufAqnWfOabKhVH3ozvnLOmYecG6W3-CtJ7oTdde1X9qZQ_HL85hLE_0dAjUAKijtNtJhkaNp5ZZ_HmZMS3Fq0GVPzSdE-OthkMymVP8OFvEBO5fQYgF5-B8GxUkqEpD8gL_MexmQv1rpFl07oG__h3TzgyB03Qeut__G1qTFk9SIU0lq9myZt5', '2002-01-07 00:00:00', 'ana.c.autalan@gmail.com', NULL, 1, 'extra:3.38,agrea:4.00,consc:3.67,neuro:1.88,openn:4.80', 2000, '', 0, 0, NULL, NULL),
+(1042, 'FrancoM325', '$2y$13$7ybxxh.czdZ.2fmn1fS58u8WApmVZzF7jB1/OnOjVNeD/xQJ0iHXi', 'Franco Martin', 'Baccarella', NULL, NULL, 0, 'ACT11 - INT7 - VIS10 - SEC6', 'pa_QIJxlLsJoANjYfMvziNScytxWorSyRRGIgOJpxIMoffRpC9uTPSCwGgHGOtTAidVF_ZlYJRs_EpXIuj2ffInPKxraMKRSNNdsav__Im-620KRnlUFj7QLl8l-6StlSyirsZR8k2AyLBNMSL4LLIVrM-v4jevIycr9Uutk47M29PN7tnYKaqxQ3oRaHSoseMc_0vorYNoXH0M3yzUU5E853JPfyEKQYaRfPfbYEv5rHOjEe4N6j_2KJhntxKv', '2002-10-29 00:00:00', 'francomartinbaccarella@alumnos.ucse.edu.ar', NULL, 1, 'extra:3.50,agrea:3.22,consc:2.22,neuro:3.50,openn:2.90', 1000, '', 0, 0, NULL, NULL),
+(1043, 'MauFerro99', '$2y$13$CmUQdbwwwnow5/cv3FHmeOaz8bA4rZDVFRg4JbGZYKFiMiUgdmCIq', 'Mauro Eduardo', 'Ferreyra', NULL, NULL, 0, 'REF8 - SEN10 - VER7 - SEC6', 'AAh3pTQBh9-_A-l51yIw74F4JwPc-6M-Dg0YpjIHhxnu1b4_QcSOTY-oHhCkMu6EMQyONJUeI7h6YBb9Zy501BF3ODkysvx5p7nRUKjNuIKCC4jsvUatN_zuErb4E8XXOmyaCirlBiwUyob-Oh41nd9UHMSnth6QRem8nKTZY6Eq4CxJunpbjhOLYPMZ1xCYYE04jhXsT8_bKJq7nfDz9NdZgzfareqw84xaqzPDRrgyyQ5mhVAO-wZg_xSgDb3', '1999-10-28 00:00:00', 'eterniumfight99@gmail.com', NULL, 1, 'extra:2.88,agrea:3.33,consc:3.00,neuro:3.13,openn:2.40', 1000, '', 0, 0, NULL, NULL),
+(1044, 'sofianp', '$2y$13$CqBooh2QF1kbCnnHF4EiQumIXNqwpxqDmjhlBp5gjQEraIGnnH11a', 'Sofía', 'Nieto Piccoli', NULL, NULL, 0, 'REF6 - SEN10 - VIS10 - SEC6', 'SO9qEOezEnFgEIIJdWtwn7DNhaWG39pTPq8REoLlcvdp8qLtqF8FWqjEeCYjQVlrOaMQr8yA4kMqKxOtW2YOPC0lmIqrRs9qzgA6LsYwCudBmEJmq-kHGDYXMM87N1wtubJxkOVZxdpvodD4ceUIrswDilL0Qxxg5nw0A_3F3R-feIhb3AiqZvBv6kKjApqnYoL-zU3QLZoUKHlVeq9dTNocpjqvvS6BmCnzs5LnnRoQaTMLg8nD69gDblsP9r1', '1998-10-26 00:00:00', 'sofia.npiccoli@gmail.com', NULL, 1, 'extra:1.63,agrea:3.56,consc:3.11,neuro:3.00,openn:4.10', 1000, '', 0, 0, NULL, NULL),
+(1045, 'mariafa', '$2y$13$9.L/HFMJVJ88nkZqAMOCXOZgWiwjlYrIllXrwktuABJ5fGpvUOHie', 'Fernanda', 'Auat', NULL, NULL, 0, 'ACT10 - SEN7 - VER6 - SEC7', 'lHN-sZB-NaMFMD1cVzPtjkTYhsOmxCJ1kF6V6WTs5LexeWYTR3oHyrniWEeL_ZZb6EDeF5Yr1XM5pe4fWJVy9UbsTXuhezdh8jTCJdFFPTxufah_Vx5KEbWd-Ve4dk_dEAhhLf-zK9IOw2M9ZnEsdjI3C4UqvxGOoslyfZcKnoTtjxqqUWsytSknJATWbOVcHYOOnI7e7lU4X2MOPTjbMqJisJZYdomvkBh4w0uVpMDxomc6A4dGN-h5wXuN5sg', '2000-10-30 00:00:00', 'fernanda.auat.unse@gmail.com', NULL, 1, 'extra:4.63,agrea:4.11,consc:4.22,neuro:2.38,openn:3.90', 1000, '', 0, 0, NULL, NULL),
+(1046, 'nicolasjitorres', '$2y$13$Rcohga6XLbAex2o.dnMlYeg7wdjt9db17Hcyecf/kM7gbs9QeFhKy', 'Nicolás', 'Torres', NULL, NULL, 0, 'ACT7 - INT6 - VER6 - SEC6', 'juhniDkMIQpgirEpLlx79H6jC1DiU2lxrz2Tn3RFsEovjnEbMn467qlX0hY8Av5WZaZdEGz4L7Rguh76ba59gMJ2UehgVc-Pc4Xrgq9sFt439vK0xaW5CQB8uLrBzYwaTt3dgATuwXMZKdU4-XJR-gRb_6qMEhaXKDLNxwfg2cVVGuNOzvpOhh9sfSn3Zh48naP45TlidAPLAG0pGCAnIeVvR4zOBU-YC5WSsiDSHmhMJ6f_poTNccMZmi2_sR4', '2000-05-05 00:00:00', 'nicoignacio123@gmail.com', NULL, 1, 'extra:3.25,agrea:3.56,consc:3.56,neuro:2.88,openn:3.50', 1000, '', 0, 0, NULL, NULL),
+(1047, 'BrunoMartín', '$2y$13$58pqInUYu64mQTYJQpq0reYOOer7rRQ9gPkozb2SgYIqO11bgpTcK', 'Bruno Nicolás', 'Martín', NULL, NULL, 0, 'REF10 - SEN10 - VER8 - SEC6', '9B-MHsyv5ZASdDGP1m2MlEIMYDKtXEKdT6FL7PnlGKujOLr1xN4K3cLR9H7Ju9661V781Db1IlHS8ZNsQDinIbRyO8ZNTrchwB5ajYQLwfmpoLwgWnchAHMwQIeAndLfqV6NF6KnL1TsmvhGmNw_0IB1wtxDgnrCkkOK0RkPvPkoqlj5lmR5NfIiYJVeXDnAIxGo7ceaSBfItwvGv9uh9LKCJzl_fLJWhhk7psEADIlO38eZ4Sk2C3zgJH8n52-', '2002-11-13 00:00:00', 'bnmartinar@gmail.com', NULL, 1, 'extra:2.88,agrea:4.11,consc:2.89,neuro:3.00,openn:3.20', 2000, '', 0, 0, NULL, NULL),
+(1048, 'Juan', '$2y$13$qGukgsRDtrZYe6phSLchge1ue07cUZgQcYKkEX3b6YgeAM5r6cnB2', 'Juan Maximiliano', 'Gomez', NULL, NULL, 0, 'REF8 - SEN8 - VER7 - SEC6', 'UzBh6hASwEr-cWwAujNNoAEgG0tz7MuEhYIsULHlGfRnD0aHXw0SXQsFTOT0yi2oDf3h0SVNwUuI1fj5h3RbhyVziKU9m3dAH5bfCac7BmvX85w_9DhfDb0O9Z7zKo0xOaeg1DbNOIJsJhaufklv-gUCu-XajN5sylk21dPl-EF4odDgpjEHf8fYi2wtnpS57Mjn2Pd-0qJapm8UKixbwUuBwyHNGSG5xCTmqPK0HgPWg-qF6g8vn3J5tpGEfWy', '2002-10-02 00:00:00', 'Juanmaximilianog@gmail.com', NULL, 1, 'extra:2.25,agrea:3.56,consc:4.11,neuro:4.00,openn:4.10', 1000, 'uploads/WhatsApp Image 2025-04-02 at 18.20.49.jpeg', 0, 0, NULL, NULL),
+(1049, 'Mauro Krinner', '$2y$13$n1X9ZMKcgJKvRw7HMHbQ5.5M58C7aCiRjHLOjXyjBWVzG0T/Tg0c.', 'Mauro', 'Krinner', NULL, NULL, 0, 'REF7 - INT6 - VIS9 - GLO7', 'aj97XTd63Ly4sr53mZAYkW3yJUF2RLfpoMwC4M0gXBYfFsga7AIpDWxx8V_hPMCf5AWTF0XhjVCq1N-97UWw8kbY3EpWcYnY9_xbwYzoYmDT3Dq0RfkbGef3WDT7nr4S9-ERXbtuk2IfR1i4hTKcPziYKOuJrT7sY5cL_xXGhV3bcqlDy97fFrsjn_zBE8L-c0iiw2lhZo90darErWz3Lva1DYhWNNWih880ziKZuQUvlLR4sWb_76k_a80WiaB', '2004-04-04 00:00:00', 'krinnermauro@gmail.com', NULL, 1, 'extra:2.25,agrea:4.11,consc:2.11,neuro:3.38,openn:3.60', 1000, '', 0, 0, NULL, NULL),
+(1050, 'juanivan', '$2y$13$ioQrk1TU7zyJQjJxb1MaNeAKMyder5roMBZwBUcuZ3Eq/.HdtCnaK', 'Juan Iván', 'González', NULL, NULL, 0, 'ACT8 - SEN9 - VIS7 - GLO7', 'A_vWp1LdX7Yae9izNUebqDKVE27ZGQpTka_SrhYfM_kMc2RJ7w-5o1YiJI3GgWCHHdd0rygTLC4IVjHMmb80K0-Ld7t5XRIXJW7l-BL48E075K4cdRytTwgcE0D04VkLIOxqh0SCENwRPDvwsPe29PEUgevRxbVs3BKs3RM84U21EKoLMqF2vyl7tUd3MFM8KuS5v17727gJ3G-vGT3eoi4N6imPf2rvdiQ_LRpk0knxPr7VHAD2UBBIpAmIc_S', '2003-07-15 00:00:00', 'juanivangonz15@gmail.com', NULL, 1, 'extra:3.88,agrea:3.56,consc:2.89,neuro:2.75,openn:3.50', 2000, '', 0, 0, NULL, NULL),
+(1051, 'JulianUmmg', '$2y$13$X92EzQKTrETiaEArDNZkK.bgXWM9uA.jMz9O1boR9N0XtNWUykopO', 'Julian ', 'Rodriguez ', NULL, NULL, 0, 'REF8 - SEN7 - VIS8 - GLO8', 'OJSll-xOfxGBnGsE_xxnerIoX4MsrT0EoBbioGOTY0lwaI2wAiWGId7U4hoYDfbec4Lwe0Q6pBIUUmbd_23VUfNWePdCC08C5E5htVyX6Lggjwx-9GBbMFsF_jHep9CQOXscK9WpnVTSHgEzDHoLIQtjJLwND5vdcMSxkKzOKGhaVQiVsHRvIY6lKEQOUEpBzKMv9Ih18OODZuNAKEeV_JNGax6sXCzr6GA7e65Ah1XON_kHgM_Ddmr4xg9ATx7', '2002-12-10 00:00:00', 'est.julianda.rodri2@unimilitar.edu.co', NULL, 2, 'extra:3.25,agrea:3.67,consc:3.33,neuro:2.00,openn:4.20', 2000, 'uploads/PicsArt_10-31-11.49.24.jpg', 0, 0, NULL, NULL),
+(1052, 'Brimalaba', '$2y$13$53I8DnoQfG3vlWsjxsF28OtEYYE2KoAOJkATJLl4gxr0Y6A4asQOC', 'Brenda', 'Malagon', NULL, NULL, 0, NULL, 'A_aDyrk8fiXebFhojgPpreYA3Ma2F8fNu6hF9HGkG_5F9EYMrpL9ERIXHTMtgfjttpFZLRNxp4E3HTnmbdXpFtP40R7kVV_OOEKzHbTzHIrFCEeh_FazifvOUSgI-jGHAWiyt9iKPu6z-DrZ2Y9zdJBA6Z-rQNd-33CSrBio3IZ8b3oZWLyXARUMgkEgqYitdvgLodFK7_i51jx3D4yXl5LMpJq6SllQwsJVvU0Q9H04c4iaJgnofqpOQgiBV1I', '2007-02-01 00:00:00', 'est.brenda.malagon@unimilitar.edu.co', NULL, 2, NULL, 0, '', 0, 0, NULL, NULL),
+(1053, 'Andress08', '$2y$13$Ic67AVgFmMjoQiYoe3zBJOeYYxmNrX81la1m1B15XVKNKlH4NvBnm', 'Andres', 'Vasquez', NULL, NULL, 0, 'REF7 - SEN7 - VER7 - SEC9', '7wC9ogCvpKYmYf2taotShrDMT4pGEzLbySgR0Yp91_DiZ6i0SlZsUkt2eVLv9sl7b26hnV86-3E-g1jpDa8IPSR4b5hAj97uWl7zO9VG33MKooeAWRLKKCpM7PRJSLixkOgAVRcsEsY0nMlpipsILF11NIbSo8CAxyMW-Oaa5OgeqEp3XSloTH3RzUygPn1MzjMK-RKsygjzfM-2yHF4TVHolEWwHtO8vhx08WJy8218mu6IqjOrMjwaP0I4V45', '2004-11-08 00:00:00', 'est.andresm.vasquez@unimilitar.edu.co', NULL, 2, 'extra:3.88,agrea:2.89,consc:3.11,neuro:3.25,openn:3.10', 1000, '', 0, 0, NULL, NULL),
+(1054, 'GeronimoPecora', '$2y$13$31LHDs/O/gOH4t.fLOuTleE864MB3oQoaV43x4yuqNclCQ4N.76Ui', 'Geronimo', 'Pecora', NULL, NULL, 0, 'REF7 - SEN8 - VER7 - SEC11', 'Lbw5U3NVdHbQ0Wu0TP1FqP3TX_XOa7VTDl-Op1bWgd4W4XtCFxmHlNWZAj-qW8C7IyxwZ_BDtJ29_jsVT-N0i0U17cthiz9E1PQ7CXpAOT_nUl7N86CKI9Jgk3IPLq6sI5VHijlTbwlmvkv5g8LykYzJ2VY-S3ttgZft70Pvj_KZpKW375J6OaWBsgl1Fu_Xydqi2fTJ327zA2LC6uVbj0uhsbNtkyIoXnXnKWLTVWLtjc8_1eA5W13s1EF4QIA', '2004-06-18 00:00:00', 'gerojpec@gmail.com', NULL, 1, 'extra:2.88,agrea:2.56,consc:4.22,neuro:3.13,openn:3.20', 1000, '', 0, 0, NULL, NULL),
+(1055, 'Adriang', '$2y$13$2dCFpHO9DBff2UOit6Ri0.nsXu5bzkprRqzo.Y33UdFApCy8uqWRK', 'ADRIAN', 'GONZALEZ', NULL, NULL, 0, 'ACT8 - SEN7 - VER6 - GLO8', 'RjkTxUc-MKxAB0tkjgHkUawCZVaF4BdJuFbkaoEyx2JOgewrem0dL3PTBfXtfj9QSXeP4akkgK22QyXpVrh9puaHM8JoXhdfHk-WBxIj6f2BFHoag3rbGVPYFYqvz9gUpXa-RmEew23ng-6PfXE6fBcrdy0iQI2gKZHrcCV8TGcQmwpWTLAibFcXpZ7FBB2e7HPzJoZYyxGYizznZuoTiin9NIxUO9X9zlACJWyd1h03b0oBBmdD8Ur_C-gy31R', '1985-06-04 00:00:00', 'adriangonzalez840@hotmail.com', NULL, 1, 'extra:3.00,agrea:2.22,consc:2.11,neuro:3.13,openn:2.10', 1000, 'uploads/IMG-20180429-WA0005.jpeg', 0, 0, NULL, NULL),
+(1056, '44312506', '$2y$13$yCjg.j2m1FV1S9k11eY.o.DvgIaP1kitmg8zWNMNmD8Y1yMI0DdCO', 'Denise Agostina Geraldine', 'Diaz', NULL, NULL, 0, 'ACT10 - SEN9 - VER7 - SEC7', 'dBdwrgQvKVuXcYep3U1Fl64WCd_RCylWrmLHQ73GRBcIHJZuQCG0cc9r_dire628rs0lymy-eFR3E0dBiSNYupacGDtFMM0agr7Mvr5MgU0J69eg4Tnnk4yJ7Nygx45yeGVZ59oms-hZxpZ-Xjyow7UlV7VQIWmi1r0yXeVdtcAtt6Z83uMHxPEHx3hroPHindGIBNgaauYwvzBLq4cOGG-jVgTW1ZdhxsinkLEETY7TBOSKQ47uxBTJCn9Bagu', '2002-06-26 00:00:00', 'dgeraldineuniversidad@gmail.com', NULL, 1, 'extra:4.50,agrea:3.67,consc:3.22,neuro:4.38,openn:3.00', 2000, '', 0, 0, NULL, NULL),
+(1057, '43793920', '$2y$13$A1Q5jgGbDwNNv.QwMiT9Q.fNE/kgKGupPrqls1.NZ4IsNddoAWxGG', 'Maria Luciana', 'Figueroa', NULL, NULL, 0, 'ACT9 - SEN9 - VER6 - SEC7', 'Pvhf690pQUKZ3yzXLKrcSYqRHk1HcY7KsrfOyxC_hITuEpexeZzkErldCjjesU8jkiW_FRCv8aCdEyzlPcBER85NyZKCgtHrJlVKt2mTMHkzeimiEZpO2ssQMbx0mIEXC84ddDwB1ZYkHDM2EfRxX0vR0QCCpRhsrrEJH6IYjm_S2mexTWv9D3rNO7CTNkJpSRCCAeKOZ0StmOToQwpWfIrGv4Krb_P_h37laDXSXiq809VZ4kJT-mbuNuZ5gwr', '2001-11-23 00:00:00', 'mlfluli@gmail.com', NULL, 1, 'extra:3.00,agrea:3.67,consc:3.44,neuro:4.13,openn:3.00', 1000, '', 0, 0, NULL, NULL),
+(1058, 'MauroMiranda2801', '$2y$13$/jQ3O9wwIQoXqcUlOp98vu2mFhOYI1IgW.3X0fUaq31HWRmBNCnhi', 'Mauro Samuel', 'Miranda', NULL, NULL, 0, 'REF7 - SEN7 - VER6 - SEC6', 'JeZ8PV16H_GbrieriQVc4dPrumnaIv_bi1yi3Gzy0ak6Ir_xEDy6M-UKJzP4aW6TWezXo24ZmDlsWJ4KoesrcWWer_i_9D00h2cBVd76ej4bgZPKGJcDE_p4VOBtNFUq02g4bAIVe7yvUJ0PyXa09gdx5ENm5yR0V0D-wz2vjCiTeNw0AnAADwugsXMKAOKpN0qJC7VgFt0I2Gv9HXrwpMJd5vRp5C8Hoe5nQiLcqJNLvtTCE2Oc1AGLmlq-boG', '2004-01-28 00:00:00', 'mauromiranda2801@gmail.com', NULL, 1, 'extra:2.13,agrea:3.11,consc:3.33,neuro:2.25,openn:2.70', 1000, 'uploads/1693498465674.jpg', 0, 0, NULL, NULL),
+(1059, 'Octavio Vega Miranda', '$2y$13$OE/r1HhWflL/dnkl1gh6S.wQTYpkSPWWd60IBo.KLB8t.h9BnpjeO', 'Octavio', 'Vega Miranda', NULL, NULL, 0, 'ACT8 - SEN7 - VIS7 - GLO6', '5oGU4buPqbNgJUdseD1cOE843R0h1Xr6IhKZStwZkiOXGpoarnRrtct2vfczvaPSB0GWrlB3I18hYXhTuQ2XE6MbXw8SmoC9Zrh8zUOp_Rm1IcZLMEUtTgZuTmzUVEjALyKXLfr7r8GQLLofFDQPJvTsyCc_GTc4NJ8Qm-xJ4an_x0PnIntJTUuOOSwpyB69Cc2fsncmgbCzud5yRSzLFceuT7nD91R4qwrnJdzK4I1K_Q3c2kw913Bd-JYTFZG', '2004-04-23 00:00:00', 'octaviovegamiranda22@gmail.com', NULL, 1, 'extra:3.63,agrea:4.44,consc:3.33,neuro:1.88,openn:3.80', 1000, '', 0, 0, NULL, NULL),
+(1060, 'maxi_gerez', '$2y$13$zkvi3j6sCLnDX9MWmSdKje4rY0C863Q67udViDSYMLd.Iyg2dfMNm', 'Maximiliano Gabriel', 'Gerez', NULL, NULL, 0, 'ACT7 - SEN7 - VIS6 - SEC8', 'JRBwvY1PrU9KkB9x1SQzd86w8w83BiJolBaSKjoVrc2apvppyK3odB3HRZec4VR8UZ2ybtVJUCrGeZ57QcO8qftUtxKb11LIJ_xTUNr7FfQzsa6qIPW8G70Le2yxr98NXvw9qWden12tsWVeAozp6ePcARTuE7bL71gK3dbU7K9_Eo7zYgkyQM5hXPviTl5Mr8dmjcMeVPD8d0p4cYe7uMCA72POFnpf99zdL3atnANqBneEQrTqsa3h0r18EqE', '2003-07-17 00:00:00', 'maxigerez400@gmail.com', NULL, 1, 'extra:2.50,agrea:3.56,consc:2.44,neuro:2.13,openn:2.70', 1000, '', 0, 0, NULL, NULL),
+(1061, 'abenjacv', '$2y$13$WZh99WJYF2WpI66hOzLqt.a06xH6.2WHsv6a6sHMxmUaUFC.wecT2', 'Augusto Benjamín', 'Celiz Velardez', NULL, NULL, 0, 'ACT6 - SEN10 - VIS10 - GLO6', 'TNOG2NOHBXkG1lkicmC5gzcouy4l8Te8Q0jaT28dzgXWJcrHqBBQRB8iySn_QaZ9W7NM7KiyadTazCcXgDOUahWJ3q9-5U3bNmOM9xwadXXd3YYY9ysWFnypcdN54S_LQ8r25o1GFzbxI69LO7IJ4Wxip-TvyJJcKgb3hqzqDTEAQ_WsPZdvIckBSB4H1UIiAjqjndfR7F0kYtf_yQaNiWUtHHZR5QjMVafZNahMSsUwXnVGaQ8wPTbWsAqC5R7', '2002-05-12 00:00:00', 'benjamincelizv@gmail.com', NULL, 1, 'extra:3.00,agrea:3.56,consc:4.44,neuro:1.50,openn:2.50', 1000, '', 0, 0, NULL, NULL),
+(1062, 'RoqueSJuarez', '$2y$13$1Hxt0PhiZkURtjbLPO8anesc93.5AW.2gf3UybLDTWVjFZoNMm67.', 'Roque Santiago', 'Juarez Llanos', NULL, NULL, 0, 'ACT7 - SEN7 - VER6 - SEC8', '2SrVwH9sk_0ZZGigff_N6GvkAadcOUZg1r0PzJ-FdWHddtWOw2K-Hs1I6-x5CDbj9W-Hz3lPlNxXzYqUGhOPN1AGyPZktIcvUJIruylXfdMtZFguQLZFbdqyHkvo8bhHcR-7Zh7q0fh9C83FMnSoNiYEuKgtHISnkDAu1LoSpdPFSUk903X_z2g9axaM5GxU2BIr7WstNLv9iGjRabdXGM_mHnV63X5_uj1kgUEibL7-OaGo7p41ZmbzZVbPIcE', '2004-03-11 00:00:00', 'santyllanos6@gmail.com', NULL, 1, 'extra:2.25,agrea:3.44,consc:3.11,neuro:3.13,openn:2.60', 1000, '', 0, 0, NULL, NULL),
+(1063, 'Gastón Ducca', '$2y$13$3DXawX.aLAjKtTuyA.sr.uJZxhFfKA/EOxlOGRCSgBpDHBEegRwQy', 'Gastón', 'Ducca', NULL, NULL, 0, 'ACT7 - SEN9 - VIS9 - SEC7', 'I9W1RuaA-qD3rb-c2iGc3tQLuMRrRdc9-uyP1PLWpxig7i3Bm4kODH8BHzG-Zc07nnzJv6kUtZM_xhRXjB4tVrb6JM5drqbYEWkvKTi-TvHU2T38PPb_p9RA9_Q34PGTeCn3RWg9DsLz-m0LDvHgXbu3KQXm8onPHRtscgfQS6Nr_TQ-hHsL6xoIPHp328L2C4AUW5ligXiaKdVUgb4Jon-6QNp-ojBb5IwNWtj-UYJWM4cYyVtyl4zqfdA2ivo', '2004-01-16 00:00:00', 'gastonducca@alumnos.ucse.edu.ar', NULL, 1, 'extra:3.00,agrea:3.56,consc:3.11,neuro:2.88,openn:3.30', 1000, '', 0, 0, NULL, NULL),
+(1064, 'SantiagoM', '$2y$13$CBmzC1Zl7CiT/wuf1sngeOdVKsa0sw7zl9qU7nEKjRGLzE/5sWH0q', 'Santiago Emanuel', 'Martos Ciotta', NULL, NULL, 0, 'ACT6 - SEN6 - VER6 - GLO6', 'M8s8n_SmqGHeX48GZU6QN7LSegkMp-JXLrnj0N24n_gKkMQ_Y9ayXuqUiLuklU0t4vd67zHPxULtu6c3EjoHjvfXQ-pOplzzIaDpPGzEKbGoRFenV3Ux1VhsSzSkGfo-RwFloWUQnJds3djpOsWJ6Dmz2rT0G1F7oCA22O1c79CSK6RnY0JzUmf1139LdWqpROF6BnzS6r_T-zNQx0lCarxn7MXv7lSwwaMyKhElEOI7cm4QCzk15tcVYttEokh', '2003-10-20 00:00:00', 'martossantiago715@gmail.com', NULL, 1, 'extra:3.50,agrea:4.00,consc:3.33,neuro:1.75,openn:4.50', 1000, '', 0, 0, NULL, NULL),
+(1065, 'ignacioneirot', '$2y$13$q1YrshM301KpS2TeuJhRfetZdlPAjYrhDW2HDTOk2KiiKHOlt9kIi', 'Ignacio Valentin', 'Neirot', NULL, NULL, 0, 'REF8 - SEN8 - VER8 - SEC6', 'AxKQ-NaRq58zk3lQz2td1gQ66ezQxwUF5ED-wrXV66X1iISSRTzwSy1eEVVH3WTTBzycqvQWvdI9yPy90CPTZC-huFSi5I0Bn_zsDuwMJ67guimxd8s1BAdEjb85sQ0mrNT6-JYUKWkANA1KwSBipMXzpuZLeYbu2egozHh_05jZeW7hWPMIFGPu4p4c4Z_8Pe0Kl7InX2wdwXB9EJynRelJ5BabxYnB0pmxoewKn2S-QVR3BSNpPbUE2EOIx-y', '2004-05-07 00:00:00', 'neirotignacio@gmail.com', NULL, 1, 'extra:3.00,agrea:3.67,consc:3.22,neuro:2.63,openn:4.50', 1000, '', 0, 0, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -17802,17 +17844,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `asignaturas`
 --
 ALTER TABLE `asignaturas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT de la tabla `asignaturas_alumnos`
 --
 ALTER TABLE `asignaturas_alumnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=517;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=518;
 --
 -- AUTO_INCREMENT de la tabla `asignaturas_docentes`
 --
 ALTER TABLE `asignaturas_docentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 --
 -- AUTO_INCREMENT de la tabla `carreras`
 --
@@ -17842,7 +17884,7 @@ ALTER TABLE `desafios`
 -- AUTO_INCREMENT de la tabla `desafios_usuarios`
 --
 ALTER TABLE `desafios_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 --
 -- AUTO_INCREMENT de la tabla `emociones`
 --
@@ -17942,7 +17984,7 @@ ALTER TABLE `tarea_usuario_puntaje`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1030;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1066;
 --
 -- Restricciones para tablas volcadas
 --

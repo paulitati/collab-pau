@@ -44,7 +44,13 @@ class UsuariosSearch extends Usuarios {
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC, // orden descendente
+                ],
+            ],
         ]);
+        
 
         $this->load($params);
 
