@@ -1,5 +1,5 @@
 <?php
-defined('YII_DEBUG') or define('YII_DEBUG', true); // Activa modo debug
+defined('YII_DEBUG') or define('YII_DEBUG', false); // Activa modo debug
 defined('YII_ENV') or define('YII_ENV', 'dev');    // Entorno de desarrollo
 
 require __DIR__ . '/../vendor/autoload.php';

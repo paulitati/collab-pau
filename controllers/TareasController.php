@@ -32,7 +32,7 @@ class TareasController extends Controller {
                 'only' => ['index', 'view', 'update', 'delete', 'create'],
                 'rules' => [
                     [
-                        'actions' => ['index', 'view', 'update', 'create'],
+                        'actions' => ['index', 'view', 'update', 'create', 'delete'],
                         'allow' => true,
                         'roles' => ['profesor'],
                     ],
@@ -160,6 +160,7 @@ class TareasController extends Controller {
         $model->asignaturas_id = $asigid;
         $model->tipo_tarea = 'grupal';
 
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $grupos = \app\models\GruposFormados::getDetalleGrupos($model->grupos_id);
             $titulo = "";
@@ -274,12 +275,24 @@ class TareasController extends Controller {
         $model = $this->findModel($id);
         $model->usar_sentencias_apertura = ($model->usar_sentencias_apertura) ? 1 : 0;
 
+        $asignatura = \app\models\Asignaturas::findOne(['id' => $model->asignaturas_id]);
+        if ($asignatura) {
+            $asignaturaYear = $asignatura->year;
+            $asigid=$asignatura->id;
+        } else {
+            Yii::$app->session->setFlash('error', 'La asignatura no existe.');
+            return $this->redirect(['index']); // Redirigir a index en caso de error
+        }
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
                     'model' => $model,
+                    'asignaturaYear'=>$asignaturaYear,
+                    'asigid'=>$asigid,
+
         ]);
     }
 

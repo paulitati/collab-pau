@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-04-2025 a las 14:42:59
+-- Tiempo de generación: 06-05-2025 a las 20:26:37
 -- Versión del servidor: 5.7.33-0ubuntu0.16.04.1
 -- Versión de PHP: 7.0.33-0ubuntu0.16.04.16
 
@@ -71,7 +71,8 @@ INSERT INTO `asignaturas` (`id`, `nombre`, `year`, `carreras_id`, `estado`) VALU
 (32, 'IA UCSE plan 2008', 0, 1, 0),
 (59, 'Inteligencia Artificial UNSE 2025', 2025, 1, 0),
 (60, 'Inteligencia Artificial UCSE 2025', 2025, 2, 0),
-(61, 'Criptografía 2025', 2025, 1, 0);
+(61, 'Criptografía 2025', 2025, 1, 0),
+(62, 'Asignatura Prueba', 2025, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -364,7 +365,6 @@ INSERT INTO `asignaturas_alumnos` (`id`, `year`, `asignaturas_id`, `usuarios_id`
 (331, 2024, 26, 820),
 (332, 2024, 25, 818),
 (333, 2024, 25, 618),
-(334, 2024, 25, 608),
 (335, 2024, 25, 850),
 (336, 2024, 25, 822),
 (337, 2024, 25, 819),
@@ -461,7 +461,6 @@ INSERT INTO `asignaturas_alumnos` (`id`, `year`, `asignaturas_id`, `usuarios_id`
 (440, 2024, 30, 864),
 (441, 2024, 30, 956),
 (442, 2024, 30, 957),
-(443, 2024, 30, 943),
 (444, 2024, 30, 885),
 (446, 2024, 30, 505),
 (447, 2024, 30, 919),
@@ -480,9 +479,7 @@ INSERT INTO `asignaturas_alumnos` (`id`, `year`, `asignaturas_id`, `usuarios_id`
 (462, 2024, 30, 968),
 (463, 2024, 30, 879),
 (464, 2024, 30, 903),
-(465, 2024, 30, 943),
 (466, 2024, 30, 869),
-(467, 2024, 30, 943),
 (468, 2024, 30, 972),
 (471, 2024, 30, 879),
 (472, 2024, 32, 974),
@@ -506,7 +503,13 @@ INSERT INTO `asignaturas_alumnos` (`id`, `year`, `asignaturas_id`, `usuarios_id`
 (519, 2025, 61, 576),
 (520, 2025, 61, 973),
 (521, 2025, 61, 818),
-(522, 2025, 61, 975);
+(522, 2025, 61, 975),
+(523, 2025, 61, 833),
+(524, 2025, 61, 491),
+(525, 2025, 61, 831),
+(526, 2025, 62, 581),
+(527, 2025, 62, 995),
+(528, 2025, 62, 55);
 
 -- --------------------------------------------------------
 
@@ -561,7 +564,8 @@ INSERT INTO `asignaturas_docentes` (`id`, `usuarios_id`, `asignaturas_id`, `tipo
 (35, 5, 32, 0),
 (67, 5, 59, 0),
 (68, 5, 60, 0),
-(69, 5, 61, 0);
+(69, 5, 61, 0),
+(70, 5, 62, 0);
 
 -- --------------------------------------------------------
 
@@ -622,11 +626,53 @@ INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
 ('estudiante', '1066', 1745876072),
 ('estudiante', '1067', 1745879650),
 ('estudiante', '1068', 1745927040),
+('estudiante', '1069', 1745938069),
 ('estudiante', '107', 1536793964),
+('estudiante', '1070', 1745938132),
+('estudiante', '1071', 1745938198),
+('estudiante', '1072', 1745938199),
+('estudiante', '1073', 1745938228),
+('estudiante', '1074', 1745938245),
+('estudiante', '1075', 1745938246),
+('estudiante', '1076', 1745938246),
+('estudiante', '1077', 1745938247),
+('estudiante', '1078', 1745938267),
+('estudiante', '1079', 1745938273),
 ('estudiante', '108', 1536810398),
+('estudiante', '1080', 1745938348),
+('estudiante', '1081', 1745938443),
+('estudiante', '1082', 1745938445),
+('estudiante', '1083', 1745938463),
+('estudiante', '1084', 1745938530),
+('estudiante', '1085', 1745938548),
+('estudiante', '1086', 1745938559),
+('estudiante', '1087', 1745938560),
+('estudiante', '1088', 1745938884),
+('estudiante', '1089', 1745939710),
 ('estudiante', '109', 1536810700),
+('estudiante', '1090', 1745939795),
+('estudiante', '1091', 1745939803),
+('estudiante', '1092', 1745939837),
+('estudiante', '1093', 1745939927),
+('estudiante', '1094', 1745939936),
+('estudiante', '1095', 1745939947),
+('estudiante', '1096', 1745939950),
+('estudiante', '1097', 1745940019),
+('estudiante', '1098', 1745940047),
+('estudiante', '1099', 1745940127),
 ('estudiante', '11', 1525043966),
+('estudiante', '1100', 1745940136),
+('estudiante', '1101', 1745940146),
+('estudiante', '1102', 1745940402),
+('estudiante', '1103', 1745940788),
+('estudiante', '1104', 1745940963),
+('estudiante', '1105', 1745947829),
+('estudiante', '1106', 1745964404),
+('estudiante', '1107', 1745968069),
+('estudiante', '1108', 1746001996),
+('estudiante', '1109', 1746085486),
 ('estudiante', '111', 1536845759),
+('estudiante', '1110', 1746304689),
 ('estudiante', '112', 1536846752),
 ('estudiante', '113', 1536846915),
 ('estudiante', '114', 1536849459),
@@ -1705,7 +1751,7 @@ INSERT INTO `carreras` (`id`, `nombre`, `universidad`) VALUES
 
 CREATE TABLE `chats` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `descripcion` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   `tareas_id` int(11) NOT NULL,
   `grupos_formados_id` int(11) NOT NULL,
@@ -1901,7 +1947,14 @@ INSERT INTO `chats` (`id`, `descripcion`, `fecha`, `tareas_id`, `grupos_formados
 (256, 'Chat correspondiente a la tarea . que emplea la configuración de grupos BD PUI 2024 ', '2025-04-23 11:58:27', 67, 185, NULL, NULL),
 (257, 'Chat correspondiente a la tarea . que emplea la configuración de grupos G1 IA UCSE 2024', '2025-04-24 06:16:24', 68, 162, NULL, NULL),
 (258, 'Chat correspondiente a la tarea . que emplea la configuración de grupos UCSEPlanNuevo', '2025-04-24 06:19:00', 69, 237, NULL, NULL),
-(259, 'Chat correspondiente a la tarea . que emplea la configuración de grupos UCSEPlanNuevo', '2025-04-24 06:19:00', 69, 238, NULL, NULL);
+(259, 'Chat correspondiente a la tarea . que emplea la configuración de grupos UCSEPlanNuevo', '2025-04-24 06:19:00', 69, 238, NULL, NULL),
+(280, 'Chat correspondiente a la tarea . que emplea la configuración de grupos ACSCUNSE/2022-3-AM', '2025-04-29 12:23:37', 83, 326, NULL, NULL),
+(281, 'Chat correspondiente a la tarea . que emplea la configuración de grupos ACSCUNSE/2022-3-AM', '2025-04-29 12:23:37', 83, 327, NULL, NULL),
+(282, 'Chat correspondiente a la tarea . que emplea la configuración de grupos ACSCUNSE/2022-3-AM', '2025-04-29 12:23:38', 83, 328, NULL, NULL),
+(291, 'Chat correspondiente a la tarea Actividad de prueba que emplea la configuración de grupos C/2025-5-AM', '2025-05-06 12:08:08', 93, 339, NULL, NULL),
+(292, 'Chat correspondiente a la tarea Actividad de prueba que emplea la configuración de grupos C/2025-5-AM', '2025-05-06 12:08:08', 93, 340, NULL, NULL),
+(293, 'Chat correspondiente a la tarea Actividad de prueba que emplea la configuración de grupos C/2025-5-AM', '2025-05-06 12:08:08', 93, 341, NULL, NULL),
+(300, 'Chat correspondiente a la tarea Se utilizarán objetos de aprendizaje (OA) creados especialmente considerando la temática a desarrollar y también el estilo de aprendizaje dominante en cada grupo de estudiantes. que emplea la configuración de grupos AP/2025-1-AM', '2025-05-06 05:15:17', 122, 345, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2147,7 +2200,37 @@ INSERT INTO `desafios_usuarios` (`id`, `usuarios_id`, `desafios_id`, `contador_d
 (86, 830, 2, 7, 'completado', NULL),
 (90, 856, 5, 1, 'completado', NULL),
 (91, 1067, 3, 1, 'completado', NULL),
-(92, 1068, 3, 1, 'completado', NULL);
+(92, 1068, 3, 1, 'completado', NULL),
+(93, 1072, 3, 1, 'completado', NULL),
+(94, 1077, 3, 1, 'completado', NULL),
+(95, 1079, 3, 1, 'completado', NULL),
+(96, 1069, 3, 1, 'completado', NULL),
+(97, 1070, 3, 1, 'completado', NULL),
+(98, 1073, 3, 1, 'completado', NULL),
+(99, 1076, 3, 1, 'completado', NULL),
+(100, 1078, 3, 1, 'completado', NULL),
+(101, 1089, 3, 1, 'completado', NULL),
+(102, 1071, 3, 1, 'completado', NULL),
+(103, 1095, 3, 1, 'completado', NULL),
+(104, 1092, 3, 1, 'completado', NULL),
+(105, 1091, 3, 1, 'completado', NULL),
+(106, 1081, 3, 1, 'completado', NULL),
+(107, 1096, 3, 1, 'completado', NULL),
+(108, 1093, 3, 1, 'completado', NULL),
+(109, 1098, 3, 1, 'completado', NULL),
+(110, 1094, 3, 1, 'completado', NULL),
+(111, 1071, 1, 1, 'completado', NULL),
+(112, 1099, 3, 1, 'completado', NULL),
+(113, 1090, 3, 1, 'completado', NULL),
+(114, 1105, 3, 1, 'completado', NULL),
+(115, 1100, 3, 1, 'completado', NULL),
+(116, 1083, 3, 1, 'completado', NULL),
+(117, 1084, 3, 1, 'completado', NULL),
+(118, 1106, 3, 1, 'completado', NULL),
+(119, 1108, 3, 1, 'completado', NULL),
+(120, 1109, 3, 1, 'completado', NULL),
+(121, 1110, 3, 1, 'completado', NULL),
+(122, 1103, 3, 1, 'completado', NULL);
 
 -- --------------------------------------------------------
 
@@ -4462,7 +4545,10 @@ INSERT INTO `grupos` (`id`, `year`, `codigo`, `cantidadintegrantes`, `asignatura
 (73, 2024, 'UCSEPlanNuevo', 4, 26, 2),
 (74, 2024, 'Nota periodistica sept2024', 4, 32, 2),
 (75, 2024, 'Nota periodistica sept2024', 3, 32, 2),
-(76, 2024, 'Nota periodistica sept2024', 3, 32, 1);
+(76, 2024, 'Nota periodistica sept2024', 3, 32, 1),
+(116, 2022, 'ACSCUNSE/2022-3-AM', 3, 24, 1),
+(121, 2025, 'C/2025-5-AM', 3, 61, 1),
+(123, 2025, 'AP/2025-1-AM', 3, 62, 1);
 
 -- --------------------------------------------------------
 
@@ -4851,7 +4937,6 @@ INSERT INTO `grupos_alumnos` (`id`, `usuarios_id`, `grupos_formados_id`) VALUES
 (511, 834, 170),
 (512, 835, 170),
 (513, 818, 171),
-(514, 608, 171),
 (515, 850, 171),
 (516, 819, 172),
 (517, 822, 172),
@@ -4950,7 +5035,6 @@ INSERT INTO `grupos_alumnos` (`id`, `usuarios_id`, `grupos_formados_id`) VALUES
 (648, 893, 231),
 (649, 916, 231),
 (650, 881, 232),
-(651, 943, 232),
 (652, 910, 233),
 (653, 896, 233),
 (654, 898, 233),
@@ -4977,7 +5061,26 @@ INSERT INTO `grupos_alumnos` (`id`, `usuarios_id`, `grupos_formados_id`) VALUES
 (675, 603, 239),
 (676, 171, 240),
 (677, 976, 240),
-(678, 984, 240);
+(678, 984, 240),
+(946, 705, 326),
+(947, 706, 326),
+(948, 710, 327),
+(949, 712, 327),
+(950, 707, 327),
+(951, 709, 328),
+(952, 711, 328),
+(953, 708, 328),
+(982, 1045, 339),
+(983, 831, 339),
+(984, 818, 339),
+(985, 973, 340),
+(986, 833, 340),
+(987, 491, 340),
+(988, 576, 341),
+(989, 975, 341),
+(998, 581, 345),
+(999, 995, 345),
+(1000, 55, 345);
 
 -- --------------------------------------------------------
 
@@ -5175,7 +5278,14 @@ INSERT INTO `grupos_formados` (`id`, `nombre`, `grupos_id`, `puntaje`) VALUES
 (237, 'Grupo 1', 73, 0),
 (238, 'Grupo 2', 73, 0),
 (239, 'Grupo 1', 76, 0),
-(240, 'Grupo 2', 76, 0);
+(240, 'Grupo 2', 76, 0),
+(326, 'Grupo 1', 116, 0),
+(327, 'Grupo 2', 116, 0),
+(328, 'Grupo 3', 116, 0),
+(339, 'Grupo 1', 121, 0),
+(340, 'Grupo 2', 121, 0),
+(341, 'Grupo 3', 121, 0),
+(345, 'Grupo 1', 123, 0);
 
 -- --------------------------------------------------------
 
@@ -16451,7 +16561,7 @@ CREATE TABLE `tareas` (
   `grupos_id` int(11) NOT NULL,
   `puntaje_tarea` int(11) DEFAULT NULL,
   `tipo_tarea` enum('individual','grupal') COLLATE utf8_unicode_ci DEFAULT NULL,
-  `actividad_gamificada` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Indica si la actividad está gamificada (0: No, 1: Sí)'
+  `actividad_gamificada` tinyint(1) DEFAULT '0' COMMENT 'Indica si la actividad está gamificada (0: No, 1: Sí)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -16510,7 +16620,10 @@ INSERT INTO `tareas` (`id`, `nombre_t`, `consigna`, `descripcion`, `year`, `usar
 (66, 'Actividad Gamificada', 'Este es un test de una actividad gamificada', 'Hacer la actividad ', 2021, b'0', b'0', b'0', 21, 54, 1000, 'grupal', 1),
 (67, 'Prueba', '.', '.', 2024, b'0', b'0', b'0', 28, 67, NULL, 'grupal', 0),
 (68, 'Prueba', '.', '.', 2024, b'0', b'0', b'0', 26, 62, NULL, 'grupal', 0),
-(69, 'Prueba', '.', '.', 2024, b'0', b'0', b'0', 26, 73, NULL, 'grupal', 0);
+(69, 'Prueba', '.', '.', 2024, b'0', b'0', b'0', 26, 73, NULL, 'grupal', 0),
+(83, 'Prueba', '.', '.', 2022, b'0', b'0', b'0', 24, 116, NULL, 'grupal', 0),
+(93, 'Criptosistemas modernos', 'Acceder y recorrer los objetos de aprendizaje creados para esta temática. Realizar las actividades alli indicadas.', 'Se utilizarán objetos de aprendizaje (OA) creados especialmente considerando la temática a desarrollar y también el estilo de aprendizaje dominante en cada grupo de estudiantes.', 2025, b'0', b'0', b'0', 61, 121, NULL, 'grupal', 0),
+(122, 'Criptosistemas modernos', 'Acceder y recorrer los objetos de aprendizaje creados para esta temática. Realizar las actividades alli indicadas.', 'Se utilizarán objetos de aprendizaje (OA) creados especialmente considerando la temática a desarrollar y también el estilo de aprendizaje dominante en cada grupo de estudiantes.', 2025, b'0', b'0', b'0', 62, 123, NULL, 'grupal', 0);
 
 -- --------------------------------------------------------
 
@@ -17135,7 +17248,6 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (587, 'Exequiel', '$2y$13$r3JfyTaHY5jlHApJ/GKRleK7ZpiRULVH6ls.nPp3ZVeso3xTH2Wuu', 'Cristian Exequiel', 'Jerez', NULL, NULL, 0, 'REF6 - SEN6 - VIS7 - GLO6', 'r0Egc4rIwnvdMu-0NjqRfvv-ULq6M0okCTPfl07Tln-AbLSsuhm_q1nXbwp4U3mxiz6nFh0_3LfmqShIb9V7PrcoAG_fZ4azkcVqP-fTAA0zfty_FD0kJjWtipsPUEjXSEcJ0yIRp4clgTsw2gLT0eOrwIdcOeOlO4HtVM2S_gypXJ9F5dSS0MaYbOkHvXq2JDTo3BkmCdT9UDSp3CVH7oUl7FyRghu9Bu_WZSM1se9jIstShU7gbJh1F_1Ggt8', '1992-07-03 00:00:00', 'exequielpardoxerex@gmail.com', NULL, 1, 'extra:2.00,agrea:3.33,consc:3.22,neuro:3.38,openn:3.60', 0, NULL, 0, 0, NULL, NULL),
 (590, 'leonoriega128', '$2y$13$29yQ2DgoZf068wNiaqHP9e6PPjnqRYoRN2UkZ27/.HnfZxhF3GDqW', 'Leonardo Enrique', 'Noriega', NULL, NULL, 0, 'ACT6 - SEN9 - VIS9 - GLO6', 'DGbVbKjv9x3xDT8qQ6r6e01e_iXUbfyqpcL-6Ydw_HCCrK4xOeezAxuuriVe9ZLIUMJY6Ez75COGqTExCDJQU71aBROWqSpLYwecsnFvZF0yHFnNpHF15a8TmL9gRATKn3smOE1OK0_VmsQqnQoYdZzeY1vxBnm4YZA8Nbq5S6VTQGoWJu5HDAb_TXbDl3dvqeDWQba4YoDHAUR4CCTArL3CkhGPS4Hm4gr1q5-zoWUnD0LySsZ3tzqqaOasQfM', '1994-03-02 00:00:00', 'leonoriega128@gmail.com', NULL, 1, 'extra:2.50,agrea:3.56,consc:3.56,neuro:3.13,openn:3.80', 0, NULL, 0, 0, NULL, NULL),
 (591, 'FernandoGonzalez', '$2y$13$HYz7ge1Fdoetei88/WRzpu.xsOxtslQxA9A5RsmPahlCrDqPI5fmK', 'Fernando ', 'González', NULL, NULL, 0, 'REF8 - SEN7 - VIS9 - SEC7', 'GedKT26IDua05t-uUYR2zhA92ePkSZ2zLQqLrSNbKqvrEfopymfanO7PhYPHOQOWBquiHmpclpB5NEUcQgDp_03o5uzPsAetVpMP4WXKP3Bt8JqKmCVYIklBN6ZRnpAixHv-5rmsWcpxjfA_7FFR9sTtPeYxlNd_R1Yn7qufssjT062aKBbXoZMhKuH2yi6FavI81wW20gw8vkbFGvRqOH3OMe1jyIQ8yOcinNY7nxexBRHpXHsYZpVtURc5IG9', '2022-01-10 00:00:00', 'fernandojaviegonzalez2018@gmail.com', NULL, 1, 'extra:1.63,agrea:3.22,consc:3.56,neuro:4.75,openn:3.60', 0, NULL, 0, 0, NULL, NULL),
-(592, 'Marianagomez', '$2y$13$owl5xYocDg/CtXq.ab9BIuD5L4ZMctq2QuDh/BkTKL29TDKCLHUem', 'Mariana', 'Gómez ', NULL, NULL, 0, NULL, 'FTk-wMx-g5yUyOkuoe7I5NFkLV6X8V4H_4JSZDLOpVJgIF9HQmN5fK3mlpEByp9meXci34vBL3DpaArx2wqD4cgC7dn9jWjmSySuuFpQsZ9s4W3zn10e394H0Gj8aTIlQ8ujbwyiEWE1_aWCj-sL3oYc1UeMZBVwR-FPiVf6w6fCg7fO1Y8yk1aFYsDv7YkMGLoDUj8g8XrKi6u1qQfh6R76mQIIojWN9tZLqJxI_Pnk85cnfpd5u-5rulXeWG3', '1995-06-12 00:00:00', 'Marianagomez427@gmail.com ', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (593, 'MaxiC', '$2y$13$dEWDnUA5SLfG8PxQbIxf8upKmZeSDITbFk.ucqA4G3dL3N0ox9OMC', 'Maximiliano', 'Coronel', NULL, NULL, 0, 'ACT8 - SEN9 - VIS6 - SEC9', 'ywDAMglZ2BxYBkvSnQEtNbMJMMXe9qN68D8xzwrE2JX5IyVLLVK3BYUE50yyexSL-5-BGbKJjANhuWXwP-X0ULySAaPIxzYVLD2GBZ3Aoz94B-Gz8GNhDBxtiYJEgmds4o0P70PyseRg8epArgOIryyu5d4DzquJVtsuP3oXFSa4PsEYdWoBxDJfHoVsGwvxTrqxgq0ZISOHQmv1id0-XaTv8us4915S_BISVroLOeqAXoPELfhPsx7SrdntFlL', '1999-07-03 00:00:00', 'maxi.coronel.99@gmail.com', NULL, 1, 'extra:2.63,agrea:3.89,consc:4.00,neuro:2.00,openn:4.00', 0, NULL, 0, 0, NULL, NULL),
 (594, 'EbiMania', '$2y$13$1/hSRa3Av6kzjcOtmnJrc.dLjfikaKrijpmxLUKxwmbGk4aIpWre2', 'Nicolás Agustín', 'Salto', NULL, NULL, 0, 'REF6 - SEN7 - VIS6 - SEC7', 'lFGkmjx_csoFrxEf5FjlZTgI3NGC61XYI-h7r6niPkURlQ7fW1jwRndehrgEVQT4T-jzy-28dIqeLMopF1eHSiePMlOX_2nbcVjrLKy-nWkYcexyzn6yHFN2rqLJQRewnD7WmyCVt4CXkR0W7WHnHo9iL0DMiJhj6lj7sY_zV_mX8LEyuZfwn5HTyqnwRLQfT5dOYBkD9ZBKauhc-A7-VS_Bkw2aAjaySL6iaCnp0wg9r3N7VwWjvVmaq9TiZl3', '1998-01-19 00:00:00', 'n_agustin@hotmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (595, 'antomattia', '$2y$13$/NJi.9UQZnWfXg0rP94WY.JfVKSAvRaMJWKhQssRpOcsyiZgY2qQW', 'Antonella', 'Mattia', NULL, NULL, 0, 'REF6 - SEN10 - VIS10 - SEC6', '_0OewzYOlJoPl5ZVJ_wA3-zPz0yI8lwqeP82I5xiH4fOQpxnnC9ncL3X_UaHL_sh_54R_khtc6NOfHKFLxA-DNpHQ_7tSbPy1gPgb8JWZ8OvYK5qgVYddp5fmM8ONW4hUuqhGUoi3J8gG54pNtf0ihkQ_xayagH3GKbACjgu0jXnZMSlgZnygxVZzEuf-sK9b76dhLTR3lrnjgRUQJmdn38Zgqjlz8_5oRuS1hmL26B1kdWukJUO6Bnr30D9Lne', '1999-01-18 00:00:00', 'antonella_mattia@hotmail.com', NULL, 1, 'extra:4.25,agrea:3.78,consc:4.56,neuro:4.13,openn:3.80', 0, NULL, 0, 0, NULL, NULL),
@@ -17151,7 +17263,6 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (605, 'FacuFF', '$2y$13$1pzwLiBpIKxLOEaY1ulfM.uWa6vTcqv9bGIerQ.6Qjp/UlLTin/mi', 'Facundo Xavier', 'Ferrera Flores', NULL, NULL, 0, 'ACT9 - INT6 - VIS9 - SEC9', 'Fa1NP-DsaRELBzpbIRCW6lP81n3TgD9PRMsgCRagxqQJZ9dXrw4mqMj5CTQZxfEb9blHCV7dsAgHBAcCtPbplPNAenhjFdK_8mtZiut0f6d3FD_qPot9GlZLnVGifd6wpFbRcyKAlkiJ7mpX4N5m1GsqcSp3RZuk2Hg93ik25UlkXb53KPLe6Hb4seR9_7XMkzcTwK5_eCAoHzF9uqUcgKH_uaBSGKM77QLuAfNXo-2wu6oSi8onhP7myShrcN0', '1998-08-18 00:00:00', 'rskorial@gmail.com', NULL, 1, 'extra:3.88,agrea:4.00,consc:2.89,neuro:1.75,openn:4.40', 0, NULL, 0, 0, NULL, NULL),
 (606, 'AlvaroMaldonado97', '$2y$13$/1ykq0GDy5utWRX9Zr28qeZrI78QRrFrOUXGHrJAHCsFKqJt11ZBq', 'Alvaro', 'Maldonado', NULL, NULL, 0, 'REF6 - INT7 - VIS8 - SEC7', 'q46x5teV3yWoLWozsIvfHEemQ2F9V3rD50t_fvxyb2tl4Ix-_Yk53OST3xneyLMyKbdeMapWvYXPwf31MdobSRxJRMwCelZScK2Zv3ibXTL_p6djdcXzLhNtmBc618KoIprCcExi8G_rcU-Ako4FwYYzPEX08m5XGSsQrYGor6mVknMIL8YVb62Z4mWPeAQmBi9tdHLrJV_b_JxNxSw3l5HiAO0-Ddk6SSXFmVKljckJDkeLufe4WG778iuExf9', '1997-03-12 00:00:00', 'alvigabmal97@gmail.com', NULL, 1, 'extra:2.88,agrea:4.11,consc:2.78,neuro:1.88,openn:4.40', 0, NULL, 0, 0, NULL, NULL),
 (607, 'darkatos', '$2y$13$nmtsh.F6lLfllR3hA27omOepSPNRoQ6pnwSGwAvFQgH0ALJahox82', 'juan miguel angel', 'gomez', NULL, NULL, 0, 'REF6 - SEN6 - VER6 - SEC8', 'tKc20SOAEEMVnfIi5bLZneZxAGSrWmP3fRY1nOQyf4e4iBLPDzLfzZO23vNqb_Q1wAVkfRoXgKBksJZ5vrg8GPQx77NFM148J-FfW1PorVnpPoEAFyyLD85znoO2RffV4NzLE0e1lCAwRNznT1P866qx71hHah-xWmW7IehkIkTx7i26ibfdnxgwXO2--ViiK99Ly1fk39nFk1bRHDyBgZLPNVTefqOpF7bDLG_4_Txm64bVKBGt80imHBG7aVc', '1984-09-11 00:00:00', 'gomezjuan_jmag@hotmail.com', NULL, 1, 'extra:1.88,agrea:3.67,consc:3.11,neuro:2.25,openn:3.70', 0, NULL, 0, 0, NULL, NULL),
-(608, 'facundoger', '$2y$13$cB2Te5Pt7ADLDqfLwV6LfeS/26w7qGkaMXF6NqpIRvubm0fQCUqLq', 'Facundo Marcelo', 'Gerez', NULL, NULL, 0, 'ACT7 - SEN10 - VIS8 - GLO7', 'IzJjB3y2QtrnBa5Ab9Id9NmWN-xguxvCtqSZTFU9S2KJGeU9S-_ccRWGRewCHWilPsJoowFqk33xWi6Afi0hyXsg3hhrYHSAHdcesjCLEcXz3hT777rY1LPdAE0XtaOx5E05Rg6-CqSAOA6X0ULpZb44Sr4LeYN8_ZmkwpHX23-t2jLSxxa7DIVdmEPIJjWiuvDjQSiNg9KidV5JVdQx6pF9zkLGXjewwH5U7MJGhdAfPgmFXP_AXWZQgy_W5jg', '1995-05-09 00:00:00', 'facuu.gerezz@gmail.com', NULL, 1, 'extra:2.88,agrea:4.11,consc:3.67,neuro:1.88,openn:3.80', 0, NULL, 0, 0, NULL, NULL),
 (609, 'elmacro', '$2y$13$cfEaPxbymQgcMD5ad6FA7exLgXdh4zZVzIvSPGpT8XDfGXMzlzHVK', 'Marco', 'Galvan', NULL, NULL, 0, 'ACT8 - SEN10 - VIS6 - SEC8', 'v0ElGn7Qy3sbtiYwyit8e4BbcLS7IFIGG4moFi3ZhxU0ntTN6xKVj2j7Lv5E2pHXIV_MCVd4hRT-d9QXivOI3VA7MRWHttlrh4DkxudLmjAO1j-ZkehSmj6psxkig9sqYsrh2utoyj5IqDxFZvK3xQd8DWiliFpuRWA2HwvWgUEOsxaNkyE6t2CsXs9cdi0Tm4ThgUovhFRsvnWtLMWndlRqM49x-PdNq6FEy2BySXsmdB_XHmT7ss96_ROAH_D', '1998-04-26 00:00:00', 'elmacro11@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (611, 'BrunoH', '$2y$13$XEb2XHHZx1WK22mPRY3z8.JoHrTfiNZrpZYUzkz7mQ0hCTPNO9cDi', 'Bruno', 'Herlan', NULL, NULL, 0, 'ACT10 - SEN6 - VER6 - GLO7', 'OYTkpTPyqQTgt4cGSJkwrCQGzE3DcC4S1AVxeqYtY9VFcUUPfb18AqIL_oc1hJS6OGTsLQ3YGbYLXTGW4dTKaKKzg3Q_jgtajwu8j--weJiCnQJ9ronCRaAiXa0Nzr9H6Xk2FY0ZVv5YqIZlrrnSOc2K8L0ouCOS0CqfLRxbVfbPllO3V7173KxgYOQwi15JjNa9CPF841I7C3V6hhikuWCveD2IKm6D06CKAVBwnoZKqUkM2Crar57lkOTYXcc', '2000-03-17 00:00:00', 'brunoherlan@hotmail.com', NULL, 1, 'extra:4.50,agrea:3.22,consc:4.00,neuro:1.63,openn:3.90', 0, NULL, 0, 0, NULL, NULL),
 (612, 'Griselda', '$2y$13$TTqx8Nc1JWiNQzoEmJTv.eLBpThq501VAZFEVgA4eTw3RbC/.ovWm', 'Griselda', 'Chazarreta', NULL, NULL, 0, 'REF7 - SEN9 - VIS9 - SEC6', 'NHqGxFCcyCLe0VgunZF6sqwPSFZT4w6ttSk1E5qMlhN6TK-KkFNFmjyUJvSTWiWXz1TZ8zCOET9NCwAq7nMt2fXLHE2oWHu3-qn_zAVrVANc1Ahmv_nz4-XcP8K2HWAtL8t9U7LqwM6XusXaASs3umRjq3xSYoV8uvJPg4RKGRoIHAMfy_4ti8ozGpxEFxon7UpCf1XIR_ieYnKqvr9VCg-NvpfECCoCtNAOhKKh6xXIB3Bv8cQT6sgAnjK7tKs', '1994-05-26 00:00:00', 'anahii_chazarreta@yahoo.com', NULL, 1, 'extra:2.38,agrea:4.00,consc:3.89,neuro:2.63,openn:3.10', 0, NULL, 0, 0, NULL, NULL),
@@ -17178,10 +17289,10 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (633, 'hernantag', '$2y$13$aOH1q6suEqH.g4WMjVsWbewrwOdKOnsZD.4Cifq0ctXtTIOnUI16u', 'hernan ', 'Tagliapietra', NULL, NULL, 0, 'ACT6 - SEN10 - VIS7 - SEC7', 'NmJSxrFXbUbcpzkzjs3J76PBb7nazBh1n8Fr-_HnRqS2Mfike7UysoZVAmJQckv7HmATq204fVl4d2O0fBF8CkG6penybIY3HL4XOIAiQ59XbgC5XnXC6hCwmz4x2frwj6O2TUTcGcxiuX-bhY5c8CDKg9q_8MszFDnM4BrzwGdzpx1IQRNursph_Ky_hg_BFksh4AmrerRAbjW68FyWGW9_1d8wHD4MohXDF0Sz4FkFDdYlIIguEMUa1CEAsid', '1999-09-25 00:00:00', 'hernan.tag@hotmail.com', NULL, 1, 'extra:3.25,agrea:4.00,consc:2.67,neuro:2.38,openn:3.00', 0, NULL, 0, 0, NULL, NULL),
 (634, 'lukemaxim', '$2y$13$qD3LDhDGLdPEoJsYuQ3zxOP.JimI2iuZmKmT2aPXTyoRqfbsXMDRq', 'Lucas', 'García', NULL, NULL, 0, NULL, 'll_5D_5RqNuNzNFyatPybUbIyFTsBjQscJ3k0_tuwtiq7-VQJQDfIPUzEthm32ciC0OHPKejX08mqJYcCZ7qcNC3rRgMmvW-c2tkUO8--FYmdXHPHWdVCt2eLhmL4yfUot3PHU0tI4mSoehaZEOn3Hapr2fNEBYB8H48PQHjRjw_jvkJEETiCxJYUcMhWQ_UTnVP2XboYtaqI1INWxIvCnOcxZWkBnzTaO86eoZ6yWjWzVWc_qqKphxUzO5t5gm', '1985-04-06 00:00:00', 'garcialucasmaxim@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (635, 'Griselda', '$2y$13$GqIGd7RtPVZaBp6ABMkJTeCl.qEBMXRAD34y0FGjUveRjIQ95nNVG', 'Griselda Anahí', 'Chazarreta', NULL, NULL, 0, NULL, 'EimJ8W1VNMmiBUKplAszXKt6Pzv1EGCckKqTCxHdUzPtm57tPO3VMoFIjX89n1bZnQpNOjFm2ft9OHoZF6EMFF_B5HV82OJlUihkzVMjg0rFeWfuQdupZuvdhxKq357HP4dupxARKBiZSmnhTYzQImuevly1sCgasVsJP82iwaEzEMioyDPD5kYp56Zbduj5VGUrHP8bNJYxh2eQUD65173ZPJD0Db36wE7ZAvsjJuWTmwc5WQ-CU88kWCnytvn', '1994-05-26 00:00:00', 'anahii_chazarreta@yahoo.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
-(636, '38483029', '$2y$13$kVubihkyqloxxkvxrkFoKuV8GjJoQmQEUNGKJQlCV3W9H7gR3VS.6', 'Florencia', 'Paz', NULL, NULL, 0, 'ACT9 - INT7 - VIS7 - SEC7', '-nDzlLEaZNok4_TpDDKRinzr98LVhuHcaNG_6moTTK5sXQr86L_kM6FEJ3TcTK0O58oWecbUqsKpRnb9p4VnK8a7Jbk-iG9Ue4_6dNggM26dRvLs3sC0vYzyyj6Jz0XHB6keGKS7yYXM--gnsa3HDCjhXfB1gUNN4gzsdHXBNfkXyaHnlAmKsxGzWYO0INT1uml3WMSYUgbJZ_FYSm-pobDLb4Yr4XN4VT9BeGppH2S9MGdeJ8YjOHpVc4NOxSs', '1994-10-27 00:00:00', 'florvickypaz.fvp@gmail.com', NULL, 1, 'extra:4.50,agrea:4.33,consc:3.56,neuro:3.13,openn:3.90', 0, NULL, 0, 0, NULL, NULL);
-INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
+(636, '38483029', '$2y$13$kVubihkyqloxxkvxrkFoKuV8GjJoQmQEUNGKJQlCV3W9H7gR3VS.6', 'Florencia', 'Paz', NULL, NULL, 0, 'ACT9 - INT7 - VIS7 - SEC7', '-nDzlLEaZNok4_TpDDKRinzr98LVhuHcaNG_6moTTK5sXQr86L_kM6FEJ3TcTK0O58oWecbUqsKpRnb9p4VnK8a7Jbk-iG9Ue4_6dNggM26dRvLs3sC0vYzyyj6Jz0XHB6keGKS7yYXM--gnsa3HDCjhXfB1gUNN4gzsdHXBNfkXyaHnlAmKsxGzWYO0INT1uml3WMSYUgbJZ_FYSm-pobDLb4Yr4XN4VT9BeGppH2S9MGdeJ8YjOHpVc4NOxSs', '1994-10-27 00:00:00', 'florvickypaz.fvp@gmail.com', NULL, 1, 'extra:4.50,agrea:4.33,consc:3.56,neuro:3.13,openn:3.90', 0, NULL, 0, 0, NULL, NULL),
 (637, 'Ximena', '$2y$13$PE4/hRHHWU1VoNK1ltv7/uNdsLDcqiNvL5xgcfivOHGRCw7qd3Xxe', 'Ximena', 'Villarreal', NULL, NULL, 0, 'ACT7 - SEN6 - VIS10 - SEC6', 'RVqASfEFJ1WSpfuuiYI50iAa6hemZxTyA2jmQsB-gc9ueGbrGiVnvYmTYw-wWFHWUg1NT5AotXINnqBxpS-iW3cthVog5z7-OrKB6Aewe9bFPy6WW6NiA7lzG0EU1DRCquvwd_IE_oWwcr4dgVLHMrZdO7cf2CzRplxm_lCNkXv-SFbdK13wotVuyeNKhm45VjOX0D1cEF6J1Eu9JLVUkXer79FuvJh5XFnOKnD6TD5r5JhaKtSHuXYeWSnvq0e', '1986-11-23 00:00:00', 'Ximenavillarreal36@gmail.com ', NULL, 1, 'extra:4.88,agrea:3.78,consc:3.89,neuro:2.88,openn:4.40', 0, NULL, 0, 0, NULL, NULL),
-(638, 'Martin9Licha11', '$2y$13$XrkP9D95CNHk40S4c5/jfejJki3k204xTR3uX3oxuwA8WEQZgZ2Ia', 'Cristina Elizabeth ', 'Basualdo ', NULL, NULL, 0, 'ACT9 - SEN7 - VER6 - SEC7', 'EBLv26bwsvzbAqX-bbUtmisbRhEEKm0AvT5qGqGVmZ7hlYtzMWZbz0Ix-QraqAOQpRN94tltHpj3CXI6CNmrtCLhBxWljYju1PEXZR7MW81ErYEB-3V0ff-Cg1Q5xDvVPrQh-0n82yz2aZFleN5vT5F6H3m-Z1nckTWOdrR5vd8Xn8Iy9IF0SUKhFYt7S8QthL349ZJKd-sTZPEAEsSAFE3cZTZ9ryGQ8rNZ_7ydhjAgFQsBVmkcZw9Qi9o87F9', '1987-02-25 00:00:00', 'cbasualdosoria@gmail.com ', NULL, 1, 'extra:3.88,agrea:4.78,consc:3.89,neuro:1.75,openn:3.40', 0, NULL, 0, 0, NULL, NULL),
+(638, 'Martin9Licha11', '$2y$13$XrkP9D95CNHk40S4c5/jfejJki3k204xTR3uX3oxuwA8WEQZgZ2Ia', 'Cristina Elizabeth ', 'Basualdo ', NULL, NULL, 0, 'ACT9 - SEN7 - VER6 - SEC7', 'EBLv26bwsvzbAqX-bbUtmisbRhEEKm0AvT5qGqGVmZ7hlYtzMWZbz0Ix-QraqAOQpRN94tltHpj3CXI6CNmrtCLhBxWljYju1PEXZR7MW81ErYEB-3V0ff-Cg1Q5xDvVPrQh-0n82yz2aZFleN5vT5F6H3m-Z1nckTWOdrR5vd8Xn8Iy9IF0SUKhFYt7S8QthL349ZJKd-sTZPEAEsSAFE3cZTZ9ryGQ8rNZ_7ydhjAgFQsBVmkcZw9Qi9o87F9', '1987-02-25 00:00:00', 'cbasualdosoria@gmail.com ', NULL, 1, 'extra:3.88,agrea:4.78,consc:3.89,neuro:1.75,openn:3.40', 0, NULL, 0, 0, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
 (639, '35252117', '$2y$13$eLnkxSwuPplESbIoibVAQeM/EbU0sApRx6V/QTOAX3xmP7K3.hRQ2', 'Natalia Rocío ', 'Robledo', NULL, NULL, 0, 'REF7 - SEN7 - VIS9 - SEC8', 'srVOIhOnQlfx2nAQMVRtmfX0dCCCaxaW_xY_6yOIVEz_bGBSgigRenjwjXDpeDTlP-LFTHv7NLe36Yh2eD_xh8ijrZqWzWeV93SDCyzxeT1IBGE_DmgBhf48gtFpFWgmI2VLjvQu90-rn1EvY6ME3dMuYOP3eguorrhrj2tEEgUi3Z-0nLw3xF2lIJjfsVropEsao3800B6pLwfHcDrQthYjEr5YLrmO-irwBq58TJbWC9ykO3aYoyR0DhsaOES', '1990-07-18 00:00:00', 'nataliarobledo250@gmail.com', NULL, 1, 'extra:2.63,agrea:3.78,consc:3.44,neuro:3.38,openn:3.90', 0, NULL, 0, 0, NULL, NULL),
 (640, 'guillo93', '$2y$13$OviGJP5122a672gUbIEP.uKABHHj4sFdsBuwWMWagUMUjlZvj07bm', 'guillermo', 'llugdar', NULL, NULL, 0, 'ACT9 - INT6 - VIS11 - SEC6', 'STewjdBIAH_IDOAdWLAoqi2SwE6s5am6cpwGSHbhwCtPJfF5_PBUtIOCPrK8Vy5fnGIr9i-ha4E9-itLgW5OYEVef3CpeNDkxM4QaiHTst8FayY_BZ7V8F3p6iZC-Q-rLac2PYieKjEejdIi1g6KYWaLpJmHGdjN4YEZEaVP2nUWNX_fWh19qu8_8mmBPNhtxvwKrw6K-jKdkJNLUcK1oBNzVitwlY0FiLTtJJK1qli6RAEuVsc_kS709yignIw', '1993-04-01 00:00:00', 'gmllugdar@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (641, 'RLR130394', '$2y$13$lAv1hfNqfaKGl78ISC5aIeShLUP.WbYDHKNBUyPlVierC4/Mxyzj6', 'Raul', 'Legaspi Rodríguez', NULL, NULL, 0, 'REF8 - SEN6 - VIS6 - SEC8', 'KM9vf6FV0WEJImJWqI8cW6NGJquw-yTBsSOhT_vT1qImC9e5Dr9zAZTsplpofHffoGf49NfwSf_pGfsKxgfCYGCmNmfNHjCcyXq0RRaFUxboZpZgtUqdJg6RURxvyAJkWOVORseGdUafVeNTbGTywkMWi7NL5YNnmwbCqqmpwrVUIBC4wJqBK6y7KKOxhwVU3nTU_IzxGcdnymfvKKXMOxrwaQIytc32EG6bn022Ijms2FPTiUExz3n9o1tuIK8', '1994-03-13 00:00:00', 'rul130394@gmail.com', NULL, 3, 'extra:3.00,agrea:2.67,consc:2.89,neuro:3.13,openn:3.50', 0, NULL, 0, 0, NULL, NULL),
@@ -17272,10 +17383,10 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (728, 'khomero98', '$2y$13$lI4tyKmrr3WVI2fVuGReP.qarTJ9EnlA4yf4xHHTC.wOG1i0sSULa', 'Juan David', 'Pulido Beltran', NULL, NULL, 0, NULL, 'NcaP353NlncPeiFDljH2amVCosZg_0VoFRcrSzAxD8ckA3QcKUGTfSmZLCCMKHy2nxgNkcO5FfDjn8AnluJDVCILdWIa7DMpFbUpX093AG-gS8d_nKbEhXgZcN3X2InnIXpIngEYUaPnYVtGrAZXxGmVGc2fTm_YAU_Xe4DF1cW1i4Y0Q2wPZ4wOp3VzfUeZ6MiCnzoxRhAmvMOxQzUbdqy1hgKaiQ5Hi97fhEoPQwIRIxDGXJ00RIRTpX-LsJX', '1998-06-22 00:00:00', 'est.juan.pulido2@unimilitar.edu.co', NULL, 2, NULL, 0, NULL, 0, 0, NULL, NULL),
 (729, 'Julie_Ib', '$2y$13$siOc7htV1dVl5NHD97rwAeEGi8K6whwF5YySODXLYzlf5KJ1Odyve', 'Julie', 'Ib', NULL, NULL, 0, 'REF6 - SEN7 - VIS11 - SEC10', 'EC6HP5oMPHL6zG8xKx8kE65OiZdb2Wzx0CVZ-EzDlaD8pM3lMXtU0PsX2gO9IfmrHLovGge51yObfSrqVGOpJN5lVzxxtwus_RXQxkfNifomLk44iaw5wMk_-A0_Vhpbpfd4j5krrUs8XvPpJrw5SJdve10l6fuaHKMvRq4YDkZqy9UkvDbzCWwRTikKxYsGPbII1wIbt_UkfBqgoSCFKsVFzq5NdKSRT0M0NaXGcHl4iEnJeAGL8kTE9V1rsvN', '2002-03-03 00:00:00', 'est.julie.ibarra@unimilitar.edu.co', NULL, 2, 'extra:3.25,agrea:3.00,consc:3.33,neuro:4.00,openn:3.90', 0, NULL, 0, 0, NULL, NULL),
 (730, 'Breidy Ospina ', '$2y$13$7GxhV.m3bULXp71iT3hl2.rPM8hF0j8z.bLm4Gz.kJPRXO1ApT6MO', 'Breidy Catalina', 'Ospina Salamanca', NULL, NULL, 0, 'REF8 - SEN10 - VIS8 - SEC9', 'Nve2cdduASV3Wmlh-Y3NAIX6JA37O6ladRmLOqPDoxVPJYKcyfU63vt3tiu5k2zWJ4iSZFcqEA5iSGdvMaNi6f0rpZ7Rv0Yv6HDjKGAu4ImJM1mliOXqXFvvoNEH3yuJQ8719wAfMtaWoNYQ4ws_8ruD8fWKdJX4VS7_Pdx2Zjin4mvKQ27UEn2-idUcHbIUyljKeEfRTilIlFIjgtSt8kj-w8-o5wGvMF4XeswkEVQPJfh_UDb-n6r-qJTvKPE', '2002-07-04 00:00:00', 'est.breidy.ospina@unimilitar.edu.co ', NULL, 2, 'extra:2.63,agrea:3.67,consc:4.56,neuro:2.75,openn:4.30', 0, NULL, 0, 0, NULL, NULL),
-(731, 'Alejandra Hurtado ', '$2y$13$m25blI.AwTyi7efmKu7rA.cvGg5wJKfrp9hCsJ2FfZTKgtHz27oPK', 'Laura Alejandra ', 'Hurtado Ladino ', NULL, NULL, 0, 'ACT6 - INT8 - VIS9 - SEC8', 'uzQLuTfYNmH7pW9QPeyfz6kXW5D_09AsF-zUuHeRLMMbB4c6gO94Fd3diYPl5pbbYFaU_GXxCR9DBcZtI9Dy5vfuY2jtSyBEn7jfBucHPVHxi7H3VEAU6tPnKw0hNJhNFIdLW9mLrSVQ05fHs9a5JZkhJaryBAlw-v-CeuLB0x3Dli8e2xh4SZkfZO869HLkOvEIhVPQ8GLKc4HnyJ3ZgxgW8-iifI8_zl92f3cCTe9-EUwvHL5hlHtcQlp2dW5', '2000-01-11 00:00:00', 'est.laura.hurtado@unimilitar.edu.co', NULL, 2, NULL, 0, NULL, 0, 0, NULL, NULL);
-INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
+(731, 'Alejandra Hurtado ', '$2y$13$m25blI.AwTyi7efmKu7rA.cvGg5wJKfrp9hCsJ2FfZTKgtHz27oPK', 'Laura Alejandra ', 'Hurtado Ladino ', NULL, NULL, 0, 'ACT6 - INT8 - VIS9 - SEC8', 'uzQLuTfYNmH7pW9QPeyfz6kXW5D_09AsF-zUuHeRLMMbB4c6gO94Fd3diYPl5pbbYFaU_GXxCR9DBcZtI9Dy5vfuY2jtSyBEn7jfBucHPVHxi7H3VEAU6tPnKw0hNJhNFIdLW9mLrSVQ05fHs9a5JZkhJaryBAlw-v-CeuLB0x3Dli8e2xh4SZkfZO869HLkOvEIhVPQ8GLKc4HnyJ3ZgxgW8-iifI8_zl92f3cCTe9-EUwvHL5hlHtcQlp2dW5', '2000-01-11 00:00:00', 'est.laura.hurtado@unimilitar.edu.co', NULL, 2, NULL, 0, NULL, 0, 0, NULL, NULL),
 (732, 'Julieta99', '$2y$13$l7AGr52FIcxqVUWj.AY4ouQ4tVTF6Ve8x9n8SFU6ChGhZz/0IfSkO', 'Julieta', 'Rodriguez', NULL, NULL, 0, NULL, 'ZH_iB_qkCExEltLiV61go9ZTG-_P9PPS3cc-EMlq0tLw8YFpPRo0HqZHfnHVxWt7DVWw3MmdwqSaIjS60oS8vN6u-ySfPQMDPqDIuwkZsLzbIdT_Nj2BDthqHKqg_jJh2C-ks9V5EnLW0izhfABFi8J_w-JQpjNzN8jyCYhylbR9C52j5LzxXyebX2wmpjJdrSjduFIzvAx-T8bXz3KwpSbNZ959Tz4G93CtkLxGmIeI_YMv1LngqrYtR_6wZ4P', '1999-02-14 00:00:00', 'est.julieta.rodrig@unimilitar.edu.co', NULL, 2, NULL, 0, NULL, 0, 0, NULL, NULL),
-(733, 'julianan.rodri2', '$2y$13$bkUJUn8St7EG6k.0Up42nOKLv8o9YBZcIvSVtzJX2Zn5cFQ1/Fpwe', 'Julian', 'Rodriguez', NULL, NULL, 0, 'ACT7 - SEN6 - VIS8 - GLO7', 'tyYMKvBYjYoXEDLRSjS0Oxfmvv7S35HKdtbSkoIjLbDDYZTYNcoDiPSszvwtH8sEPUeAlkgyRaUjBeiP3XqCCdYcrbg4LXVRpgcPVkkdmobyjFhyPn57PjZdcJazdfZz0kZXREO1vjE6DQnE-ku4YXgojAtdEpKCq44RNOtzSBjAG3ygro7xi59AGTV_RK_exZEOHhRFK6uZ-58ZgjexKDcbB2ODOAGFmrrl0Fu04JbP4Pib6K33gG9-y-QeDOd', '1999-03-21 00:00:00', 'est.julianan.rodri2@unimilitar.edu.co', NULL, 2, 'extra:2.38,agrea:3.56,consc:3.44,neuro:2.25,openn:3.40', 0, NULL, 0, 0, NULL, NULL),
+(733, 'julianan.rodri2', '$2y$13$bkUJUn8St7EG6k.0Up42nOKLv8o9YBZcIvSVtzJX2Zn5cFQ1/Fpwe', 'Julian', 'Rodriguez', NULL, NULL, 0, 'ACT7 - SEN6 - VIS8 - GLO7', 'tyYMKvBYjYoXEDLRSjS0Oxfmvv7S35HKdtbSkoIjLbDDYZTYNcoDiPSszvwtH8sEPUeAlkgyRaUjBeiP3XqCCdYcrbg4LXVRpgcPVkkdmobyjFhyPn57PjZdcJazdfZz0kZXREO1vjE6DQnE-ku4YXgojAtdEpKCq44RNOtzSBjAG3ygro7xi59AGTV_RK_exZEOHhRFK6uZ-58ZgjexKDcbB2ODOAGFmrrl0Fu04JbP4Pib6K33gG9-y-QeDOd', '1999-03-21 00:00:00', 'est.julianan.rodri2@unimilitar.edu.co', NULL, 2, 'extra:2.38,agrea:3.56,consc:3.44,neuro:2.25,openn:3.40', 0, NULL, 0, 0, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
 (734, 'est.samantha.huertas@unimilitar.edu.co', '$2y$13$GdWa7TjZYFOtc814RQZvQ.ROcyS5OQoky3pFOxvnILf.LBk56Ugpu', 'Samantha', 'Huertas', NULL, NULL, 0, 'ACT6 - SEN6 - VIS10 - GLO9', '8KyYr-ELVeCP0Wfkq58hUDUQEcL42JtaUPmrFdPL_ycUFblt-gV6h3qp16gnwxSbPak44vTDJCBMnkm3zt2INxSQgBllblMbWtzpScMnzZn7QoMl7YHC-YVnzUApuJADA7yBt3ErytFRGQqAhuv_p0cWj42CIZ_z5PxhuqsH4VZcpN_qOV1ExHPHHJKlZyi1MFZU0xCkSTcWREqPxdh3Rj0fhVcryg5FmJswI1zBGF0pT4m8jyKXfyoIK5WY6n7', '2001-02-26 00:00:00', 'est.samantha.huertas@unimilitar.edu.co', NULL, 2, 'extra:3.00,agrea:4.11,consc:2.33,neuro:3.38,openn:3.70', 0, NULL, 0, 0, NULL, NULL),
 (735, 'Jorge ', '$2y$13$wVGSCofMF5h2OlPOOHc7K.X2JXQHvbEpRBqj.fiPS7LBxxoAWG0B6', 'Jorge', 'Fonseca', NULL, NULL, 0, 'ACT7 - SEN6 - VIS8 - GLO6', 'jrY7c6zWUqtvZV_GS0xEeGDhx7RYLZYnnObXBpM4aVrwVJb6BSKl2dvf-JJBf-BodjFhoOGrnngjuA1FmZ9K9Ji2AgljnEZ_cz5Dgol1gYiPnfYnNpFnrjubDq2fb-8TYS4TJAzJT9_q0sm5I4oGKGd5S__VXc43WG21heGPyTQejlift0u-_0jwLeRgaJt07H5W-kJ7HQR8ZcCbLA17ydhpA-C4Wm0-_zN666r3_a7OSJrUxnVD475kUTrYfF5', '2000-11-14 00:00:00', 'est.jorge.fonseca2@unimilitar.edu.co', NULL, 2, NULL, 0, NULL, 0, 0, NULL, NULL),
 (736, 'Laura G', '$2y$13$MBNXAytwXcw35Ca6sUwSAuvEYOZAV502FfcceQ0nv5jDqJGZkgJiG', 'Laura ', 'Garzón ', NULL, NULL, 0, NULL, 'GsVxEhVmGHXmzSLaP3DfS4RW6JM9rxxc1VaMNcmVfOAYZdGWftfAppWDb3XbyTPNF6BN2erxilG-NhnruJJeEGZE7rsZv0xSWhAOaTdbWBpi_09mDWhsvXxJ-uZWoURRfoHmOb6Roa6yBPZJDhnbVcRi50jJDjheskRvtZVr6QdS1jBL4E2w7zUU0ZcyU-yTw3s8QenyRamHtzNNDj7jmPzzJ441KjGnYKY--3lhUErXGnZk8V9GoSdaRDXYmGY', '2002-10-09 00:00:00', 'est.laura.garzon2@unimilitar.edu.co', NULL, 2, NULL, 0, NULL, 0, 0, NULL, NULL),
@@ -17317,7 +17428,6 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (772, 'milugonzalezz', '$2y$13$VtkG.EqPT48IQFShuYv/0.G7spVtQCJWHc1C232Gm1GNWTBrbL8jq', 'milagros', 'gonzalez', NULL, NULL, 0, 'ACT9 - SEN8 - VIS6 - SEC6', 'eJNkdNXKQzx0vgRG6gDdNzAqWZnEcyiWBZISpQ8VbujQmbWq3uuCck7FuDHjYRZqs_ApsdaQM_AEpvXckz3Loli3PSslnIiUdNAUmhoTpZ90ti0YrcLx8oq7_CkpuvO3CHzPKJDsoh3jfk0e8J-zHgA_BaH8KJSSmUpoVwvlY-WqDcccLPnpaAuKcpeVTWc50Y4JPBvMwE0juHoF_k_JI8UJ0zN3gM_V9_VORDdt_oOybRvo70VsFc4C3oSFmwp', '2000-11-22 00:00:00', 'milugonzalezz@gmail.com', NULL, 1, 'extra:2.00,agrea:4.00,consc:4.00,neuro:3.38,openn:3.20', 0, NULL, 0, 0, NULL, NULL),
 (773, 'JuliL19', '$2y$13$pG1v8BWZvr3GdmfB2i9jR.sBSDwUoubzECk/gFjw.qFWRseISbIyu', 'Julieta Luján ', 'Campos ', NULL, NULL, 0, 'ACT8 - SEN6 - VIS9 - SEC7', 'MDtWtB2zAHKdUNOnQWibHIUqS3tfuu6qbNexQWP2Gif8aP8xC4xmtaVUO0m5pq5D1CKSKxBPS7WtanB3cnP4CwmV5uzXYe2l4jsQxOuX7gtR6OC-I_d9fncWO-motfLrPtU-ztlncoB237nUQkaN_ZSjKubTYT-ojAeVzJpSG2FriRGue7tHelgqH_ghn3ulHRIb9Vd1UwnZdvqG9BDMhi0RVH426hu-nSxoIQ__31buOnV_39pNZxqH0aR0ZGc', '2000-12-19 00:00:00', 'julicamposs19@gmail.com', NULL, 1, 'extra:3.38,agrea:4.33,consc:4.11,neuro:3.38,openn:4.10', 0, NULL, 0, 0, NULL, NULL),
 (774, 'Sofigerezb', '$2y$13$BwJyULUzRIgn3Hyp3313VuFrOw95pO3elnTWxbncx28izOmQDuKa2', 'Sofia ', 'Gerez Bustos ', NULL, NULL, 0, 'REF6 - SEN9 - VER8 - SEC8', 'P_KaHTG6TVV-bOg6AxenrGzFiXoD8RwKy7j3FssA1RriS0Oi-gF_nOkS1pI9t38nPuI2HUyZHBmYTZ74sUT2Yv2BVRcRLiiSGYPyV-2b7gyQmRD752g0W0kDXhzHzZIu0YeH2OfcMQ_mREvSrqTOllmbvqDJJhmrkM0klBZ79Izz1fO5tHrUL5PXe5WhLw3zFNnmVUAGMjqzcoNsr2R2PQbB-pIL2-oDxpHqwQujFIFGd5e1FWHqdw1zCT7GtNc', '1999-10-30 00:00:00', 'Sofiagerezbustos@gmail.com', NULL, 1, 'extra:4.25,agrea:4.44,consc:3.11,neuro:2.88,openn:3.20', 0, NULL, 0, 0, NULL, NULL),
-(775, 'Morcilla95', '$2y$13$Ce6aeRWMiHy6RpfAKG6WROh9e0O7bWFPjx1RZSsWx5l0fyU7VaJ5u', 'micaela', 'Gomez', NULL, NULL, 0, NULL, '6noOU3eeOD6xcs8-0Iw_oBfXktjiEE6TEo6FrEcRB6m5jeAxb4I0PL3ZboTo_s38KbRXKGMPVkixdAJ5B5NrTjlPdn0Ew3iDK58vFLtElSCW5oR0_8Q1to6a9AYR7_GDBRCDBSDMSZqAtq67SWPqY5PbMdTi0HhRihUieYDiBXxu3D9FctW4AiHMIFogPn8FyHjytMuoY8EkcTiGSrCg8XNv7pWyAR35eGU7c5mlLDOSaMKGFxQ-AOp5mHvJpHR', '1995-04-08 00:00:00', 'micagom95@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (776, 'MicaelaGomez', '$2y$13$bEJgYhlhKEuPNqLRyZjLS.km52ocgUX9HL1slwK24hcymfUm1iyAW', 'micaela', 'Gomez', NULL, NULL, 0, 'REF6 - SEN7 - VIS10 - GLO7', 'o2eTiS5ZyizuK5VpT2_9M3Otw5ApHy5X2YhOkHe2seqXawpUz3uVR4UR8HIZDyp0qkTeRQZlC9BX3W-hlwq1PsTfCiObRbs2lcSCs94xKG_khEgXXDBxucPzdYtAI28rnq2Lf0p23dlpRmn4QvEcsj8eYwbR4sSKVo2TJW9dDCTYo-rHOiYS-StS7EsBxt3Ax4tDdG9zj0jKfpwhXe7IGRDANeVRXrWHch7ZdguJfWXywsvbacWjdU9vCD83ikB', '1995-04-08 00:00:00', 'micagom95@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (777, 'Nahueel', '$2y$13$mpiXksmyxeQrt6J3u.nCVeMIR9oNwTSUNzfTti2hVVlZWNxaOJqDq', 'Nahuel ', 'Zanello', NULL, NULL, 0, 'ACT9 - SEN9 - VIS7 - GLO9', 'iz5Gb00Q10EB_J3IXs6jmh4Cw151Q5GBy-0eDkNv3qanKTiuwkLmoNTM7nI_axZi_MjvebQdM5SLmbJnab3rKTEvTfFl2_NWEQlbddVyukYk-RlbNtO1EkKoOSRFjyp85qrXZlespLIyGFXKLOEHsmHEMDirbsVANKzj74mRp1vrRiSw2XhEBRTDvPs2eoZIX7tm_yHIp0KCe6na0KYbNiS8rRHzj1HH0pWd9q5VQIClnXCFrhQUFrtHSc5jMKO', '2000-05-09 00:00:00', 'nzanello45@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (778, 'ailinariaspaz1', '$2y$13$QakX8qPjibhHsrurG.Pylujk4CIEc5Djg3M38dNssZMqdDZJNw71K', 'Ailin Gabriela', 'Arias Paz', NULL, NULL, 0, 'ACT6 - SEN7 - VIS9 - SEC6', 'PaLpLLOIau3d28T01ezX2LrgwL3y6TR70XPwXHOGvReIsh0U_jZ6SPUhs2MDgj40sFZGvtTNkADyxyiC86Ocr7iHTnxY3jJTFo9Amf8-Z3V7yIwudpB_SI98ZK8eybkr-RIxPiMJ_MzRt2MLN4psPOL9UDNrnS5NyS0Tsr-yW3WLjFRR7FTLjXpS6LNpLpxZKd-Aoe71TGWtXQ_tiAOnuTzGH2BFDQC5KfMM5XdZvoHz9Z34AjDPz9SfkWmkZLt', '2000-05-28 00:00:00', 'ailinariaspaz1@gmail.com', NULL, 1, 'extra:2.50,agrea:3.22,consc:4.00,neuro:3.25,openn:4.00', 0, NULL, 0, 0, NULL, NULL),
@@ -17364,11 +17474,11 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (819, 'charlyyy', '$2y$13$/YcN3QUHQls7M7QWLFuo0uGlS8GnDG2JVGIWn2KWEcngh8StSu3SG', 'Carlos', 'Alvarez', NULL, NULL, 0, 'REF7 - SEN9 - VER7 - GLO6', 'yzDf9T5T8Qm6xKGbjtCqBm2Eb5rDv8f1Iot9sfJ-a9M_M9PYEtmV_Cdho1wW9S7aNrrRoQb_dBiJ3ZTH4so4FbXoaGFzGXN4KN8t_wzaXNY8u4tELfKvmreoOnEYvp324TZjC_Ocuj-ZGzvuUjArvSp4uCBydZenaEiEtFww7BCbtaCEaevdJbjT6S5nVRCg0qiBiAJLM9o4Yt7ZLhk73R9TN6uDD0O4PgorL_w-APeOhO1QW0KXCFiV7IV4ItG', '2000-07-07 00:00:00', '711carlosalva771@gmail.com', NULL, 1, 'extra:1.88,agrea:3.44,consc:3.78,neuro:3.50,openn:3.50', 0, NULL, 0, 0, NULL, NULL),
 (820, 'Ecaceres', '$2y$13$SNhLd5llzAsF.9Ubr3JocuI7ssxEoQlw0xviSExEiiM9QmdWVMEfa', 'Emiliano', 'Caceres', NULL, NULL, 0, 'ACT9 - SEN6 - VIS11 - SEC6', '9a6V7IgQ9AzWjRITWRYKCm68dGTSMFAmcDG-fWmoRVcTGh4C7oAIAxwBiloNJyBvKmtN04C9jg9dYTwcclHd9ySWlu6CVj0VDYJVGGUVvYS1vmpPZVyhobzat6kon5Y74E2jZcaeKQhg4NB0H4Wp2gfH3nyWgukJTbmz5U4pFoP3SduXEvzKOnvfoMsBLyWb3_TGTeKrDVr9-lph3h15JWEH7QIWwx0ozrxQBqxGFgc9SCyLvqtutHAqrf6p3U4', '1986-10-04 00:00:00', 'efcl86@gmail.com', NULL, 1, 'extra:4.88,agrea:4.89,consc:4.33,neuro:1.50,openn:4.50', 0, NULL, 0, 0, NULL, NULL),
 (821, 'balderramab19', '$2y$13$89wN7ooj1o4hDjNX27vMb.kZf20Vc73Y.groZwGXnUT.dUXekI8ty', 'Bruno Elia', 'Balderrama', NULL, NULL, 0, 'REF9 - INT6 - VIS6 - GLO9', 'tcxQ_yPxdlNjmpWm3vs1CdwB0wRYcpMTp69UdV6Ea1YWHp1MwofM9zVthB0SZswBHrckC7sinyK_AuGwFg2mYQcl7HKaVk5vuB1KS1eEcO3QQb5clrWtW2R-pT1lWI8fZx-2NbuxfVRMAtaFfDBdil1S1hR4nu8kn_xkaNuWadHQCV4sNVENyUXMDqZT51Q6EAB8qShC32g5_DO0sIjuL3ZJZBBQcYqLLG6XQzLAL4Q5r3inbxz7odpF3yI0Ow2', '2002-06-19 00:00:00', 'balderramab19@gmail.com', NULL, 1, 'extra:1.63,agrea:3.56,consc:2.89,neuro:3.00,openn:3.40', 0, NULL, 0, 0, NULL, NULL),
-(822, 'rodygabriel', '$2y$13$r8NDj.e9PHPcSHOEAZoZFugurxY6gZamfrha.eBYFieiaMyce8uue', 'Rodolfo Gabriel', 'Valentini', NULL, NULL, 0, 'ACT7 - SEN9 - VIS8 - SEC7', 'FA4YGHlsESjO-D-c54i5mP4BgRyNOyTE0i6mshx5P5z5Q442gLZ0Yh2g3Sec2WlJMve6AHUh5qAxr_kQfisS52AOPjTR67cFQjKhN_TFQa3lk2O_BCUT4vggHE4pEOEZD-6rNfDF4o2XFP9RKMjbPiqGQQgDtVaCXqiladfUVHDbDojEBDFmLWSWD_tnkm-AiOgZNKgvEe_gNJPeviNmRyNipxUhQpmLFX4ixFZ4LhdG76G0T-2gR89Oj1VG9zB', '1999-12-15 00:00:00', 'rodygabriel1999@gmail.com', NULL, 1, 'extra:3.13,agrea:3.56,consc:3.11,neuro:2.50,openn:2.80', 0, NULL, 0, 0, NULL, NULL);
-INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
+(822, 'rodygabriel', '$2y$13$r8NDj.e9PHPcSHOEAZoZFugurxY6gZamfrha.eBYFieiaMyce8uue', 'Rodolfo Gabriel', 'Valentini', NULL, NULL, 0, 'ACT7 - SEN9 - VIS8 - SEC7', 'FA4YGHlsESjO-D-c54i5mP4BgRyNOyTE0i6mshx5P5z5Q442gLZ0Yh2g3Sec2WlJMve6AHUh5qAxr_kQfisS52AOPjTR67cFQjKhN_TFQa3lk2O_BCUT4vggHE4pEOEZD-6rNfDF4o2XFP9RKMjbPiqGQQgDtVaCXqiladfUVHDbDojEBDFmLWSWD_tnkm-AiOgZNKgvEe_gNJPeviNmRyNipxUhQpmLFX4ixFZ4LhdG76G0T-2gR89Oj1VG9zB', '1999-12-15 00:00:00', 'rodygabriel1999@gmail.com', NULL, 1, 'extra:3.13,agrea:3.56,consc:3.11,neuro:2.50,openn:2.80', 0, NULL, 0, 0, NULL, NULL),
 (823, 'iFederico', '$2y$13$nTmpC96I/O.Xsn1BCvzgAebG6I.3VMeR0HaQHOZEipH3wFSQvAPfq', 'Gaston Federico', 'Escalada', NULL, NULL, 0, 'ACT6 - SEN9 - VIS7 - GLO7', '0SvY9KKjNRkRs-xzRUqVZP6n1AhYF-mdTZtC5Oseb-Axk6VyA3iIOAl2VwUHNPmUM2breI7ZiVHjfjx8X75Ev6J9YKNVp744GAjGJ41FRJrWZ7xywU3-4RDcRJl7pnMSgtdW98ASSGMiy6730bpyhvMKnzFVuFSd1FHQ0iDXaGVj7asKI156SYAwqZseTc0ygCe3lf-fd02xo8fOJTLI0BkKkwgMwF943Jo9878eH5I6oNRcoIx5ovvcJpdeppq', '2001-03-28 00:00:00', 'gaston.federico69@gmail.com', NULL, 1, 'extra:1.75,agrea:3.44,consc:3.44,neuro:2.38,openn:3.00', 0, NULL, 0, 0, NULL, NULL),
 (824, 'jos_gerez', '$2y$13$gyhRC5k7wepp72sAnPVCmOVsua2F5r.tTUnhgd5BrbnL3E7M3R/iS', 'josue', 'gerez', NULL, NULL, 0, 'ACT6 - SEN7 - VIS7 - SEC7', 'dgSzeOnkhHC5T20QExqJf6XX25KAr7QfzCZW-OZKeBWUcf2sLb0coI8Tlcg4O6cedQKxCOIPwk3dVR57riBkzlmFY0QXNkLSZuLiNKxvxAe3h83sGV7gD3b9_qEthTLhEXwcWErw284ELcis4TymLUkjCPx_v0-j4e2A7YMzA6v3tEoiIMnnp7xaGsrL0haQVLixLR24PoPUyv618YG1w_fWvO8LQz2e1pKRflZ5AwSArMfAFlk6TarCrrLB1C_', '2001-08-03 00:00:00', 'josue9gerez@gmail.com', NULL, 1, 'extra:3.00,agrea:2.56,consc:3.22,neuro:2.75,openn:4.00', 2000, NULL, 0, 0, NULL, NULL),
-(825, 'fanassif', '$2y$13$XKoFep5VBgfO36W5sjxN.OhZalDuE8EDmPCVSJWe.3VxqYfcLr7pe', 'Francisco', 'Nassif', NULL, NULL, 0, 'REF8 - SEN6 - VER7 - GLO8', 'TKmNmQHhA0ISUSZejK1XV3ike6YJbfgK29SHe8mBbPaADXysMubmTsMXgqwfGSzkF2Gp7e2jXNSV5oXq7LWQehhu2MuFkEXxAbXqJPd84l9mCxrh5SWw5Dl1hiCCX7hEPOXWRVmExTXOaT0KKahH24g3NNqibLV-qRvni_qtW538-Jvt8aGJhFASEh5R7LEkdS0TokF5k-spUqaeh4ca1LfNUYA3TZpQAZL-iKLPDwaI0-Q0n79uY2iyEFpS-dQ', '2003-01-30 00:00:00', 'frannssf@hotmail.com', NULL, 1, 'extra:3.25,agrea:3.56,consc:3.67,neuro:2.13,openn:4.40', 2000, NULL, 0, 0, NULL, NULL),
+(825, 'fanassif', '$2y$13$XKoFep5VBgfO36W5sjxN.OhZalDuE8EDmPCVSJWe.3VxqYfcLr7pe', 'Francisco', 'Nassif', NULL, NULL, 0, 'REF8 - SEN6 - VER7 - GLO8', 'TKmNmQHhA0ISUSZejK1XV3ike6YJbfgK29SHe8mBbPaADXysMubmTsMXgqwfGSzkF2Gp7e2jXNSV5oXq7LWQehhu2MuFkEXxAbXqJPd84l9mCxrh5SWw5Dl1hiCCX7hEPOXWRVmExTXOaT0KKahH24g3NNqibLV-qRvni_qtW538-Jvt8aGJhFASEh5R7LEkdS0TokF5k-spUqaeh4ca1LfNUYA3TZpQAZL-iKLPDwaI0-Q0n79uY2iyEFpS-dQ', '2003-01-30 00:00:00', 'frannssf@hotmail.com', NULL, 1, 'extra:3.25,agrea:3.56,consc:3.67,neuro:2.13,openn:4.40', 2000, NULL, 0, 0, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
 (826, 'Lucca Bellomo', '$2y$13$FxIQU/EO2u7a8YJg.Ctof.2chLg/E.sbcHsXsa/DGcdQS/QhB3EBC', 'Lucca Daniel', 'Bellomo', NULL, NULL, 0, 'ACT8 - SEN9 - VIS8 - GLO9', 'UxR9KtewKKtQgA0DbzilKvKcK92QVZU_IZmIkkF1zPDiEFWDkwObeoq-rwaxb0S77FFhHUnqcXdwaN7h5DSeQ4nsQXjTuEE3-XsgqLz6g6zJzhMCjCFOnDYCfcTQednKXxYRGvcirQKaFUc3jPp4yqtw5X8Y3xhu1Vv990qjTxm9RPU91xj7fwmElO2c_B2xLOWe0o3IOsd4a9WOslsgXyURoVOh4ooQEL8Hz5ngorl3KA6d1GwLjksQ66EDrbI', '2002-12-20 00:00:00', 'luquitabellomo@gmail.com', NULL, 1, 'extra:3.25,agrea:4.00,consc:4.11,neuro:2.00,openn:3.40', 1000, NULL, 0, 0, NULL, NULL),
 (827, 'facuducca', '$2y$13$R2DjdtUdl5MHy0yf3y86IeLNYz5Lz8eu1KWB.cQ98Aqjc6wasiLjS', 'Carlos Facundo', 'Ducca', NULL, NULL, 0, 'ACT8 - SEN9 - VIS7 - SEC6', 'NYiGPAX_CQdwaUNe5BSfXuOgDacsEGKg6qoOI34f7HAnK5rgVOsUOkdEqwLnW5XqeF3QJnpybQl2IspgIPXm-jAmQBkMYrYWXy9kLBfq5Ay-GNc9TRU5No7AXhDtwCjhK1Ww8bbDSfUJMC2hE2cNn1Q481omlGyHI5qc-3ViHrZECzpgadQPj7T2CDqIfU8bfGcOsWsCrrhfrXHC42hulnsaUyqFpaUWGya-n8OTLzDGBcXAJfxUmK7-13tSOo5', '2014-08-25 00:00:00', 'facuducca@gmail.com', NULL, 1, 'extra:3.38,agrea:3.67,consc:3.00,neuro:3.25,openn:2.40', 0, NULL, 0, 0, NULL, NULL),
 (828, 'Chazita', '$2y$13$1xY0KzAEVaDZZjxAtjeF7.TPqWoYBxKRCp5zqF0HOKwBihV2s4bBu', 'Nicolás', 'Chazarreta', NULL, NULL, 0, 'ACT8 - SEN8 - VIS11 - SEC8', 'LDKXWExQ94PRQZzg4YXyo6sta13u7QpX_h2zCYSm975eI6m7ZnRsPG5uFyAtfh9qKYZMJNKXuruHqOzOAkWeCZvJ_Bsb15AtejoDkXWoqxLDPJVlUjzzD1fX5UzSj2czmE2827Lp8WK5CsNPei5O6WLCn0NXWcYdwg637hSQmhAGW7mRtW5uZ9D-NPUrBKLZPa780Pvtp4AERfsofytsEDOKuOFeI3gxZ4-I096hs8D2kMZkfB7UKOiukL8qq3L', '2003-03-10 00:00:00', 'nico.chaza367@gmail.com', NULL, 1, 'extra:3.13,agrea:4.44,consc:2.78,neuro:2.63,openn:3.40', 1000, NULL, 0, 0, NULL, NULL),
@@ -17456,11 +17566,11 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (910, 'marcosdar', '$2y$13$WoYL8/bp1ukx8kvTjBmyxeGIrkCnzcg0LpgSUYBivUt9HlXEu1WW6', 'Marcos', 'Darchuk', NULL, NULL, 0, 'ACT6 - SEN9 - VIS9 - GLO6', 'JIRz2Lg18psUdJ4k3NjbdRV2mvJNUwllZOwhoL61ivPf6FTYaVmZLd6_RTsI4SybFgVMzkFQVN_CEvfbKGjZngZE_rL8T-o1ccXrXSUh-8lfP5j1RLUzJtBmGuA9oP5sU2Ww0b2wLZ3EmqiFO54Uc3LgQzlgUVYdozPUET-xwbSnkSv2JKt9Z2BvHLE8qw1D0tlXQ71VppHoz02XRlAMhxQjPhtNHZ00MDBR8tm0Znyf5XCcxS6DJ5nGE2dDvj6', '2001-02-25 00:00:00', 'marcosdarchuk5@gmail.com', NULL, 1, 'extra:2.63,agrea:3.89,consc:3.33,neuro:2.50,openn:2.60', 0, NULL, 0, 0, NULL, NULL),
 (911, 'Luna', '$2y$13$/qFTcT8LorlKCfe3jUm81e0TT1Ze7jV3Q..KkjQvczm0smLHNSjvC', 'Hugo Raul', 'Luna', NULL, NULL, 0, 'REF7 - SEN7 - VIS9 - SEC7', 'j51WA4Z2LxrGjdMkgH7aedxUUr4HKZ22V2Y1DUvRIKv_lpmE2_wGfrBQdDRnNqzQJDp72RvZ2_cQZOgMP4neYOKUhnuzal_wWpBp-iWcnzHDlerL3uzxZS5d1Ho5NUTD30fUD1i8zQTCIvE1lT57UU7eb_-ImQ5U9uaj9ffdR9QwdJRen9Ghur_9cJ_gNH4jmUs8EZk5MsUQLdga2-IHK9-xy_Oi7MywD6ix5w5XcSQBK-8KDiTvoWaJeoJNKXb', '2003-05-23 00:00:00', 'conectar@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (912, 'eduardoferreyra', '$2y$13$VyRoGKkREt7/SDoO22.y3uZuU9JqZHTEs60erC/xzH3JFyRi77WG.', 'Eduardo Juan Ignacio', 'Ferreyra', NULL, NULL, 0, 'REF7 - SEN6 - VIS7 - SEC10', 'tGP3M73fZi3tXifb7okdWId56CS3FoIFcrnQIbU6MNCj5JCv4iTF-ReQ8ORKJ1mRymHGLn_I6RNQhUWXgM2FiwbRgRgRGbGOwYng71X4SzHKrwQQYetxRsVjhyrzJ5wE8shLK4omppGHqP44Pw402go8luHDgUg2-LaUFTLEI6j3lvR4L73IKJgMzDra439juiaNFw_jfVCdi52t42JOHF_o_pzUow3LV68j7uduxgwtOmGFaWCNnaHxOW6Ov8A', '2003-08-10 00:00:00', 'nacho2039ferreyra@gmail.com', NULL, 1, 'extra:2.50,agrea:3.22,consc:2.89,neuro:2.50,openn:2.60', 1000, NULL, 0, 0, NULL, NULL),
-(913, 'Alan', '$2y$13$i3OnegV6mVXgTKNxs/UE3uZFP.ubcmghQlU5CtqyIeAuHGEs0RKs6', 'Alan', 'Franco', NULL, NULL, 0, NULL, 'GVSioqO9AGyiVhrTiVMfR9SWMQ2BSTz7k4B-EA9-1C6vSoZeYyykI62jr59Plz598Sk9nLENUXD1F4Yl1Wny5TrmqUIA-TLlFlBukkqZmwzFH_kDbU7v_YuouoPVJhSevlyQ-GmPrEyU2xZxkvjIq8AdkRHvjRq1CLRUVdqsOQ47dE8PMUm9mnDeX9g4LleEmdo4yWZ1BOf-fUJ1gl_Fu5rYS145-KMlZ6Ny0ticSEx6HQou4zhsD8XgYVj7C-0', '2002-07-04 00:00:00', 'alanexe9@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL);
-INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
+(913, 'Alan', '$2y$13$i3OnegV6mVXgTKNxs/UE3uZFP.ubcmghQlU5CtqyIeAuHGEs0RKs6', 'Alan', 'Franco', NULL, NULL, 0, NULL, 'GVSioqO9AGyiVhrTiVMfR9SWMQ2BSTz7k4B-EA9-1C6vSoZeYyykI62jr59Plz598Sk9nLENUXD1F4Yl1Wny5TrmqUIA-TLlFlBukkqZmwzFH_kDbU7v_YuouoPVJhSevlyQ-GmPrEyU2xZxkvjIq8AdkRHvjRq1CLRUVdqsOQ47dE8PMUm9mnDeX9g4LleEmdo4yWZ1BOf-fUJ1gl_Fu5rYS145-KMlZ6Ny0ticSEx6HQou4zhsD8XgYVj7C-0', '2002-07-04 00:00:00', 'alanexe9@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (914, 'AlanExe9', '$2y$13$9d65nJGiOZt3oy7CycElYOGP9aovWTaeS1In1Z3GXWnrPKdQepaaW', 'Alan Exequiel', 'Franco', NULL, NULL, 0, 'REF7 - SEN10 - VER7 - SEC7', 'GqKrRTAJMNAzsb4QHB5TPBJspYcbNSzjlagHKL8srRsiQ4Zm8duYtWGcYHL0onSXOhnUrrUwYRIrUv_cKAP3x4uUDxNY0Ts0GAAFSuMOYuElgRZlKKolnmASOawFGmzkowP6o6luZjUjiQQYfH-E_zExdFdoFNPOa8vPnsdUDl9DU_lVHr5WmAJFqGfZRsicjWpeRY2P8TC54AoRHBGvtJOXFKn_HyKQQapv3v5mV3obL9mcXXFeq3-GaiboT3L', '2002-07-04 00:00:00', 'alanexe9@gmail.com', NULL, 1, 'extra:1.75,agrea:4.00,consc:3.11,neuro:2.63,openn:1.60', 0, NULL, 0, 0, NULL, NULL),
 (915, 'matiasjaredluna', '$2y$13$qGCpgxpQTnKj/wD1aPk5Lebe4fWtvXhPwATzcHT84gIjQuvADHU/a', 'Matias Jared', 'Luna', NULL, NULL, 0, 'REF6 - SEN10 - VIS10 - SEC8', 'Uk2oBRxX-nyY4W0e-Bym52nk4fVKi_brMOEBop9RkqMLsMiksR7T5Qw7mYxoVzX-CxUxU6yFibXmhZaG-a8_UHT1IY8PUabNuWeUtte3lzB89I7KPLlzh775OUMsPq_qCpBjqUxLAYomGS-KgwLJYuT4z152ZowLiMDSnmGOAY4rUmcarY04KfaCngt_LUsqyIt1P5AJCN7s37lWRRQ1sWYQImDAstEX03nUopG5Zigdu74KhxIrOkOEtL5NmcT', '2000-01-07 00:00:00', 'jared003@gmail.com', NULL, 1, 'extra:2.88,agrea:4.22,consc:3.78,neuro:2.63,openn:3.40', 0, NULL, 0, 0, NULL, NULL),
-(916, 'Francisco', '$2y$13$A9o0jNYBnqG9HhAlPEiCZO8YhYn532TGYwcivd39vg.sfppWedQPW', 'Francisco', 'Sanchez Gallardo', NULL, NULL, 0, 'REF11 - INT11 - VER11 - GLO11', 'OgIvLzkPfLj82RIAq94ZjMQzxZHvvsJRvMt_CUZQRvYBBDrhqElxGh7Snip2xSaXNmKr34wo1rokRBRy9m0noCcbZMaw0OY3Q7wiotXUxdA7tKcppXfxyZc3nohdOqZX98rlr7PbioMbtNmg_Pl2x7sVGak_F3NTb22jHU3lZ_y2OWa0qX9aEWfD-CTZKWAVUCUtd3QeUkY_iTSM4rBMo-TlfSZ6t91THfD7daJ5zo2UeJ68ixvUeCct2_F6at1', '1999-09-09 00:00:00', 'fransanchezg20@gmail.com', NULL, 1, 'extra:3.25,agrea:3.89,consc:3.33,neuro:2.75,openn:3.90', 0, NULL, 0, 0, NULL, NULL),
+(916, 'Francisco', '$2y$13$A9o0jNYBnqG9HhAlPEiCZO8YhYn532TGYwcivd39vg.sfppWedQPW', 'Francisco', 'Sanchez Gallardo', NULL, NULL, 0, 'REF11 - INT11 - VER11 - GLO11', 'OgIvLzkPfLj82RIAq94ZjMQzxZHvvsJRvMt_CUZQRvYBBDrhqElxGh7Snip2xSaXNmKr34wo1rokRBRy9m0noCcbZMaw0OY3Q7wiotXUxdA7tKcppXfxyZc3nohdOqZX98rlr7PbioMbtNmg_Pl2x7sVGak_F3NTb22jHU3lZ_y2OWa0qX9aEWfD-CTZKWAVUCUtd3QeUkY_iTSM4rBMo-TlfSZ6t91THfD7daJ5zo2UeJ68ixvUeCct2_F6at1', '1999-09-09 00:00:00', 'fransanchezg20@gmail.com', NULL, 1, 'extra:3.25,agrea:3.89,consc:3.33,neuro:2.75,openn:3.90', 0, NULL, 0, 0, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
 (917, 'Herrera654', '$2y$13$mGm8Ly5mCRjocu4HLY8X6O2MkM4fqzhnoGt1K6EPYUWLmc90AmWeG', 'luis', 'herrera', NULL, NULL, 0, 'ACT8 - INT6 - VIS9 - GLO7', 'Z8A9t40JJLoF4YlyDYFcyBsJ3hRM8-92A1E_ZBS07dikMoZsLF-sSoONCIFVFjBf8RuP5nnOrb1ZLMSd8U9X-9R9sIQWAo6ELl1T-6BN9EDby30X6FVe-ZLT5AiHvNuVu9SL6h3_bnkh7TirLRc0YUYuqo2-2uybayzzm_eqH534ROISsb4QPO3IUU5K2UE_sEnaIRX8VsD8FSdXwMiLK2-qTSAWw7asd61gFsPnJ8JA-qTMbLZJlc3wyno6_e2', '2024-06-24 00:00:00', 'luis11_herrera@hotmail.com', NULL, 1, 'extra:3.00,agrea:3.00,consc:3.00,neuro:3.00,openn:3.00', 0, NULL, 0, 0, NULL, NULL),
 (918, 'lean211', '$2y$13$55sWAUEjt2bsZI4itELFkOWAWZpQ0ug0Mw78FM6dakM1IFRINTz/a', 'Leandro', 'Gallac', NULL, NULL, 0, 'ACT8 - SEN8 - VIS11 - GLO6', 'ZiyCkltUM6D2ZaQ0iNgant7Tp17GGR3zfLSvqDf_mym6J3Y4EIxAfsr7Lcjc_BIIKjIt91mTV3t_okYyJyQtvRmTVS0txskmeBBTWEPw5rKFw6fQQ1FEGmXm8X0NATSwJcW-NBRT5j8af06Uw1igqRhFfb0QQBdXrzT2Bt5uGLpZXMmHQcjE8AG2XaVnUFGDeYofwnDYnDzaYQ5DHWbjOtrMkPvY1Y2Odb9y-gYkUkNeR5QW_x5mbta9yR2HgCG', '1996-06-21 00:00:00', 'gallacleandrog@gmail.com', NULL, 1, 'extra:2.25,agrea:4.00,consc:3.89,neuro:2.38,openn:2.90', 0, NULL, 0, 0, NULL, NULL),
 (919, '45707585', '$2y$13$arN7gGaPn2dhfUVyz90QterFoObCwH/18Ab6OJR1Ni1FIIZdUMOHa', 'Juan Cruz', 'Ledesma Pons', NULL, NULL, 0, 'REF11 - INT11 - VER11 - GLO11', '-zw1HOwkuD1JvXWv_a3u2fm920wRT7y23y82ieLFJhALj5_8FqzNaT057Gm9dDw9SrmKmC5xjsl3bj_RwuErA3RXEXF31eYsIlYcFbGrbdQmZEsPbInIhud8wQ9F90n4wZXoBQMNmWH-GhqvILki6K0AtnxmDNXTJJ9vwOaxXcnDVA3Fv94RFS5BVzN7BCorpjw0IS9scwgBfPiNxrZzcKAjjwm4tkE7yY-EyS_Kqza4IKOmBACqYSCgGNlTMnM', '2024-12-09 00:00:00', 'juanchelo159@gmail.com', NULL, 1, 'extra:2.25,agrea:2.67,consc:2.67,neuro:2.25,openn:1.20', 0, NULL, 0, 0, NULL, NULL),
@@ -17484,7 +17594,6 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (939, 'nahue_34', '$2y$13$.l/9WIQJSyCZUsRyHC.hHOGp6/JaeF41ADacwReD.lex2qfOB80yW', 'Nahuel Exequiel', 'Coronel', NULL, NULL, 0, 'ACT8 - INT6 - VER7 - SEC7', 'Nq_OQ153XtX2duefwYXbgtBrOD0PBg6riLzfNBIMGoisnS6-vZZ7qDlp7-Gm_XEJKyP3pKQU1jsxQWWc8Hs2rKUC7JnEV81HfDUPbYITwVDgVHVeSOPBISpWgP58SrpfuHPQRk3_gQvSkM4s-fge_C-Xkd-Ju999ZGKqoWeDt4PG2A5Wdfqz7KmLnBTJ5HhdR3NPUXQuShFCKfxvi92SlX52E8KwfTFhRPpmzpfEg3rZ4slFyLHLBHRvzHoGLGW', '2001-07-04 00:00:00', 'nahuel2tgn@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (940, 'nahue_34', '$2y$13$1qdoO3P4WtezcRQtLnoD/e6/AY0X0X/PKyjoxroeXY5L0tg1psS7.', 'Nahuel Exequiel', 'Coronel', NULL, NULL, 0, NULL, '6_TQ77dBD2cnad8A4Nm-7JGFnP9H5p0__a4bA09G6O7u_YRjrYnstp0ANQWAde2S9jKTdD7W39k-GPsKmfYVm_lG_N_jYx2xW2rJMbDdjuMHAg9-sv8ekhiA0Wu_n-vDVYC1rguSndGpjeQlbZW-lCjobTIg6HVHmOYjwO3WgqrLI-Z-UD-cjovXqChU3mSrFpUbTheC7KUvz5LcPkyiAsZHwyRVn0oMhK5TUFmuJ6ao4Db4wFAn8CwnM_clT3A', '2001-07-04 00:00:00', 'nahuel2tgn@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (941, 'Tadeo Mendoza', '$2y$13$27FNHriLBFkjA0jGUtoh4.5gshH0VE6Ie1K9BrigkYCLdOIGMixqS', 'Tadeo Exequiel', 'Mendoza', NULL, NULL, 0, 'REF6 - SEN10 - VER6 - SEC6', 'xOYeJF6uY1seAdMZaM3XlzO7hHFbe6uCxi_GRLmiwM9EYdd7D_4z2LlX2JDHwYiyvk6ACnIj1tPi10ioKX2riVY6czRgjpSU6NxxEShoRMheBptGzorgG6gG0DG6d64pCTC1Cb0-WomLMaN8JGsp47qSDoIoTVG9xpi_grSKtgmBKP3iLlImrtLcQCc9buay2s8STuEF6Do0cv_snJKfzVQpANFxrS31ih7zGZC6elWfGh-DJO_7GoiQng5TzGe', '2004-04-21 00:00:00', 'exequielmendoza04@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
-(943, 'maximoGomez', '$2y$13$M8ybOmHy6dHBbGDeIh1AzOTLlUyaWl7pkn.ovg3roIUFH/aJD3b8m', 'Máximo Leonardo', 'Gomez Pereyra', NULL, NULL, 0, NULL, 'USxV8uvMfTNaibbaUYPIwQF9LdZ5V6svZot0O-sDGRzzN0jE_U8cu9hXfjrUUREqTKAnR5QjMlJk755XFG1RFRzyuHOVNcpsK2c2T-gAdPUSEJ4WEA-ISpoZJhuEsgnh3pCA2JlYkFQBs9RMwqzUHsEUrM63BJeGC2fGlt7QvMpDd1hEKMUyN1bTFPUlYf539UEOFGclsGwBSzu1-JTQyKpy5ox2vpP9FlFl-t8hQGNdt4kogEux2YZyNm4lg0p', '2024-06-09 00:00:00', 'gomezmaximo87@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (944, 'AlvaroC', '$2y$13$AbplYiOT7i1IuH3SYaz/rewTiUSKac2aKDRNlgQA8A3W.WH7OfqyG', 'Alvaro', 'Coali', NULL, NULL, 0, NULL, 'i_yhqCazN7Qt-e3IA3ybiuO89Q8FbnBsAkYmdCK9mUbFrPpBMt9dGbOEa1EBhACbHJWFQGKZhcWv71SxZoLpxOHCVDB1bSQIpsFWTy8SwmEGjZimrnS3Xmp41fxYFteD-syYjffK2uejIOzl7V0j8oeIb7Pq3DGGpLrqgPLgB9-nCAhOl_W0HUhPqpq4teeKZA70PsU9RAUKsrzfHdG2lTWQPUTOED9281hLkL2yEFohdBJH2ws1DKwWB-BOfrd', '2001-01-19 00:00:00', 'alvarosao2015@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (945, 'MarianoMM', '$2y$13$YN3RuoDi1Yo5pePQbrY7I.KjIjTIJkVt3VlnsQX3Vp2eNYOjx/jNq', 'Mariano', 'Mendoza Matach', NULL, NULL, 0, NULL, 'ylessc9uMOSs53kEg6wWEZvO8t4nX6RlLb2fdLYyOW1D0E9-ED5UuqDsKHAkUD29oHAUcyvnqmeqbuJqnyrNCpbW19KBRspiipz9lH8JYTTB5T6fL_mgRcjgoW9wkR-ceVQMaaYgSyuFVhv2JY822iRikNDGykBrhg9OubvlZV2IMjTXND0aGqeQtJKKbU5mKOEfEsw-8pAM-dIaVT7kdTHoRHWHr-8uU1OqOhUpnaT13d7kJxfXxPB1j5qC6DK', '2000-06-17 00:00:00', 'marianomm16@hotmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
 (946, 'lean', '$2y$13$CKhy0MnE.XF1JJne4Mvdu.0Qn.DJTPhPmwJv//speSPs2.PE2P3c2', 'leandro', 'gallac', NULL, NULL, 0, NULL, 'mJv7sRSug7b7EhmvsvTdKygznUNpEY9sZNGSEUa6v_xsqaKg8rEYH1HlWoH3-_L41zPN_QSJUuJgHE9-aKxucip4vbQ62QqGKRbnlsYfnHJcWyr8Fdf7M4lH-PLp6a5u8xsCehNT13xCwjDV3-e8Q__o-L8o9ae0Ric6v-rRxhkE4qkVJ00eWNZBByhJSt_AID6ICn3Z3zbS0ZqpY2g2mqTPHSmds34PxT64gXbpl2clnhJG0xS4JmztEvERmsH', '1996-06-21 00:00:00', 'gallacleandrog@gmail.com', NULL, 1, NULL, 0, NULL, 0, 0, NULL, NULL),
@@ -17550,12 +17659,12 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (1007, 'Andrés pachón ', '$2y$13$YKE0e/LtgpeED/Mun6BhlOMRUDGgMntvtNcbygdVsfbp94vbBQvLq', 'Andrés camilo', 'Pachón Nuñez ', NULL, NULL, 0, 'REF6 - INT6 - VIS10 - GLO9', 'n4HGqx0yYhZzvFBiSyl8mB2dI7ANJeSOsfCjXwhtfWUtF2ap8d40MnkVmYWfoYDUW8XGDdspzPG6J-YkPGSWv1PoN_8EMaVzcwTjfgN7GUXZgfjogmkdqepmWu7N47kSmlJMQF5AUu6ffcDG-gZadGTvfYE5bN3ng7aNLz_BY1EgzNA9U9KilolWs3KElq6XfhaKGkmPHPOoHVndeAr7aesO_TqBwV7mWSml0ndu7LQaXSsdFCjeNGcxyy1lQYu', '2001-10-10 00:00:00', 'est.andres.pachon@unimilitar.edu.co', NULL, 2, NULL, 1000, 'uploads/17310908427174149895186734741620.jpg', 0, 0, NULL, NULL),
 (1008, 'Carbi', '$2y$13$dUzf/dzfCz1UPiQtvBbVIeRJgQCrHu0om72vGedFvSH/HawKWcfuW', 'Juan Sebastian', 'Carballo Ñustes', NULL, NULL, 0, 'ACT6 - SEN8 - VIS8 - GLO6', 'KGH2eUMgyIBfaHMJPiSxCWC4kWVnilYiTXe53B_GPQ5x8Bi3rCWbaCDzcZT5fhRBqzW5j4yojYsRp6zoQFhOI34ELUmKXAp3KxV_s76hsjivA0G9Cj_epvz5aN2dOrjBml_zYhnwWL8sQWai0TUmhv340Tw6fRppqmD3tsG536kfYMQGOgfEzkjEUgb768vHru6rL4-KOVqvbR11SwNnYiDCxyXKD7CdNdKG-j4G1Py-9GoR6-_tPaEQEqpQFYu', '2002-09-24 00:00:00', 'juanscarballo2016@gmail.com', NULL, 2, 'extra:3.13,agrea:3.56,consc:2.89,neuro:3.50,openn:4.30', 1000, 'uploads/Mirada_folladora2-removebg.png', 0, 0, NULL, NULL),
 (1009, 'Jorge_Andujo', '$2y$13$GHYYro8qxbtUFFD5V/aeZ.hE.FvGFHpuUonsmF18oONhzoqiVL2nq', 'Jorge Alfonso', 'Andujo Valdez', NULL, NULL, 0, 'REF7 - INT10 - VER10 - GLO8', 'p7BZoJOvayJWeEt4gejiJ4fcemlvVT0HSbNqzwMk5xx3TEOhYUlWu8SsBuuACAZ0sSyijO7do5nvxJzOXFnlQ32nf_b631t8hE7GC0wwbaGkibgn_Hz_2he7HXVf1yNjIxAgvehOE4WdaWpLTtYapy4iesVoCxvJrybq8y6oB85Fqn4w_LoVZgLJ8CDQP60bmaTQUyHYZ65y9jL24qqk6cfXKjJN3yNI8VAmA60z33zhxR_jwiW4OgPiaxC8PgR', '2004-09-20 00:00:00', 'A01563535@tec.mx', NULL, 3, 'extra:3.00,agrea:3.67,consc:3.89,neuro:2.75,openn:4.20', 1000, 'uploads/yoyoLOWRES.jpg', 0, 0, NULL, NULL),
-(1010, 'AdrianPineda21', '$2y$13$NPL9SxusYnvDIpK1N9pteeZxc/BQFanG1WEZVAtg8QW0RqkvH.Yi.', 'Adrian', 'Pineda', NULL, NULL, 0, NULL, 'de6r_S6kCz-EMc2CgyPWBdd_okQ12k77tK-y9U9WjS7fOHL8P_RtRtoff8tijkKqSddboJW222V1aGE4HV02eRytTPUwwg7-n9heDRh5yifq7MH-9tL62txBK3Dvu-s4o3c5ujYUw45kNyPUydaIQPIKhijiIGzlUR8gOqhTYEdeOw3w2CK-pXoiABhS46iQZVOJTymHOyx-9Lv9PERRew8GNyFX46tRy_GgBcP7wTR_eLXMcvDan3uoYl8Yzw5', '2003-04-21 00:00:00', 'adripinedasanchez21@gmail.com', NULL, 3, NULL, 0, '', 0, 0, NULL, NULL);
-INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
+(1010, 'AdrianPineda21', '$2y$13$NPL9SxusYnvDIpK1N9pteeZxc/BQFanG1WEZVAtg8QW0RqkvH.Yi.', 'Adrian', 'Pineda', NULL, NULL, 0, NULL, 'de6r_S6kCz-EMc2CgyPWBdd_okQ12k77tK-y9U9WjS7fOHL8P_RtRtoff8tijkKqSddboJW222V1aGE4HV02eRytTPUwwg7-n9heDRh5yifq7MH-9tL62txBK3Dvu-s4o3c5ujYUw45kNyPUydaIQPIKhijiIGzlUR8gOqhTYEdeOw3w2CK-pXoiABhS46iQZVOJTymHOyx-9Lv9PERRew8GNyFX46tRy_GgBcP7wTR_eLXMcvDan3uoYl8Yzw5', '2003-04-21 00:00:00', 'adripinedasanchez21@gmail.com', NULL, 3, NULL, 0, '', 0, 0, NULL, NULL),
 (1011, 'Bryam Barreto', '$2y$13$KSsSwNQ4knmmXWQvS2DiKewOt4EF70wGfW4/d9YRNiRKc3wW8bCAW', 'Bryam Alexander', 'Barreto Leguizamo', NULL, NULL, 0, 'ACT8 - INT7 - VIS9 - SEC6', 'OnS0pAL3PuUPPDb4Omj73VsYBeSG4KdaasHERqy5kZ7tvTiAsOHwUzMekKmu3s6ERBtly-TmpkVxSoNPYhwThGhh2xY4V8OdK8bnBCAhaT94Qxs7CcauJnLEjWgfsLnqWImsYSjpa1TInKEpleEcwxQPXPhQaDa-uWUeBzm1jsmugEEXe3MMcjXujc5XUZjGTKWRqRe9qM7oL1SnbXw1kAK1y5yFk0IobRYp4cGI1j-c8IFS17xE7wlSllqwGxd', '2003-02-07 00:00:00', 'bryamb36@gmail.com', NULL, 2, 'extra:4.00,agrea:3.67,consc:3.89,neuro:3.38,openn:3.40', 1000, 'uploads/FOTOOO.jpg', 0, 0, NULL, NULL),
 (1012, 'StevenOspi', '$2y$13$Ib6Z47Jb2NdR.DT98MnqU.8c1BZ9hDeWZiOq3PUvSt40c6coCiHG6', 'Edison Steven', 'Ascencio Ospina ', NULL, NULL, 0, 'ACT10 - SEN7 - VIS8 - SEC7', 'QBrFOJr4_QOYRUA36iIEI-lJfBXtxS_GlAFsQ3-QJpp_ghi4sTmAowIPqiZc0QutcG9JRTWtdOzeAL587CGGIwqiO-qzRQ7gFBoGHxQzRfzQ_7cKVadFXfYPCpIvpyG0rIbgtK-SljekliFQ_O41PTt07ijg3b1l5PR14OP2S4s_iI_xy7FLTdshX273ofP6x43SF4ThMGtMZWjlU_j64wybg0xenKSg1rrysl-aBrDMpS3OsDE8097ZFDniV5s', '2001-03-09 00:00:00', 'est.edison.ascencio@unimilitar.edu.co', NULL, 2, 'extra:3.63,agrea:3.56,consc:3.78,neuro:2.38,openn:4.20', 1000, 'uploads/IMG_20191111_173004_353.jpg', 0, 0, NULL, NULL),
 (1013, 'DanielaFuentes13', '$2y$13$wzxkDugneCHy60KB8T1O1uh3wyxd1TUDbnCFW7KZdS56iFK22xE3m', 'Daniela', 'Fuentes', NULL, NULL, 0, 'ACT6 - INT6 - VIS7 - GLO9', '5axX3cHOOZpl-a0C4Bfp2XoPW3ylbWKZ5BLC05ocEzJECJZ2RHIqrSe8mJemnS9yDqJU4VL84Gf4qSD7fP3yCtIbsYxyeTqTrpxez-tZnByQWFyMr1ta0KTgkLrlkOPYYaTgQYLQvCAqlWzPHHxJrPIaQJBUAzeVd-KEb8kY6rjAJAx9KS_ZuR8P5QeEskaZiFbuO3MxAcVzFy2BTbBI-At9ulrVCOdPDYslLI58c-1pP_hilK1EqBBX5bv5R9l', '2001-02-13 00:00:00', 'est.daniela.fuentes@unimilitar.edu.co', NULL, 2, 'extra:4.13,agrea:3.33,consc:3.33,neuro:3.00,openn:4.00', 1000, 'uploads/mia foto (1).jpg', 0, 0, NULL, NULL),
-(1014, 'karlasov', '$2y$13$l0qELWdRRku0aKg9aKS7OeS5lXUmguDwR1vA03U0xIAJLKllAdKFy', 'Karla Susana', 'Olvera Vazquez', NULL, NULL, 0, 'ACT8 - SEN8 - VIS6 - GLO7', 'eEt6WAiIthbHHtPLA7qaVqGEt0OR0KQNjBRukKGRdeS6egfpTu-r4_O4zyNavgvqsI5UszCBI74JePASIcH7_Mbcyev0tE2_HljHz_sxY7DZeDBRrFlrCxrGm12MxHt2WEVq9GBzoxg0koCucdouu9E9fsdVNPHRd_U0ycwxI2nIyYhAe9dLqFBtFS8JyzQY0aHrDrg2itGGuKpiSmZjXIPpkB0QaaLZxQcRJU9Qy_blN5qAMIqLl45HpHNj19c', '2001-01-16 00:00:00', 'a01379097@tec.mx', NULL, 3, 'extra:2.63,agrea:3.00,consc:3.56,neuro:3.25,openn:4.60', 1000, '', 0, 0, NULL, NULL),
+(1014, 'karlasov', '$2y$13$l0qELWdRRku0aKg9aKS7OeS5lXUmguDwR1vA03U0xIAJLKllAdKFy', 'Karla Susana', 'Olvera Vazquez', NULL, NULL, 0, 'ACT8 - SEN8 - VIS6 - GLO7', 'eEt6WAiIthbHHtPLA7qaVqGEt0OR0KQNjBRukKGRdeS6egfpTu-r4_O4zyNavgvqsI5UszCBI74JePASIcH7_Mbcyev0tE2_HljHz_sxY7DZeDBRrFlrCxrGm12MxHt2WEVq9GBzoxg0koCucdouu9E9fsdVNPHRd_U0ycwxI2nIyYhAe9dLqFBtFS8JyzQY0aHrDrg2itGGuKpiSmZjXIPpkB0QaaLZxQcRJU9Qy_blN5qAMIqLl45HpHNj19c', '2001-01-16 00:00:00', 'a01379097@tec.mx', NULL, 3, 'extra:2.63,agrea:3.00,consc:3.56,neuro:3.25,openn:4.60', 1000, '', 0, 0, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni`, `institucion`, `tipo`, `estiloaprendizaje`, `auth_key`, `fechanacimiento`, `email`, `nacionalidad`, `pais_idpais`, `personalidad`, `puntaje`, `foto_perfil`, `cont_actividades_individuales`, `cont_actividades_grupales`, `pregunta`, `respuesta`) VALUES
 (1015, 'Jbanegas111', '$2y$13$flhIApILhhky6r5LANwdRuVVHb2KOFqdBTVsbnQPtwSMM/pn5Cz6S', 'Javier', 'Banegas', NULL, NULL, 0, NULL, 'rWRDA5y6Y0Bc5kjm5y-2OP5OWs_ar2YY4KyKe_RuzmhHCHtiuh_hjSwLFRZ6DOmx8f-6abIoshYnFV1V4yYWktytlsDUwAVUcVcJ6hSvVLfipCtxq1LGRiRAYYNaxcBfQRavuHZRaAqtNP4nCtPUlm6tC5wkZIysnkCUw-yg6JhYaqVUK4e_i7G9e-rB_fxgzuTHwDdWwlaXzyWEogHaoVpjjwpt64vUG5TbBWIuxopJihiqH9e9tIdIK615UnY', '2000-08-29 00:00:00', 'a00827812@tec.mx', NULL, 3, NULL, 0, '', 0, 0, NULL, NULL),
 (1016, 'Mateo Llanos ', '$2y$13$Xrjmxm2PZhX5/FipxtLfGeQXsb7I0rnJYc9C1xXZmUyhvHTHo6Gry', 'Jesus Mateo Llanos', ' Llanos', NULL, NULL, 0, NULL, 'lPN982ehILdCmiof-rgL707oc59tP71ZFrUOeiyi3gutS_BAW9UotQFjRBYoMlI5sM8tq_oR7H79FcHZZ7ladspLs__syEFuTUtDmAD7qb33DuDOdV08X7fiDtXHGKmaq5iTbQYM7xlWV5S8wWlRsmCBvlf0mP9r0JG0QWmrB1Fa9EwGcRWSB-MRUsHVwWBEcjohcrQ5Ki7SNF7LpHD5H4UYGget9CZuk5CQWjhAHoQNTchBDZyTwfeeDZxoe5t', '2003-08-29 00:00:00', 'Mateollanso431@unimilitar.edu.co', NULL, 2, NULL, 0, 'uploads/achu}.png', 0, 0, NULL, NULL),
 (1017, 'AdrianPineda2121', '$2y$13$qCcgLaNX5UbS/LC53Q/JCOKeHJjDKV9aTFQAwaCqI.U6p9qVcTXD.', 'Adrian', 'Pineda', NULL, NULL, 0, 'ACT8 - SEN6 - VIS10 - GLO8', 'GzFggPAWTjAxwoSrWTsVS34FtyH9hOAgQy01oq4zHv7QRN2Z7FFDG2A7mojf-EaElCVI7pifUHvO4awKNUxKNnKF1vv6rFnQJv6x07wDQbGJwjjRKzg6lsoKVuPGPzSpNY4l5m73IeTy21gU6y3yPZQy3x_7bWZQ_Kexe3KK5Yws5qY5VO_z5RV6ZQZcKWtYgLJMumRuADuJ7CTajBVqZzSjrgi7OPIypWiP4vv9DK1PcUqfs_S84NRUET8r9KE', '2003-04-21 00:00:00', 'adripinedasanchez21@gmail.com', NULL, 3, 'extra:3.38,agrea:4.22,consc:3.56,neuro:2.75,openn:4.40', 1000, '', 0, 0, NULL, NULL),
@@ -17598,7 +17707,49 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellido`, `dni
 (1065, 'ignacioneirot', '$2y$13$q1YrshM301KpS2TeuJhRfetZdlPAjYrhDW2HDTOk2KiiKHOlt9kIi', 'Ignacio Valentin', 'Neirot', NULL, NULL, 0, 'REF8 - SEN8 - VER8 - SEC6', 'AxKQ-NaRq58zk3lQz2td1gQ66ezQxwUF5ED-wrXV66X1iISSRTzwSy1eEVVH3WTTBzycqvQWvdI9yPy90CPTZC-huFSi5I0Bn_zsDuwMJ67guimxd8s1BAdEjb85sQ0mrNT6-JYUKWkANA1KwSBipMXzpuZLeYbu2egozHh_05jZeW7hWPMIFGPu4p4c4Z_8Pe0Kl7InX2wdwXB9EJynRelJ5BabxYnB0pmxoewKn2S-QVR3BSNpPbUE2EOIx-y', '2004-05-07 00:00:00', 'neirotignacio@gmail.com', NULL, 1, 'extra:3.00,agrea:3.67,consc:3.22,neuro:2.63,openn:4.50', 1000, '', 0, 0, NULL, NULL),
 (1066, 'ASCAR', '$2y$13$3hD4YYJV9jkiO0JOAWIpEOuJY/ZOof5vaj2vYxjP.CSf3bNRhEGsK', 'Astrid Carolina ', 'Melo Guayacán ', '121313013', 'UMNG', 0, NULL, '7JCskO1aUJnPxWXSA9_ZzPZzNl6nnNUM9Z5_MOKxxhIz5--cirlz6AtxReZdVqvcB29iFRFqlZ5qZsiCYbqEeLbb9CxHLnG-RrA2nXRwpIn4Pyq0NnRoQGAOax8ZNvu4uovjPpJDSj2ArO_GxeNuSwlH9le800092YggFZ7UcjTV0VFKvwsMiN_lOze3ktyy_WYOP3S5sZ-yuVkpX5_vpMhSjjE7nHMflGWIzVejN5dbAbA3f68XNTlEwHn_8ZM', '2005-06-11 00:00:00', 'est.astridc.melo@unimilitar.edu.co', NULL, 2, NULL, 0, '', 0, 0, 'pelicula', 'W'),
 (1067, 'Sofi_Alvs', '$2y$13$0M9EWhvAWDWwbyRHrJkpJuvnXl0iigC0ENjslKuxz/Fkqo0RiziaW', 'ana sofia', 'alvarez sanchez', '1019986985', 'UMNG', 0, 'ACT7 - SEN8 - VIS7 - SEC7', 'eQ1j4odYI64EopaqCznF9rrOX0qI-1TznT5fqDNGFdigIX9SAuk8mRo2aw_RVo0umqC2YLStMuDtu0ZqvQQFjmPTxpyjVXtS-exX6GhFP7LWmjluhPWY5YEMrTSQdWFpqt7j95gFOegz3ZCzHO9dA6TpkyYmHabZNIJp0qxnOr9FcTxO4sZC0f5iwUxNNOdrshJr9R68fp5S6S4oJhMNR2kHflDmTlt7qFCl1Z9OmMlEf7I_-xXugUfCV6DePpy', '2005-10-21 00:00:00', 'est.anas.alvarez@unimilitar.edu.co', NULL, 2, 'extra:2.75,agrea:3.22,consc:2.44,neuro:4.00,openn:4.40', 1000, '', 0, 0, 'mascota', 'simon'),
-(1068, 'David Felipe Santamaria Cáceres ', '$2y$13$uq1KcoWbOorXsRp8YPomwOK3alI2.jQ9heBqK1lyfHfjmU0tU/W8e', 'David Felipe ', 'Santamaria Cáceres ', '1001174255', 'Universidad Militar Nuevo Granada', 0, 'ACT6 - SEN7 - VIS10 - SEC7', 'ICl9hRg8_ys1sSMLtTbDewS43rYHEJjCPKSClesd887E659x8yBRXFWEmizLySno5Ehed_eKbwC4vK6SUxvtYF5_iVLC3Vq9PwP-U0LUohNLsFdl5T_jXbrse4iGduJ2NuM5ebU0pq-mn03NaSrklKQjpP7IS3NeFQTas1K7T6_V3UfV8gP6Q0PzWxwNzZ6gcx9eu5eGtT_2TZMJloyC3hrDrCfFAYoabLvsOmobksbDRD8q2LLYhQwR0csg8mc', '2002-09-26 00:00:00', 'est.davidf.santama1@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'Tommy');
+(1068, 'David Felipe Santamaria Cáceres ', '$2y$13$uq1KcoWbOorXsRp8YPomwOK3alI2.jQ9heBqK1lyfHfjmU0tU/W8e', 'David Felipe ', 'Santamaria Cáceres ', '1001174255', 'Universidad Militar Nuevo Granada', 0, 'ACT6 - SEN7 - VIS10 - SEC7', 'ICl9hRg8_ys1sSMLtTbDewS43rYHEJjCPKSClesd887E659x8yBRXFWEmizLySno5Ehed_eKbwC4vK6SUxvtYF5_iVLC3Vq9PwP-U0LUohNLsFdl5T_jXbrse4iGduJ2NuM5ebU0pq-mn03NaSrklKQjpP7IS3NeFQTas1K7T6_V3UfV8gP6Q0PzWxwNzZ6gcx9eu5eGtT_2TZMJloyC3hrDrCfFAYoabLvsOmobksbDRD8q2LLYhQwR0csg8mc', '2002-09-26 00:00:00', 'est.davidf.santama1@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'Tommy'),
+(1069, 'Cristian22', '$2y$13$RGMdPR.p4lMFLham8v1WeOE21Z3AooEgtUyYT1lxVIknUhVEXWzfi', 'Cristian ', 'Moreno', '1000065119', 'Universidad Militar Nueva Granada', 0, 'REF6 - INT7 - VIS11 - GLO8', 'S3vj3ZCKdks3le-UPO2GMRFQTn3345zP3F5e22JgE8Jz8HS8zr8ZnPJxRIlImnklHnwr5jsGGtv6JzH1tmoH3GCAvYCHmmTt2Ysssp-FTYoHZADGdwyB1QYMzzXnB6xiekn38XReAEWieDxolVSEtAaELdhg-JOzCm8yOgex8N8Q5znMn6M5stIytMQQ_78w4cX_JilEYu1tddx6F8MYkUOTds-YfzY1kA5JD3Rm_pqEizTlo91Jkh3M26pYcVo', '2002-07-22 00:00:00', 'est.cristian.moreno1@unimilitar.edu.co', NULL, 2, 'extra:4.25,agrea:3.67,consc:4.00,neuro:2.00,openn:4.50', 1000, '', 0, 0, 'mascota', 'Rory'),
+(1070, 'Santiago linares', '$2y$13$G7doCOZSitQMqgF9K60b..ujbjH7fNeSxDAcMA4Dg0Y/OQVnR66DG', 'David Santiago ', 'Linares Páez ', '131651086', 'UMNG', 0, 'REF7 - INT6 - VIS11 - SEC6', 'wBfBE1SpOwgyfqdUAiVa3DufB0nRoAhaLPLr2_MSuRMRP8ShZPdrp1cCJCyL2qOEeAVu_RTeBgNjBPfEZleFBQ5VmsB_-n-7SI9lo5iur977NApFekd3bWCuImg7csdESt3QeNLqfxsPhb2Vg-PB1zRlEviFRNlZwWzm1vUjqNxFkJ4Q0h6myHicYzZE8ABz1KVSMCHP4ZSUdl67Fn1Q6jQyXmnHYd8kJldTaJfVEFzA48VADxVIb9tWk22lr-5', '2006-11-26 00:00:00', 'est.davids.linares@unimilitar.edu.co', NULL, 2, 'extra:3.63,agrea:3.56,consc:3.00,neuro:3.25,openn:3.80', 1000, '', 0, 0, 'comida', 'Pizza'),
+(1071, 'L37U4ND4', '$2y$13$UWzVsJtkgfDN4loDHPWMw.EU4oH0mIh3jdQIbl3.61YGFZjNXkVJu', 'Samuel ', 'Ortega', '1027280596', 'UMNG', 0, 'REF7 - SEN8 - VIS9 - SEC8', 'flV3kF8gtcjdeBhwJzzWS3nLD0TONR2I0CDFJ2awixVivTXdANdjTfH9y-LmV4kNQw5c9ujT1df6fvvwYwQsC4_awLOD4eKR5zJDrNpxtlhOVlfYlr_vMnuR12Vw786-PdCPATLsxq6iQkUO0kZIlyVsAtHn1KVHFXjFimvN393KG2_ICst4PQ4AIC3c1lf07usMtEJIQOz1W0dHpeKJKrUyrUlCTTnQr7g8u4N8hMnG5x7pUxGtczhCCvzyuaB', '2004-06-22 00:00:00', 'est.samuela.ortega@umng.edu.co', NULL, 2, 'extra:1.75,agrea:2.89,consc:2.78,neuro:3.25,openn:3.60', 2000, 'uploads/IMG_20250122_155800_533.jpg', 0, 0, 'mascota', 'Valkyria'),
+(1072, 'Juanito Alimaña ', '$2y$13$NQE0GGuMpNI0AV3aDtIaCOkny9yhX2upS3TRcny/ciZ9/VdsZRHay', 'Juanm Manuelle ', 'Urueña Villanueva ', '1014660949', 'Universidad militar nueva granada ', 0, 'ACT7 - SEN6 - VIS7 - SEC6', 'HvkX9GwGMhx3SQF7ymxTWkvs8tLxbYQtn-hfs0H30HRGbtkEXaVyMYDh_pc95eT2WT-yRvDUDsPg1tRpPvJkCvoQjsfaBV4__wbpofIuDDqh78XKakiWSXGJ5wIrQoTn8w50LHWcQs8rws4JS_ZaNcBnakKtZKDFwJtsz_GHmeN5-848AaHiLOoQQeangF6De8EMq91y4AMNxc0TZytGIguEPv_09k01wx9N9HOxL1MuUUC9zSs2fkWkMSZsvi-', '2005-09-05 00:00:00', 'uruvill@gmail.com', NULL, 2, 'extra:4.13,agrea:2.44,consc:3.11,neuro:2.63,openn:3.80', 1000, '', 0, 0, 'mascota', 'Eskiper'),
+(1073, 'Mariana Ospina', '$2y$13$CYhg5HC3iiGjN.hKLu6AqOlOAhZC2CMRtjykLeeoel/dJzKb4zhp2', 'Mariana', 'Ospina ', '1072642447', 'Universidad Militar Nueva Granada', 0, 'ACT10 - INT6 - VIS6 - GLO6', 'cXPIf5ag8Au8WsoYuhLanq0DGef56CKaYXvF6_P3qX-WX37PbyhdgS8kfBt9F84t9dNb-qwPZhvWPJ0Uo4EG-IGTo8AQmOq-7T_4JzeABTuF4qvD9CPwu92ju2XXKheomPYu3hACExR7Ugaxn_NrvmjFWW4ZEAtsMl8gnXqMBYBsuFnuPtYaeBRJ60-cMxv1fHoN-TPQcs10t4iX6_WPUwNnpsHZJv1HA3PBsWNv8yQB_Gce7unRdiNxPliabGE', '2005-01-27 00:00:00', 'est.mariana.ospinap@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'pelicula', 'Orgullo y Prejuicio '),
+(1074, 'Lizeth ', '$2y$13$OVA9iQDtYFYWU46VjWDL6uKWGWj3L7NJQxhVGdgZIzptyzOsk9H5i', 'Lizeth', 'Perez', '1013610184', 'Universidad militar nueva granada', 0, NULL, 'TRx0ifhKMQuA8dQ0DHkXvK8dyD8AyEaLESM8vHHdgmeSxlydQlwirMrCeGxSiWQiaw_44ZkejMMtgchCGq7gYirEOQT4xoHylq3ofu_HoZ6-0c_httofDNit8Rluwp5ggVy-41kQ9mGQCAVWE7XZhD209xBKnYPOCj4sjCQCB_9XHR_m2_CHpCktGAWZPqe-FkC1Kk1V2L1YZP5VS0vPtMlHSMiyTekGwEizaaAynJZkXgM5L88_4AoewMYgrxw', '2008-01-31 00:00:00', 'Lizetph992@gmail.com', NULL, 2, NULL, 0, '', 0, 0, 'mascota', 'Akira, azul'),
+(1075, 'Yojan_36', '$2y$13$3hmUZCJ0IWu0tzaJLwT.jej1uItVlojV00h01C6oyTeLjJwM5EVtG', 'Yojan ', 'Gaitán ', '1053330256', 'Universidad Militar nueva granada ', 0, NULL, 'j85ad-0xnGTZ1Ny-deLvTU2av_p5zVf7jna_eHlYFW-yDvpG4Udcpt6SKK47fYJiQNMMEn3-Krvt6YtECjNyrrPjkMUg2SMC4l8Aaa1fJRmva2UMUdLEEr3DXvtiySWq3CydSQcNWcct9yOruXhAKFYh2cXPV6N_OnIuI8YgAfu1PuG6as_zZqzhJ7C-ziVDh9dn_dNjxBwfxei-qlwoQS_ISbIu_AYa8o2BfzxSt89UArW3d7_DGEKdUtO6W3M', '2006-09-11 00:00:00', 'yojanelcrack@gmail.com', NULL, 2, NULL, 0, '', 0, 0, 'mascota', 'Kiara'),
+(1076, 'Camivelas', '$2y$13$21woD..B1HPUbnTiZd3Qme4u3xijfbiYvXshto24TrX/i6I141jM2', 'Camilo Andres', 'Velasco Carreño', '1021676826', 'UMNG', 0, 'REF11 - INT11 - VER11 - GLO11', 'j4-_dwH8_fnk3Q9dW5aAgKwH39padeXY9h41fF_RGeNq9lf64M1bEBcOtxPOe1xeancEwiyr5tdp4TDnTg8_nsBWGDdoZmHUoICTaRUcSmHr3Z1rnrpSvIqUFV93oILjjWHtmIq8YJzdxiRfNccOF8YDCh_o49q8Vg0j62cz5Kt2vY53eA_UZRS22ZTu1_KWZyzPC45r1-RQd_2EvwirDScVk8dI0yHXXcTFYtXKFTSJmQJ3CY_uzhbOIkfLnB2', '2008-02-25 00:00:00', 'est.camilo.velasco@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'Ñoño'),
+(1077, 'Juan Gallardo ', '$2y$13$8AOjc3g1t/1.PoKuO7KZI.y3MTg7B9rmSuduqk755sbx0Ng9HVK8i', 'Juan', 'Gallardo ', '1016952337', 'UMNG', 0, 'ACT7 - SEN6 - VIS11 - GLO8', 'Vdk9Nyp-y2-kxCPro7Ey5KYgE9vdI8XPqbGvfVY-u_H1rNhosIYhjCN1fDUC142JToM7szVm7NZtzswbFkpXlT7cPYXf4YTrAdtG2UAxtb1SKFE92bnfKZ7bYrmbeX9k3R-TYQSuQCP3JXpkm-gkDWPZit3K0eS1N5hs_u_C0ArvqXEWQVvPBDFt8OSppoHaaw0E9q88FG1ziNabxzkRWxSmFcAYejDNGTLu9LMNsIa5Gm0oE8fY0k8lBe4gfJu', '2007-09-17 00:00:00', 'est.juan.gallardo@unimilitar.edu.co', NULL, 2, 'extra:3.63,agrea:3.44,consc:2.56,neuro:3.25,openn:4.40', 1000, '', 0, 0, 'pelicula', 'Mean girls '),
+(1078, 'Lucas-2004', '$2y$13$TGuqU0tZt6Bj99QXskOnXukbeABS4r/jUyvJAzFGL96F6cnEdGyJO', 'Liseth Natalia ', 'Ortiz Franco ', '1087112642', 'UMNG', 0, 'REF7 - INT6 - VIS6 - SEC6', '8jXh7UKkzdF_-JFD2NH4yCPDsbRyvHmZa_AasVeo7bT-Gir-O8h1TWF_WxAJw7DqLHwKuZ_-HyaChGY7YDMKYVuippnBPFgwVlTz7T8hv6E7-F_3H7NQtK2MzJNkXhOnuyj_u3k2Eim8t090638vwGsLaNxvvM9tM58K_3SlxEpH8Gs6_wEf6kpkXcTSEB-Zk4jip5jaaJFVafXlyuhOs-LDiwRVE8XNm_HD5HLG-L6t9Z0OL4vc6KMdtlga-EI', '2004-10-01 00:00:00', 'est.liseth.ortiz@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'Lucas '),
+(1079, 'Lauralinares', '$2y$13$rdMsq/eQKV04ALJ6WSQXL.SvqU5XkAohiWjx2UrPozLhI/cDI311K', 'Laura', 'Linares', '1032941292 ', 'UMNG', 0, 'REF6 - INT7 - VIS8 - GLO7', 'yyUNlc36ecmAc3XW6zcyvzZRHxB0Y0oomshLxUnhnoZPZ1GQ2F6xKiTHkPaXI62ar_ACgnfyPgdOv-at1HwWrTH_Kx5BOHqIOZ5FylsIWg4mdpVCcvyeIsJu3jeUVXX8EGR9qVBqEp8nbCraDLXF38l7tlUo6m4E-5FbzCJbZ9qpu6cmbz-Y4bJrM8Vin524CtwueJ3yq-NYIobfygro8pfBIhJ_PJxTcLiMJV-Dl-TIuyJcdirxp9NZjQy0FIl', '2008-02-22 00:00:00', 'est.laurav.linares@unimilitar.edu.co', NULL, 2, 'extra:1.75,agrea:3.44,consc:2.89,neuro:3.38,openn:4.70', 1000, '', 0, 0, 'mascota', 'Leo'),
+(1080, 'AnsuzMind', '$2y$13$XwWN65Jg8gb4qJJTaKKOteGMAZCfN.aqESDduVkrEabqaKeX1pgyG', 'Nicolás ', 'Martínez González ', '1029986394', 'UMNG', 0, NULL, 'IXmTLjwv11NUsFITAWtYivDECYXki_DmT55sk5bVX4vE79F34UVc9AU0WO2XopAAuuruHb74Qv53hFpky0YweKLHHQfW_1aq3SBFD7qwVhseqmkM9ChMN5riaIw1Bkn2QiNCJiYA22gp2mIg72yn1uSJqmJzWZe2ylAw1fotcC3HW_Bi4ng9HMrQWYps8TTbmFuPELjx3vaaRB_mH8O8j1HIoxeb_3wju1VXGcYJ_-dnX92f16myqEPLMCI_SC7', '2007-08-30 00:00:00', 'est.nicolas.martin4@unimilitar.edu.co', NULL, 2, NULL, 0, '', 0, 0, 'mascota', 'Cooper'),
+(1081, 'JuanSepul', '$2y$13$mhT8k5qjeuxcbMCv3Cnbg.ys4W4NUd4Bv.lAOkG.1ivHyWcI4azli', 'Juan Pablo', 'Sepúlveda Castro', '1145925517', 'Universidad militar Nueva Granada ', 0, 'REF6 - INT6 - VIS7 - SEC6', 'yvQXIixLEC54Y62h9OsPGcUvhBdKw19s3oKopSpJh7Bi8PKRzbvotApprgk28aD4hSlr9RG8n_EKiTgGr9el8Lk9Pw0GTSLDbmOIm6eKofvY8VGi-pc8DcL1TCBS3bq1f8EZL3HydkjdhEkYgarkIT-nYdXHlkBtxlbNkMq9Vd22Z-7X7F7kaGo7q35AjlNIFzcUiq-_xjbg7jQiZ99seoIA-1IKLf_kffHTgB4Bu7LmrHxDb8J6QnN7HThVKTN', '2007-07-17 00:00:00', 'est.juanp.sepulvedac@unimilitar.edu.co', NULL, 2, 'extra:2.13,agrea:3.33,consc:3.56,neuro:3.75,openn:4.10', 1000, '', 0, 0, 'mascota', 'Sayori'),
+(1082, 'eii.beltt', '$2y$13$AeYajKH0NTrcx.7muwRe1ekHImTCkP87OQHDB8pJn.uaVU15yYfgq', 'Eileen ', 'Beltrán ', '1028484515 ', 'Universidad Militar Nueva Granada ', 0, NULL, 'LggyQ57vO6769lfOmHGCFkQzgtGPkMCpnnrLd-lwpS4FJ80cBaOLkMZLePoEsyI7fmOn7CNEJ56MEyzeAsXJz0tOysJOu8C_IWYBZZRjxNGncYdow2avO-lH3UZK43r1EeZ8SAE0ii0HfMNaoXZaC8amkOJNcosRN4g8ub39TGBnQl9VFSbGR1O7M5eNgqYgDbhG9dG8vg2vvyKbV_75hzNFQ8gpJCvG-hOOlICrZf1q8aVXD_XuRECtkRvOCKx', '2007-06-25 00:00:00', 'est.eileen.beltran@unimilitar.edu.co', NULL, 2, NULL, 0, '', 0, 0, 'comida', 'Frijolada'),
+(1083, 'est.paulaa.florez', '$2y$13$Eye4M/7xkezQXO4Rh16XlOtv9jPlixKPPO4DZzV8.3iOF9xM9lufm', 'Paula Alejandra ', 'Florez Vivas ', '1031541921', 'UMNG', 0, 'REF8 - SEN6 - VIS8 - SEC7', '1XqPl4WQ9NFuqGFkmtKYexWZuPnqxuq8PaPDTlfCV7508AuMLuhGaAvIFtus8zOzDIJtREwIGoBvgTvGQJmdsgCeUDrU1Gl25HHHXqj1I7TTfRPjnf5Jn6WXfX3VRYF7YRjvG4rSK4rIelKF-3o3sMnsO9_fpgSXCgw8TEnLEGhYHSKeB9e8v-KBX4XK-iC3vhZCHYKVrK-B2-qhY-_AWF58bA9XndvQga6UfksoN7YJGB9be5bNtGGjc3MV6qE', '2008-04-03 00:00:00', 'est.paulaa.florez@unimilitat.edu.co', NULL, 2, 'extra:2.63,agrea:3.22,consc:2.78,neuro:3.25,openn:3.80', 1000, '', 0, 0, 'mascota', 'Luna'),
+(1084, 'Alana ', '$2y$13$5jzb3OA.W8AztxysYmsoAO7hoYLZOWYXb250uFRUAIWOozuj.CAnm', 'Alana ', 'García Tovar ', '1013112040', 'Universidad militar nueva granada ', 0, 'ACT8 - SEN6 - VIS9 - SEC8', 'CLrSe4UCL1DR7Y0h5MvGjZbxyyajswOSQJ8Qgx0D3yVB-wl7nC55OQKiKIQauCqBg9OKHyRLZh5beYj9CPWs9xZd7CKwappHZud1jSk-Sx0cVBHhCxYxQSfqC7G8d3uKdT_oEUDOBSzEO7whrofL1JCOGV-5iIUGw6IH4huHynoFUDPIfX9Dj-HBbzms-DgS48F30bpXzNYH9fRaCPipxFFZm-oihhW6Y9K0RwUUXT7gC5Rn7WVSnpjMEl_bEAM', '2006-09-20 00:00:00', 'est.alana.garcia@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'Tomi'),
+(1085, 'Gabby', '$2y$13$7Z5KM/OD/8oVDOz2UaOu0u0zoDQof..JmY1BqcmUegEgOPng5J9MW', 'Gabriela', 'Alba Cerquera ', '1010963457', 'UMNG', 0, NULL, 'msl2WUeiG1UNTOji0nMlSfF-qI0lMdvBroJBQRWgIkCg5rxVGrH779u4PdyHyXYuzqzQYVZZ2QHPa3SmotLQipnS70RHWTYX-Refh66Pu5P4UZ7TPEN1gdcSxOXPjkqvkxOCBH4GfcmxBgROhg1hjduyLAs6gIEsYwkVyrE3VVcqKlRRxcCXNsfAsFnbN0HGxBmATgKqaV59WxwhyM832c80p6CC7au4Dja7AMQbX8yNekPC0B7sP1InLvOCbfy', '2007-02-09 00:00:00', 'est.gabriela.alba@unimilitar.edu.co', NULL, 2, NULL, 0, '', 0, 0, 'comida', 'carne'),
+(1086, 'Gabriel Camargo ', '$2y$13$DqlQr8E2y60H0P3FhzD2JOmLMc4e4xvZxGNhlQRqa9ZIbVyUlqJGu', 'Gabriel Alfonso ', 'Camargo Suárez ', '1019993183', 'UMNG', 0, NULL, '0yMfnLYSltnTtnjoEZanxacKMmV_a83-YylmVw-flknPQQScB_lkR3w7TbLG9kh4-2QfKwn8y1KRSWbetgIwUizDaQ_DTrk8h9EHjOeoSzJSuuN9WzyJ5iVhu5TH1FMbyWvxoVd_sOZnMuBIdN2mzJ1yyjVlBk6yIhbIlZLKzFd-GqUKtYCWBSi0VmzhJPWI8-7rVPOlvHlom_scYdYIIxZ9ZV2UE5_gYmCR7YKNgtetNn-1_dlVie7spjs56un', '2007-11-12 00:00:00', 'est.gabriel.camargo@unimilitar.edu.co', NULL, 2, NULL, 0, 'uploads/IMG-20240227-WA0046~2.jpeg', 0, 0, 'mascota', 'Manchas '),
+(1087, 'Julian Betancourt ', '$2y$13$ecNYkgNb33KagnVq6oy2C.K9MNJvit29lmerIJlVGZs7BL3mOXpXC', 'Julian Stiven ', 'Betancourt rojas ', '1032798455', 'UMNG', 0, NULL, '9VP9-wHR_R7YTE9wjkEhOHRhWs72mB7FHbf-xYLiRwWA7m7btvE4j_Teuv4ym0BlvtKRiAK9JuP0dDgnIOSEdD2OO4B3NtS5mu9xRwglM75Bn-WtYIrbtsrJz7jbKCHHaMdAxZDysgj5TbyqN2iLuOwk8wdIHlo25iIPkVJg8ZBTCic3zTUPmJwayzaFGALVLZCZ5jU3BM4vRbqXqY5Lk-EiJ3vU1zQMIWHHFBbd2Bah0CMXNFn9I_mFZ1f9os0', '2006-02-19 00:00:00', 'est.julian.betanco@unimilitar.edu.co', NULL, 2, NULL, 0, 'uploads/IMG_20250403_075041715.jpg', 0, 0, 'mascota', 'Lulú'),
+(1088, 'Cristian Mora', '$2y$13$1IcjjF0.pvmHj3rxigO2V.vvmwWW0K8p/g8ut9hJVOrmB8ZAFeREe', 'Cristian Felipe ', 'Mora Velásquez', '1019606418', 'UMNG', 0, NULL, '-pnM8FBHaY8HcYCAqg1XjeqcEy4s2hijqMZ5uscaPdAEe3qDHdQw9B9IGJGeTRt8A0uD08L7BaMnrDSC2g_9bwkzyC5Iuz42EiZfZzV3QxICUdJ0VerZvCQneNoQeuHuZldLOu-ulTm9Lkeu7Xih_RSLzc6kAFw5pV6j5Yeiil4w9txU8U-RuhMYBaDDg8F9dp71_IKBQJHwZAw-mBKjIzOO230uQeNA9n8vqu-jjNVXLmmMv3hu6Dcg7cR0hEC', '2008-01-05 00:00:00', 'cmora5137@gmail.com', NULL, 2, NULL, 0, 'uploads/IMG-20250118-WA0000.jpg', 0, 0, 'mascota', 'Dylan'),
+(1089, 'N0819pg', '$2y$13$Ne/oxVeOiQaFGNLPymXnV.4wXAhiB1HPZGqtyXlSI/GUMsXLwr/F6', 'Nathalia', 'Pacheco', '1001296124', 'UMNG', 0, 'REF7 - SEN7 - VIS7 - SEC8', 'E4GAfjMCCc1OpfA46Vj47UlTyTEo6RLqXeEoaHF86nx35dMPIu8A7xbRTJ7cFpMN2wdrmIeWl0xQj6--rlPy7yFjTjlpNjyptIKcRRVO3NVVv3uV76z4QK05M-yhEn7k-XAZzurhR9ITJLm4N8JmV0RSGnsDM-a3kDNT-axD7o7IL3yhMsmvfInZI_zcOYR5cEb4G7WUIhQQUrPSKPhCYnz7m-aREJFrQJr-Tj4rr3Gcyi7kMK-wjO1e54iD0Nr', '2000-10-19 00:00:00', 'est.nathalia.pacheco@unimilitar.edu.co', NULL, 2, 'extra:2.25,agrea:2.67,consc:2.67,neuro:2.25,openn:1.20', 1000, '', 0, 0, 'mascota', 'Almendra'),
+(1090, 'jeissy.caro', '$2y$13$tbaRXl8s9L6YLuBEf5U72ucLrWz5ic73.hzUPuwLotA9GOo9jaXz2', 'Jeissy', 'Caro', '1044614904', 'UMNG', 0, 'REF10 - SEN8 - VER7 - SEC7', 'PbtnhVe3Vz4DQYFq0K7LlXlSZj6S1bxDNfoUScJexjJit40exUtkv_PhB7hiYIQ-gsVI0NE2Cy2l3Pm8wTzR2Yv46NPH0W0zNLHqnoP9Yv89k-XslhwhfLqDM-sfeRc1_p1gLdJc29lC1Jz6nm4OVFL9tNT2QvOUVBbbbgt3LJXDXr7K9Fe6gCAGNpRCI2lSqdHpHKZX1otdSC_Nd_2NlFAfNEtF3s532TQAP2Qsrd9laxltPULBRaPAZvT7Wo7', '2006-01-24 00:00:00', 'est.jeissy.caro@unimilitar.edu.co', NULL, 2, 'extra:3.13,agrea:4.56,consc:3.33,neuro:3.75,openn:3.50', 1000, '', 0, 0, 'mascota', 'mermelada'),
+(1091, 'dannaibarra', '$2y$13$2q5nNbyNpYhViZ7yHGKy6OK4sIYfpGQSw6WFiUpJRGrmCFkHEb2p.', 'danna', 'ibarra', '1021665991', 'UMNG', 0, 'REF8 - INT6 - VIS8 - SEC7', 'am2eDTdGEcQiRCfO4HlLNdDnjIe9wE2ufU51inWmAQqy2k9sPERDqGaHRqt_rH9YwC6-V57c7RM4rAcycZ5tmMuseJ-0Mkaog4RJFKXu-nD9H2-9kNbQW6P0D3gozXLFn7Mb6Qos2-M5e9bITzSgK4s_id80yn5bCFtw-jhNdDi58gNjsK6VjHwvK94YCmmiNK0zEeo3BkRwaOTFhKNRXpnJ3V4lXQLZQ8A6Sr1aONxA6FuJgCJcM2aRxxIPWa4', '2004-11-04 00:00:00', 'est.danna.ibarra@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'goffy'),
+(1092, 'danielagarnicag', '$2y$13$hIjVF/unp4cyYA96gBjQGOvMxQDWPnGe9FClZTmy.DixC4kBKRbCe', 'Daniela', 'Garnica', '1013256029', 'UMNG', 0, 'REF6 - SEN9 - VIS6 - SEC9', 'Uf2oCSxkR2iTwgmwEDvdzdh3GPxNNW_1JyCDao1vWxHCZbbCvi1K-Mv0_ydvvi0vN2EAjN3YvdckPIwMJns_4BQ6JcolfBmuBkRfztNM0r0ZwxjWVLDu-RH4lByQEj-g6xZYrAYra-XCTtrFw-hi1Fq7tNjqSSv8kQkU6iGe0JXanRxNKIw1Zcnhl2L_GjSY-GXKLBVVvc-7aptDueUjRW7CowK33a8nHQGYPJBARz36a6W76BaVzc8jYcTpssK', '2003-11-24 00:00:00', 'est.daniela.garnica@unimilitar.du.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'summer'),
+(1093, 'CamiloMora14', '$2y$13$jWXNqP7ZVdmH8j6bormVgO7cPUci6yt0r.n.eExP7lLaW9kzMgj7q', 'Esteban Camilo', 'Mora Alfonso', '1014857706', 'UMNG', 0, 'ACT7 - SEN7 - VIS8 - SEC7', 'f-NlJXQxph4Rd2XtKCchf06mvT3MnP1sJJFzW19h62X0DVqIp9d3xD5sKoLKx-uYcuqBm0ySmqBTY-WWKiT_cKCA9VyjpalfKINJV-LoVJu1rA4CaYBFDtT4A2zaH52lFaIf5ZEa_xj1Qkm-Sy_wxYvRk2ub66T1EHas8o4x6e0xbQwUSzoBs3nYLZFiWG97xzyZpJ8hA3bjJnYD2vZKQfthAbTn49rWU_ueHQIdK-tgZRuveK8-scatA1Ey8Kg', '2005-01-14 00:00:00', 'est.esteban.mora@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'valentino'),
+(1094, 'kiro1357', '$2y$13$F7s5Y8XbkKevg0miOeOmnOUhI73NtJ3BQqsLH/RlylufQdFSSSGam', 'Juan Estevan ', 'Nieto Velasquez', '1016947859', 'UMNG', 0, 'ACT7 - SEN10 - VIS7 - SEC6', '6RNRLw3Jy3z_Q958lUo7zC4WcqQ8F3sQD0ZCX42x6D1RP3O2PHjop8gc10ZCmkwylC0at7Cwxj-rCXICA5Uy2inSVqTU-fKThtOGBnAQNSmMwqi6X9AGMpLILOAaRS3CYzNh5T666_ulbyzpuH_NUxAUTovwUHFc6fJhtpuaoAZB9pAYnaHBC0eszlBPZ0ZNUextJ_e2_zAtvA7PgPuyFAB731xOcEST6ULT4S4SrWxCgUn4twOGqfLRibjbeA1', '2006-01-04 00:00:00', 'kiro25127@gmail.com', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'keyner'),
+(1095, 'alejandra', '$2y$13$Pwf/vS75O2iK.i8QCmAZ8eA0XMgm/UQFr94YskZJRbpWAETiC6vT2', 'Alejandra', 'vanegas', '1013109480', 'UMNG', 0, 'REF6 - SEN8 - VIS8 - SEC8', 'APBj40Nj80cqvQkP2G4VWKkmAKMbet-l99rv0dxQHekfirgSv1M1ONldpXcUtrL02TDM_SnLGO2rZE6PkadddWNcQrElAeCQXh_3QRXl2ayM85roOcC8tX8K_81aPqH_4s53W-Dkb-Fldsl0cbiEx__oWg2bz7-ki10QBQ7Myc1qn6DhFZeLv12aznI4E4uz4v_SJ6SPwD68azxfcCTBFWfjQaIKR8qiweuBkuYIHsDtoorjZsi3fTkvB2Ztu3h', '2006-04-24 00:00:00', 'alejavanegass@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'gato'),
+(1096, 'Keyner02', '$2y$13$HtJHFyBOxwG7JEMlK7AT6Opma1dvQf1bv2XbbUeNrAj2O4HGVLrMm', 'Keyner', 'Martinez', '1011087369', 'UMNG', 0, 'ACT6 - SEN8 - VIS8 - SEC7', '6H7m_JVXKntLvwkqfTa_dcEMoSwUKVLI8Xy7DtuYqpdsZTW8DE-dJOp3j4yTzHpcoxjWqAiGy-pkH4lYRlmbK23A4Gnt41cGlhUd1GzXMrP5kxRyVJRa31drnbApevFv-nTvdfi04VkXPjQrk_w0aZRE7va0OShCj-37nvF4eu57pw0gP3RsA3KGp-DqhWVKV6cuW1C0t3K3g60AQzw6_NI4Fsa2_6VmQElpgTQZ-68XdbK3VX9MnX3249h8XCQ', '2005-09-02 00:00:00', 'est.keyner.martinez@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'pelicula', 'deadpool'),
+(1097, 'Camilor463', '$2y$13$jgL98J3nn8m3wK6BPB7B6uMzR..KNgs/KyFYy21EtzVkj4iT6ZrS6', 'Camilo', 'Rodriguez', '1031648588', 'UMNG', 0, NULL, 'issJEmG-MOYcIJA0y1BT98-lP9cB-QZL5TaMAq2zBZf7AQ-OdlUgt_huNtqnSBx1hLZOyjXcsRVZj48pLPhp5vZmud-sW0rEYb4ZwLZDvjczrpISCcg5fwduJ9sSneFb8pxsRLcwaHysvjFeqfUI2tw0ey-n0Ze8CCsoPNnNXgrb8mVYML1tkxNVUZgN0gkNOQsvai70GWTlLjBWyuqyX-D38oOcgZZOHx20JMWYeIAJKGOCeYQRG1Zw3NDsjjr', '2006-02-11 00:00:00', 'est.camilo.rodrigu1@unimilitar.edu.co', NULL, 2, NULL, 0, '', 0, 0, 'mascota', 'Rex'),
+(1098, 'Annym1447', '$2y$13$.IivVYdOd5J/nFIMUcImR.CHdw59NL5FqK4lPfgGzwlzc6sjFG9Mq', 'Diego', 'Ospina', '103439512', 'UMNG', 0, 'ACT8 - INT6 - VIS7 - SEC7', 'DO0wbyWMnuLemz3-ieF77Ua6shrKnTtJdFd7PTJm56-JG9OX9ftPbxnab7PTZ6auFxhg-7Nxyoayj7tPk_tflC9FHNnoH9gCtj4K1x5N6sLOclXsgNm1sPoLxdpnawhy8oSP3eJQwJZyYqvjGvquD7NtvbXixfnsvz64uaomGWibgzNrTzEEecqn-zxrP9uI5TOuBb5xc9wZ0fNoS3WURlQZVTWdYQVgI_jx65HpAjmsE9I_1r23UoL4LcC3mN9', '2006-01-27 00:00:00', 'dospina319@gmail.com', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'Oddy'),
+(1099, 'Rainnnnz', '$2y$13$dS9Wv.PL3MAUYmyOFHugtOq/LSg4fdVz6116I2hcKg//fEasXdmHC', 'Sebastian', 'Torres Gonzalez', '1027523558', 'UMNG', 0, 'ACT9 - INT7 - VIS10 - GLO7', 'OMDXpNNV7bPsGb1pKZ6xioti6yGA71M9Q2tTeL1UIXlFAkdq1YCThdanQCHbaecFhg0DK43AXvxFPh4A4AbuqY-cR0GUfu4UfDgWyf4szLsSO629waDOCHshUQzth8iKZ9OSTE0PP_OMOXoYkVfUlCYo3nZJJ0IcG9nnamfFqpxD_mwAUlwxKXaRaPNYeGfG2whO7KGcaBdKhw_vFg8gnLtbTlgARurVYYuE__jAMuAbeaWSUfysnYeW43f9Udq', '2005-01-31 00:00:00', 'est.sebastian.torr1@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'ivy'),
+(1100, 'Katerin suarez', '$2y$13$J1OGtr8YlUJz7YRWtTLtLO6Na23/0Y2AZ2X08JjJ5F.vjt89AV8E6', 'Katerin', 'Suarez', '1069582423', 'UMNG', 0, 'ACT7 - SEN6 - VIS9 - GLO6', 'tGGdofcwbDexlyCC9F1DBHTnS2C8PCqqC3KtuMFPnOK2oekHGNJyrtZCBJQxSv84W_3XD796vCO3KYDkxGYO5rc_fWRNLJcJir-HwVJKKlyLaUblTdiHw4v8RcGj1llUT7HTZjbkk7ZgrrZatPPHR_rFPY5beG27gEWKCAyyJgrDGyLlY12JsRoUZ_qWaMPqvgIIiJAFgcGQtt7LtJ89_bDofzzaQGZCq9aTNa_ZqhDCJDjCRxb-eghlHAhrX17', '2005-02-12 00:00:00', 'katerindaniela.suarezrico@gmail.com', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'chimuelo'),
+(1101, 'JuanjoGutierrez', '$2y$13$qBAel7mK67zCHGBjqemxreP2W..2CiUXUwnkhqCPOTJWqMXDYyb7q', 'Juan José', 'Gutierrez', '1016948558', 'UMNG', 0, NULL, '8qklNM-E9V47LNYq_0MjHusevgd057X4ccc8sd0gkVER0Msk0F7cdXwX-G9z1ftfd03RlHXSwZfHJ9iB1M3o1m3jb0fV7aXxwJbbdfaYBnp4hdr0dOEi5mmHWXLck_NKMNnyp5ZpLRZ-VkrFmJOcR-3kgqP_d9wcudTjlhzuSj2Na6I3K-kQx2mWtJombmCyet0KxkYIi0fdaZ8c9hmF7UHnPqLKMS2P6pDsfdkdBc0uBhrR0mx8w4zg-fGuFKW', '2006-04-05 00:00:00', 'est.jun.jgutierrez@unimilitar.edu.co', NULL, 2, NULL, 0, '', 0, 0, 'mascota', 'Roger'),
+(1102, 'Luisaf65', '$2y$13$o1.wlXeBwfzkXFpk2oX6pO6YavwDci/vaXgPwLqv5Gx.Pba7uWj9.', 'luisa', 'castaneda ', '1019989485', 'UMNG', 0, NULL, 'UDaL1xGFZ9ToySIQB-pCc24XegfS2xhImKpj1DfYIrFfYIpLt_zV23-O4XVlmcufDp3C0lqmN5aYGhmY9XnF74P09GvlpYE0xv7cPXSGV6D0ta81jbsMlWyJ1FDfY2SyZphzXwRXMZ4r6hEeAtvJ8GJB4axtEGRlvZ_-nyBhLkFQyzlVtgZNProHOrfKvGHX62QH6-DNUtzNS9S0oRDK4LM1c_yHOr2JZ2k8mwhAZBBTxpef3gy2ura1ZPhTUy7', '2006-08-12 00:00:00', 'est.luisaf.castaneda@unimilitar.edu.co', NULL, 2, NULL, 0, 'uploads/goku .jpeg', 0, 0, 'mascota', 'Rocky'),
+(1103, 'dilangaor', '$2y$13$S4RM195DzPYD0eHALcUnT.52qnKh6L61WC4Itp4TPgfC5Hq00jyE.', 'Dilan', 'Garces', '1021666305', 'Universidad Militar Nueva Granada', 0, 'ACT7 - SEN9 - VIS10 - SEC7', 'Hfgzc2fwGtl6BNW6JF8qv_gewcyx7mDt26Zc8Xv_CIVZd_Kybp9x9RXFKVrG0pLkzAptbbnNJUxO03_7xeNG0DVeBJMxNbmKMrnjAGO2JUUoSECsGI-NGN1m4r-k_wnSALELLzZ6B6leFr8_B5o6CgopKOWV7AxPvR5U7U-AjqTQYWS-FGt1aaFnkZytCiQneHMVp0Kz2IX2nroxg22wZV5nIXVAReyMPDn2BRuRC8yWxZd_xN-qw8is6KgKz6L', '2003-08-22 00:00:00', 'est.dilan.garces@unimilitar.edu.co', NULL, 2, NULL, 1000, '', 0, 0, 'mascota', 'Rene'),
+(1104, 'JonarbynM', '$2y$13$lOkrvTTr9/Xpr5hL6Pnlw.oOxHku9EDTMGeZWkKxjY0MS2DzzcVHW', 'Jonarbyn', 'Mora Contreras', '1007552554', 'UMNG', 0, NULL, 'd-XoQlYE_7-eBB3Ae3ldfQ6LQcVckIbeB575Rlp2azSrRrHrCEsKwHatTeBUhEWMxpm-AcSEc5nuX52TBl1ivjtf09zby-eYGJKQy14MwKG2KhFIEZrebXiwCwV1x2C0HBqFTJQj13kVBjYN9Ri5kyfko2qCyuaOUSbsQyipE9_7mqvyJW9iSO85EcB_8j8NITdP48-R8IyyJqZReIR6Tx5k8ktKuZngsR1zoU0Yo_jlGchF8hVsbH_Ukzbu8LD', '2001-09-18 00:00:00', 'est.jonarbyn.mora@unimilitar.edu.co', NULL, 2, NULL, 0, '', 0, 0, 'mascota', 'Molly'),
+(1105, 'est.mariana.toron@unimilitar.edu.co', '$2y$13$AWZTyvBjGoGOtSaDJirHreOusP1lm1cEssLV2hv3qa6uOigF/OxBK', 'Mariana', 'Toro', '1013111696', 'Universidad Militar Nueva Granada', 0, 'ACT7 - INT6 - VER6 - SEC9', 'snZieaeFY68BZprJr-Nq92PC0fAMu5qB7_oCJIE73tp8dozS1QnQvygpxioNSrX-mEaTq7G79-ylK5WCDSzj4Wpu--zrrQfsQZDDAhGh0NCE6xsHdsZgDBkKG_EApcFEvStEXgCHE520RHs9hHinoxawB662s_jRKBgB2LRjQO1HUx2DoggCsVc0lE3e7U92xvhFdnCabNCdnOFyQzhLVEW-e-r4DlPRdzkcakG1fW1ucdAzkQANuBbjhQcdSjB', '2006-09-21 00:00:00', 'est.mariana.toron@unimilitar.edu.co', NULL, 2, NULL, 1000, 'uploads/Screenshot_20250219-201454.png', 0, 0, 'comida', 'Pasta'),
+(1106, 'Dali', '$2y$13$Ciaz4qmuo1nKiqp9KeI/heO4SHJphwwS2n9b.oRDw8prkXtMGvpvq', 'Samuel', 'Gonzalez', '10000000', 'Umng', 0, 'REF11 - INT11 - VER11 - GLO11', '1wwWWbBkqSi9QxU3es_zryfaNkeC-S-7qEzS-nzeS7lnuVNfKOVIyxnCvuFaVMZNv_pmCBPyU27s8Bp1O68pnPMMjlQcuvxfT5ezD0HF-rF9IbGWtEHRMaNUeCHa1bOpO10B9f-ylTDB-vvrlRt_D5HH9H2_6IKqujrvNeSunyL2ZpBul-yrKE1ZpLcja0hcCOMFPp5dOEn9h1xGSP7xPrXQls_BKMAp7LYkDDVPJ7RK8nyeU96mmORagCLZu2l', '2004-10-29 00:00:00', 'samueldaligonzalez@gmail.com', NULL, 2, 'extra:4.00,agrea:3.56,consc:3.11,neuro:3.00,openn:4.80', 1000, '', 0, 0, 'mascota', 'Lulu'),
+(1107, 'Carola', '$2y$13$0j9emzNZfuQ7SU2kfltoSOaOET250vRffl0AyuJL65mZIDEY2FkWu', 'Diana ', 'Vargas', '10000001', 'Poli', 0, NULL, 'b606h1aayfxe8_cvxfLrzW83p4LqEEDyZTktL5PBzffsFtvGoch3oYYh-5sr2MLu6C_kdp0Kf5qCPWVD8qd65YT_2Wp8xvTdpGzZOD-WfcQ5nQUd0_A8mqpste1xP9RYMESuGCkby017xvjI3RICcvN-CRKKDES_qC3xoCzbz67sEcPSxcyKstdAo2dc0gTX6-FMBpjYC_VhTZZGKgVdmwAg-BZjotHwGYBwcshFB7LYciQNyPhGEQkSN4NckE6', '2004-10-29 00:00:00', 'dianacarolina0120@gmail.com', NULL, 2, 'extra:3.88,agrea:3.33,consc:4.11,neuro:3.63,openn:3.40', 0, '', 0, 0, 'mascota', 'Lulu'),
+(1108, 'Zebbz', '$2y$13$wIY8RtEhaobjuuZBXUlZCeb5uOa492e2q8rP7l3j5GOuj98mCjRRy', 'Juan Sebastián ', 'Rodríguez Rodríguez', '1003882320', 'UMNG', 0, 'ACT6 - INT6 - VIS8 - GLO7', 'qi2144ISyHVJ49xPwF--FH483AJfsmIop6gY6DiXbAc0cqKVIh4dA5blE8fiwCYy7-Wate8xj_qtdibW_Fs02NoYF_Qo4u7aQaKuh_tnHdlMpZbY1fTYJfV5zg9PU4CJ1OUraCiood6bLNJ9x6CTeqqAqVaaOA5_-NcEjpNktSGW8AKjnNZuu7RhKxB7-EaI5ITPVOu1DGqCFFIXwT0OTHopbVtKzEDfAVWfco4GN6SOmJ0-4PRx69Zkkqj-TUf', '2003-02-21 00:00:00', 'est.juans.rodriguezr@unimilitar.edu.co', NULL, 2, 'extra:2.75,agrea:3.89,consc:2.89,neuro:3.38,openn:4.90', 1000, '', 0, 0, 'mascota', 'Orion'),
+(1109, 'S3rgio', '$2y$13$ynt5jpFl4seRDQqdYUyWee0LKu9zWs5VypAE32kFuXDhcrqALVS6O', 'Sergio', 'Cardenas', '1077224076', 'UMNG', 0, 'ACT6 - SEN8 - VIS9 - GLO8', 'xBfC1g6rY_QsIfqa12l88_custyYKj1F4RaMIJbfHNbf-Th7IQBAgR_clhikt8Z2j1xC2FVQy5RW2tmCO_jmoxAoobxvUUWxX1D38f7depCBz_j-SPSyeushCs8pwDaOrtAhm7LM_KKUNJkf90KOufYKynEi1WKoF6szP30_SYCAAdZ7jdPbiK6KrtvRSwkth8qmurLbdSZ1PwuLRLSX-4DR_FaGz_BzVum1m1XBPg3wcLEitMmjl7aW0mCUBaQ', '2004-02-09 00:00:00', 'sergiocarper204@gmail.com', NULL, 2, 'extra:1.63,agrea:4.00,consc:3.11,neuro:2.63,openn:2.70', 1000, '', 0, 0, 'mascota', 'Max'),
+(1110, 'est.diana.camargo3', '$2y$13$mnX05QXKe1Zr41X6MXoo8eeiLlqAPz/JAtnCq92uDziQCGXYnDILK', 'Diana Mayerly ', 'Camargo Pedraza', '1052401532', 'UMNG', 0, 'REF7 - SEN7 - VIS7 - SEC6', 'lhbx3ClINCESPKF42JwMpZQ019ni7OCQ7_MAWVlSJol9eMWu-OKNeBpXATKKHPM5bN6XgYjig1Ti5zfT0axTswnuNb9ikz_ijrNyrjD36ofoJ1EBwM__TOd8y1MNsr9nY7z8aryyCDI2zLh9eu2Pkv-u-mxl3pCbDb0qbmRs1wrgQ2Q-_oiRKIDG-Pl42-Mw9-RjQT7pJCIQIZdUatVekGQdCwpZQPyDN2ujFvFhbV6Iwq3UuarPij1aqTfOeH5', '1994-04-23 00:00:00', 'est.diana.camargo3@unimilitar.edu.co', NULL, 2, 'extra:2.88,agrea:3.56,consc:4.33,neuro:3.13,openn:4.30', 1000, 'uploads/foto de perfil.jpg', 0, 0, 'mascota', 'notengo');
 
 --
 -- Índices para tablas volcadas
@@ -17852,17 +18003,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `asignaturas`
 --
 ALTER TABLE `asignaturas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT de la tabla `asignaturas_alumnos`
 --
 ALTER TABLE `asignaturas_alumnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=523;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=529;
 --
 -- AUTO_INCREMENT de la tabla `asignaturas_docentes`
 --
 ALTER TABLE `asignaturas_docentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 --
 -- AUTO_INCREMENT de la tabla `carreras`
 --
@@ -17872,7 +18023,7 @@ ALTER TABLE `carreras`
 -- AUTO_INCREMENT de la tabla `chats`
 --
 ALTER TABLE `chats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=280;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
 --
 -- AUTO_INCREMENT de la tabla `conflictos`
 --
@@ -17892,7 +18043,7 @@ ALTER TABLE `desafios`
 -- AUTO_INCREMENT de la tabla `desafios_usuarios`
 --
 ALTER TABLE `desafios_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 --
 -- AUTO_INCREMENT de la tabla `emociones`
 --
@@ -17907,17 +18058,17 @@ ALTER TABLE `eventos`
 -- AUTO_INCREMENT de la tabla `grupos`
 --
 ALTER TABLE `grupos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 --
 -- AUTO_INCREMENT de la tabla `grupos_alumnos`
 --
 ALTER TABLE `grupos_alumnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=946;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
 --
 -- AUTO_INCREMENT de la tabla `grupos_formados`
 --
 ALTER TABLE `grupos_formados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=326;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
 --
 -- AUTO_INCREMENT de la tabla `logros`
 --
@@ -17977,7 +18128,7 @@ ALTER TABLE `sentencias_apertura`
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 --
 -- AUTO_INCREMENT de la tabla `tareas_alumnos`
 --
@@ -17992,7 +18143,7 @@ ALTER TABLE `tarea_usuario_puntaje`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1069;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1111;
 --
 -- Restricciones para tablas volcadas
 --

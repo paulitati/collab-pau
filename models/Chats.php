@@ -38,7 +38,7 @@ class Chats extends \yii\db\ActiveRecord
             [['fecha'], 'safe'],
             [['grupos_formados_id', 'tareas_id'], 'required'],
             [['grupos_formados_id', 'tareas_id'], 'integer'],
-            [['descripcion'], 'string', 'max' => 255],
+            [['descripcion'], 'string', 'max' => 1000],
             [['grupos_formados_id'], 'exist', 'skipOnError' => true, 'targetClass' => GruposFormados::className(), 'targetAttribute' => ['grupos_formados_id' => 'id']],
             [['tareas_id'], 'exist', 'skipOnError' => true, 'targetClass' => Tareas::className(), 'targetAttribute' => ['tareas_id' => 'id']],
             [['nota'], 'number'],
