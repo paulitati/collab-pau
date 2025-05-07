@@ -54,7 +54,7 @@ $script = <<< JS
 
                     //Calcula cuantos grupos se podran crear en base a la cantidad de alumnos y la cantidad de integrantes por grupo.
                     var j = 0;
-                    var cantidadGrupos = Math.round(aAlumnos.length / $('#grupos-cantidadintegrantes').val());
+                    var cantidadGrupos = Math.ceil(aAlumnos.length / $('#grupos-cantidadintegrantes').val());
                     cantidadContenedoresGrupo = cantidadGrupos;
                     //Bloque cambiado
                     // Crear contenedor padre para alumnos y grupos
